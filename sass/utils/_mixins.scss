@@ -47,6 +47,7 @@
 }
 
 @mixin appearance($val: none) {
+    position: absolute;
 	-webkit-appearance: $val;
 	-moz-appearance: $val;
 	appearance: $val;
