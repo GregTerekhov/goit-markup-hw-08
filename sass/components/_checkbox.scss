@@ -1,0 +1,29 @@
+.checkbox__label {
+    @include centeredFlex();
+    @include fontType($weight: 400, $size: 14px, $lh: 1.714);
+  
+    color: getColor('text-secondary');
+}
+
+.checkbox__input {
+    position: absolute;
+    @include appearance();
+}
+
+.checkbox__icon {
+    display: inline-block;
+    margin-right: 7px;
+  
+    border: 2px solid getColor('border-checkbox');
+    border-radius: 3px;
+
+    .checkbox__input:checked + & {
+        border: none;
+        background-color: getColor('accent');
+    }
+}
+
+.checkbox__contract-terms {
+    @include link(inline-block, underline, getColor('accent'));
+    margin-left: 2px;
+}

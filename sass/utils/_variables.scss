@@ -1,0 +1,74 @@
+$colors: ( 
+  'accent': #2196f3,
+  'background-primary': #ffffff,
+  'background-secondary': #2f303a,
+  'background-tertiary': #f5f4fa,
+  'background-activity-label': rgba(47, 48, 58, 0.8),
+  'background-footer-network': rgba(255, 255, 255, 0.1),
+  'background-modal-overlay': rgba(0, 0, 0, 0.2),
+  'border-button-close': rgba(0, 0, 0, 0.1),
+  'border-cards': #eeeeee,
+  'border-checkbox': #212121,
+  'border-header': #ececec,
+  'border-modal-input': rgba(33, 33, 33, 0.2),
+  'primary-button-hover': #188ce8,
+  'button-modal-close': #000000,
+  'gradient-hero': rgba(47, 48, 58, 0.4),
+  'social-icons-hover': #ffffff,
+  'link-nonactive': #afb1b8,
+  'logo-footer': #ffffff,
+  'logo-header': #000000,
+  'overlay-cards': rgba(33, 150, 243, 0.9),
+  'placeholder-footer': rgba(255, 255, 255, 0.6),
+  'placeholder-modal': rgba(117, 117, 117, 0.5),
+  'text-primary': #212121,
+  'text-secondary': #757575,
+  'text-tertiary': #ffffff,
+  'text-footer-contacts': rgba(255, 255, 255, 0.6),
+);
+
+@function getColor($key) {
+  @return map-get($colors, $key);
+}
+
+$timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+.page {
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0.03em;
+  
+    background-color: getColor('background-primary');
+    color: getColor('text-primary');
+  }
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 1200px;
+  }
+
+  .page__backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+  
+    width: 100%;
+    height: 100%;
+  }
+
+  .page__modal-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+
+  .picture {
+    @extend %picture;
+  }
+
+  .modal-open {
+    overflow: hidden;
+  }

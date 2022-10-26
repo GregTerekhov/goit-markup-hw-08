@@ -1,0 +1,43 @@
+.navigation__list {
+    @extend %list;
+    @include centeredFlex();
+    margin-left: 93px;
+}
+
+.navigation__item {
+    
+    & + & {
+        margin-left: 50px;
+    }
+}
+
+.navigation__link {
+  @include link();
+  @include fontType($weight: 500, $size: 14px, $ls: 0.02em);
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  transition: color 250ms $timing-function;
+
+    &:hover, &:focus {
+      color: getColor('accent');
+    }
+
+    &--current {
+      position: relative;
+      @include centeredFlex();
+
+      color: getColor('accent');
+
+        &::after {
+          @include pseudo();
+          bottom: -1px;
+
+          height: 4px;
+
+          background-color: getColor('accent');
+          border-radius: 2px;
+        }
+    }
+}
+

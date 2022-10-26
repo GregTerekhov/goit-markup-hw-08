@@ -1,0 +1,123 @@
+.projects {
+    padding: 94px 0;
+}
+
+.projects__title {
+    @extend %visually-hidden;
+}
+
+.projects__filters-list {
+    @extend %list;
+    @include centeredFlex();
+    margin-bottom: 50px;
+}
+
+.projects__filters-item {
+
+    & + & {
+        margin-left: 8px; 
+    }
+}
+
+.projects__filters-button {
+    @extend %button;
+    @include fontType($weight: 500, $lh: 1.625, $align: center);
+    padding: 6px 22px;
+  
+    background-color: getColor('background-tertiary');
+
+    border-radius: 4px;
+    
+    transition: color 250ms $timing-function,
+      background-color 250ms $timing-function,
+      box-shadow 250ms $timing-function;
+    
+      &:hover, &:focus {
+        color: getColor('text-tertiary');
+        background-color: getColor('accent');
+        box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+          0px 2px 2px rgba(0, 0, 0, 0.12);
+      }
+
+      &--current {
+        color: getColor('text-tertiary');
+        background-color: getColor('accent');
+      }
+}
+
+.projects__cards-list {
+    @extend %list;
+    @include centeredFlex();
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.projects__cards-link {
+    @include link();
+    
+    transition: box-shadow 250ms $timing-function;
+
+    &:hover, &:focus {
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+    }
+}
+
+.projects__wrap {
+    position: relative;
+    overflow: hidden;
+  
+    @include centeredFlex();
+}
+
+.projects__overlay {
+    position: absolute;
+
+    background-color: getColor('overlay-cards');
+  
+    opacity: 0;
+    pointer-events: none;
+  
+    transform: translateY(100%);
+    transition: transform 250ms $timing-function,
+      opacity 250ms $timing-function;
+
+    .projects__cards-link:hover &,
+    .projects__cards-link:focus & {
+    opacity: 1;
+    transform: translatey(0);
+}
+}
+
+.projects__label {
+    @extend %margine-padding-reset;
+    @include fontType($weight: 400, $size: 18px, $lh: 1.556);
+
+    padding: 63px 24px;
+
+    color: getColor('text-tertiary');
+}
+
+.projects__meta {
+    padding: 20px 24px;
+
+    border: 1px solid getColor('border-cards');
+    border-top: none;
+}
+
+.projects__name {
+    @extend %margine-padding-reset;
+    @include fontType($size: 18px, $lh: 2, $ls: 0.06em, $transform: capitalize);
+
+    margin-bottom: 4px;
+
+    &--lowercase-letter {
+        text-transform: lowercase;
+    }
+}
+
+.projects__category {
+    @extend %margine-padding-reset;
+    @include fontType($weight: 400, $lh: 1.875);
+  
+    color: getColor('text-secondary');
+}

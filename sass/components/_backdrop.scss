@@ -1,0 +1,13 @@
+.backdrop {
+    background-color: getColor('background-modal-overlay');
+  
+    opacity: 1;
+    transition: opacity 250ms $timing-function, visibility 250ms $timing-function;
+
+    &.is-hidden {
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+

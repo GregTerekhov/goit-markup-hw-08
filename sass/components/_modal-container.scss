@@ -1,0 +1,48 @@
+.modal-container {
+    width: 528px;
+    padding: 40px;
+  
+    background-color: getColor('background-primary');
+  
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  
+    transform: translate(-50%, -50%) scale(1) rotate(0);
+    transition: transform 500ms $timing-function;
+
+    .backdrop.is-hidden & {
+        transform: translate(-50%, -50%) scale(0.5) rotate(180deg);
+    }
+}
+
+.modal-container__form {
+    @include centeredFlex();
+    flex-direction: column;
+}
+
+.modal-container__button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  
+    @include centeredFlex();
+  
+    padding: 6px;
+  
+    fill: getColor('button-modal-close');
+    background-color: getColor('background-primary');
+  
+    border: 1px solid getColor('border-button-close');
+    border-radius: 50%;
+    cursor: pointer;
+  
+    transition: color 250ms $timing-function;
+
+    &:hover, &:focus {
+        color: getColor('accent');
+    }
+}
+
+.modal-container__icon {
+    @extend %icon;
+}

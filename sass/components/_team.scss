@@ -1,0 +1,67 @@
+.team {
+    padding: 94px 0;
+    background-color: getColor('background-tertiary');
+}
+
+.team__title {
+    @extend %margine-padding-reset;
+    @include fontType($size: 36px, $align: center);
+    @extend %sec-title-margin;
+}
+
+.team__list {
+    @extend %list;
+    @include centeredFlex();
+    gap: 30px;
+}
+
+.team__wrap {
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+}
+
+.team__meta {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  
+    background-color: getColor('background-primary');
+  
+    border-radius: 0px 0px 4px 4px;
+}
+
+.team__name {
+    @extend %margine-padding-reset;
+    @include fontType($weight: 500, $align: center);
+    margin-bottom: 10px;
+}
+
+.team__descr {
+    @extend %margine-padding-reset;
+    @include fontType($weight: 400, $align: center, $transform: capitalize);
+    margin-bottom: 16px;
+  
+    color: getColor('text-secondary');
+}
+
+.team__socials-list {
+    @extend %list;
+    @include centeredFlex();
+    gap: 10px;
+}
+
+.team__link {
+    @include centeredFlex();
+    @include socialLinks($color: getColor('link-nonactive'), $background: getColor('background-primary'));
+
+    &:hover, &:focus {
+        background-color: getColor('accent');
+        color: getColor('social-icons-hover');
+    }
+}
+
+.team__icon {
+    @extend %icon;
+
+    transition: fill 250ms $timing-function;
+}

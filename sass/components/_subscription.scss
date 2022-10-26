@@ -1,0 +1,47 @@
+.subscription__call {
+    @include fontType($size: 14px, $transform: uppercase);
+
+    display: block;
+    margin-bottom: 20px;
+  
+    color: getColor('text-tertiary');
+}
+
+.subscription__form {
+    @include centeredFlex();
+}
+
+.subscription__input {
+    padding: 15px;
+
+    width: 358px;
+  
+    color: getColor('text-tertiary');
+    background-color: getColor('background-secondary');
+  
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+
+    &::placeholder {
+        font-size: 16px;
+        line-height: 1.25;
+      
+        color: getColor('placeholder-footer');      
+    }
+}
+
+.subscription__button {
+    @include buttonPrimary();
+    @include centeredFlex($type: inline-flex);
+    margin-left: 12px;
+
+    &:hover, &:focus {
+        background-color: getColor('primary-button-hover');
+    }
+}
+
+.subscription__icon {
+    @extend %icon;
+    margin-left: 10px;
+}

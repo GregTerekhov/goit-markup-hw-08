@@ -1,0 +1,19 @@
+.logo {
+  @include link();
+    font: {
+      family: 'Raleway', sans-serif;
+      size: 26px;
+      weight: 700;
+    }
+  line-height: 1.383;
+
+  color: getColor('accent');
+
+  &--black-piece {
+    color: getColor('logo-header');
+  }
+
+  &--white-piece {
+    color: getColor('logo-footer');
+  }
+}

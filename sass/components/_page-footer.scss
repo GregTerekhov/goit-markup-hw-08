@@ -1,0 +1,24 @@
+.page-footer {
+    background-color: getColor('background-secondary');
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.page-footer__box {
+    @include centeredFlex($align-items: baseline);
+    flex-wrap: wrap;
+}
+
+.page-footer__wrap {
+    margin-right: 70px;
+}
+
+.page-footer__logo {
+    @extend .logo;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.page-footer__socials {
+    margin-right: 93px;
+}

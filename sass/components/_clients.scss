@@ -1,0 +1,37 @@
+.clients {
+  padding: 94px 0;
+}
+
+.clients__title {
+    @extend %margine-padding-reset;
+    @include fontType($size: 36px, $align: center);
+    @extend %sec-title-margin;
+  }
+
+  .clients__list {
+    @extend %list;
+    @include centeredFlex();
+    gap: 30px;
+  }
+
+.clients__logo {
+    @include centeredFlex();
+    width: 170px;
+    height: 92px;
+  
+    border: 1px solid getColor('link-nonactive');
+    border-radius: 4px;
+    color: getColor('link-nonactive');
+  
+    transition: border 250ms $timing-function,
+      color 250ms $timing-function;
+
+      &:hover, &:focus {
+        border-color: getColor('accent');
+        color: getColor('accent');
+      }
+}
+
+.clients__icon {
+    fill: currentColor;
+}

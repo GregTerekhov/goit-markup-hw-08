@@ -1,0 +1,45 @@
+.activity {
+    padding-bottom: 94px;
+}
+
+.activity__title {
+    @extend %margine-padding-reset;
+    @include fontType($size: 36px, $align: center);
+    @extend %sec-title-margin
+}
+
+.activity__list {
+    @extend %list;
+    @include centeredFlex();
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.activity__thumb {
+    position: relative;
+    overflow: hidden;
+  
+    @include centeredFlex();
+  
+    z-index: -1;
+
+    &::before {
+        @include pseudo();
+        bottom: 0;
+      
+        height: 70px;
+      
+        background-color: getColor('background-activity-label');
+    }
+}
+
+.activity__label {
+    @extend %margine-padding-reset;
+    @include fontType($size: 14px, $transform: uppercase);
+    position: absolute;
+    bottom: 0;
+
+    padding: 27px 0;
+
+    color: getColor('text-tertiary');
+}

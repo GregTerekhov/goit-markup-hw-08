@@ -1,0 +1,27 @@
+.socials__call {
+    @include fontType($size: 14px, $transform: uppercase);
+
+    display: block;
+    margin-bottom: 20px;  
+
+    color: getColor('text-tertiary');
+}
+
+.socials__list {
+    @extend %list;
+    @include centeredFlex();
+    gap: 10px;
+}
+
+.socials__link {
+    @include centeredFlex();
+    @include socialLinks($color: getColor('social-icons-hover'), $background: getColor('background-footer-network'));
+
+    &:hover, &:focus {
+        background-color: getColor('accent');
+    }
+}
+
+.socials__icon {
+    @extend %icon;
+}

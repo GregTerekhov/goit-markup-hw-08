@@ -1,0 +1,29 @@
+.address {
+    font-style: normal; 
+}
+
+.address__list {
+    @extend %list;
+}
+.address__item {
+    width: 231px;
+}
+.address__link {
+    @include link($display: inline-block, $color: getColor('text-footer-contacts'));
+    @include fontType($weight: 400, $size: 14px, $lh: 1.714);
+    
+    transition: color 250ms $timing-function;
+
+    &:hover, &:focus {
+        color: getColor('accent');
+    }
+
+    &--map {
+        margin-bottom: 9px;
+        color: getColor('text-tertiary');
+    }
+
+    &--mail {
+        margin-bottom: 9px;
+    }
+}
