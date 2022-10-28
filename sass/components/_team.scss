@@ -1,18 +1,37 @@
 .team {
-    padding: 94px 0;
+    padding: 60px 0;
     background-color: getColor('background-tertiary');
+
+    @media screen and (min-width: 1200px) {
+        padding: 94px 0;
+    }
 }
 
 .team__title {
-    @extend %margine-padding-reset;
-    @include fontType($size: 36px, $align: center);
-    @extend %sec-title-margin;
+    @extend %margin-padding-reset;
+    @include fontType($size: 28px, $align: center);
+    margin-bottom: 30px;
+
+    @media screen and (min-width: 1200px) {
+        font-size: 36px;
+        margin-bottom: 50px;;
+    }
 }
 
 .team__list {
     @extend %list;
-    @include centeredFlex();
-    gap: 30px;
+
+    @media screen and (min-width: 1200px) {
+        @include centeredFlex();
+        gap: 30px;
+    }
+}
+
+.team__item {
+
+    &:not(:last-child) {
+        margin-bottom: 30px;
+    }
 }
 
 .team__wrap {
@@ -23,21 +42,25 @@
 
 .team__meta {
     padding-top: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 24px;
   
     background-color: getColor('background-primary');
   
     border-radius: 0px 0px 4px 4px;
+
+    @media screen and (min-width: 1200px) {
+        padding-bottom: 30px;
+    }
 }
 
 .team__name {
-    @extend %margine-padding-reset;
+    @extend %margin-padding-reset;
     @include fontType($weight: 500, $align: center);
     margin-bottom: 10px;
 }
 
 .team__descr {
-    @extend %margine-padding-reset;
+    @extend %margin-padding-reset;
     @include fontType($weight: 400, $align: center, $transform: capitalize);
     margin-bottom: 16px;
   

@@ -1,0 +1,10 @@
+.mobile-network {
+    @extend %list;
+    display: flex;
+    gap: 20px;
+}
+
+.mobile-network__link {
+    @include link();
+    color: getColor('accent');
+}

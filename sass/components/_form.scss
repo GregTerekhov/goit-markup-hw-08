@@ -1,8 +1,13 @@
 .form__call {
-    @extend %margine-padding-reset;
+    @extend %margin-padding-reset;
     @include fontType($size: 20px);
   
     margin-bottom: 12px;
+
+    @media screen and (max-width: 767px) {
+        line-height: 1.5;
+        text-align: center;
+    }
 }
 
 .form__panel-list {
@@ -15,7 +20,7 @@
 }
 
 .form__label {
-    @extend %margine-padding-reset;
+    @extend %margin-padding-reset;
     @include fontType($weight: 400, $size: 12px, $ls: 0.01em);
     display: block;
     margin-bottom: 4px;
@@ -28,8 +33,8 @@
 }
 
 .form__input {
-    @extend %margine-padding-reset;
-    @include fontType($weight: 400, $size: 12px, $ls: 0.01em);
+    @extend %margin-padding-reset;
+    @include fontType($weight: 400, $size: 14px, $ls: 0.01em);
     display: block;
     padding: 12px 12px 12px 42px;
     width: 100%;
@@ -59,7 +64,7 @@
 }
 
 .form__textarea {
-    @include fontType($weight: 400, $size: 12px, $ls: 0.01em);
+    @include fontType($weight: 400, $size: 14px, $ls: 0.01em);
     display: block;
 
     width: 100%;
@@ -83,8 +88,8 @@
 
 .form__input::placeholder, 
 .form__textarea::placeholder {
-    @extend %margine-padding-reset;
-    @include fontType($weight: 400, $size: 12px, $ls: 0.01em);
+    @extend %margin-padding-reset;
+    @include fontType($weight: 400, $size: 14px, $ls: 0.01em);
   
     color: getColor('placeholder-modal');
 }

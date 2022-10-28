@@ -4,13 +4,21 @@
     padding-bottom: 60px;
 }
 
-.page-footer__box {
-    @include centeredFlex($align-items: baseline);
-    flex-wrap: wrap;
+.page-footer__box {    
+    @media screen and (min-width: 1200px) {
+        @include centeredFlex($justify-content: space-between, $align-items: baseline);
+    }
 }
 
 .page-footer__wrap {
-    margin-right: 70px;
+    text-align: center;
+    margin-bottom: 60px;
+
+    @media screen and (min-width: 1200px) {
+        margin-bottom: 0;
+        margin-right: 70px;
+        text-align: left;
+    }
 }
 
 .page-footer__logo {
@@ -20,5 +28,10 @@
 }
 
 .page-footer__socials {
-    margin-right: 93px;
+    margin-bottom: 60px;
+    
+    @media screen and (min-width: 1200px) {
+        margin-bottom: 0;
+        margin-right: 93px;
+    }
 }

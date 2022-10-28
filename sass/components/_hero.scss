@@ -16,26 +16,35 @@
 }
 
 .hero__title {
-    @extend %margine-padding-reset;
-    width: 696px;
+    @extend %margin-padding-reset;
     margin-bottom: 30px;
     margin-left: auto;
     margin-right: auto;
 
     font-weight: 900;
-    font-size: 44px;
-    line-height: 1.363;
+    font-size: 26px;
+    line-height: 1.615;
     letter-spacing: 0.06em;
     text-transform: uppercase;
 
     color: getColor('text-tertiary');
+
+    @media screen and (min-width: 1200px) {
+        width: 696px;
+        font-size: 44px;
+        line-height: 1.363;
+    }
 }
 
 .hero__button {
-    @include buttonPrimary($width: 216px);
+    @include buttonPrimary();
     @include centeredFlex($type: inline-flex);
 
     &:hover, &:focus {
         background-color: getColor('primary-button-hover');
+    }
+
+    @media screen and (min-width: 1200px) {
+        width: 216px
     }
 }

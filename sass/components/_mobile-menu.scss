@@ -1,0 +1,42 @@
+.mobile-menu {
+    @extend %list;
+}
+
+.mobile-menu__item:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.mobile-menu__link {
+    @include link();
+    @include fontType($weight: 500, $size: 40px, $ls: 0.02em);
+
+    @media screen and (min-width:1200px) {
+      @include fontType($weight: 500, $size: 14px, $ls: 0.02em);
+      padding: 32px 0;
+
+      transition: color 250ms $timing-function;
+
+      &:hover, &:focus {
+        color: getColor('accent');
+      }
+    }
+
+    &--current {
+      color: getColor('accent');
+
+      @media screen and (min-width: 1200px) {
+        position: relative;
+        @include centeredFlex();
+
+        &::after {
+          @include pseudo();
+          bottom: -1px;
+
+          height: 4px;
+
+          background-color: getColor('accent');
+          border-radius: 2px;
+        }
+      }
+    }
+}

@@ -5,6 +5,10 @@
     margin-bottom: 20px;  
 
     color: getColor('text-tertiary');
+
+    @media screen and (max-width: 767px) {
+        text-align: center;
+    }
 }
 
 .socials__list {

@@ -12,6 +12,7 @@ $colors: (
   'border-header': #ececec,
   'border-modal-input': rgba(33, 33, 33, 0.2),
   'primary-button-hover': #188ce8,
+  'button-mobile-menu': #000000,
   'button-modal-close': #000000,
   'gradient-hero': rgba(47, 48, 58, 0.4),
   'social-icons-hover': #ffffff,
@@ -40,6 +41,10 @@ $timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   
     background-color: getColor('background-primary');
     color: getColor('text-primary');
+
+    &.modal-open {
+      overflow: hidden;
+    }
   }
 
 .container {
@@ -47,7 +52,18 @@ $timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     margin-right: auto;
     padding-left: 15px;
     padding-right: 15px;
-    width: 1200px;
+
+    @media screen and (min-width: 480px) {
+      width: 480px;
+    }
+
+    @media screen and (min-width: 768px) {
+      width: 768px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      width: 1200px;
+    }
   }
 
   .page__backdrop {
@@ -67,8 +83,4 @@ $timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
   .picture {
     @extend %picture;
-  }
-
-  .modal-open {
-    overflow: hidden;
   }

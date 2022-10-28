@@ -1,12 +1,27 @@
-.feedback__link {
-    @include link();
-    @include centeredFlex();
-    @include fontType($weight: 500, $size: 14px, $ls: 0.02em);
-    position: relative;
+.feedback {
+  @extend %list;
+}
 
-    padding: 32px 0;
+.feedback__link {
+    @include link($display: inline-block);
 
     color: getColor('text-secondary');
+
+      &.tel {
+        @include fontType($weight: 500, $size: 34px, $ls: 0.02em);
+        color: getColor('accent');
+        margin-bottom: 32px;
+      }
+
+      &.mail {
+        @include fontType($weight: 500, $size: 24px, $ls: 0.02em);
+      }
+
+    @media screen and (min-width: 1200px) {
+      position: relative;
+      @include fontType($weight: 500, $size: 14px, $ls: 0.02em);
+      @include centeredFlex();
+      padding: 32px 0;
 
       &:hover, &:focus {
         color: getColor('accent');
@@ -30,9 +45,17 @@
       &:hover::after, &:focus::after {
         transform: scaleX(1);
       }
+    }  
 }
 
 .feedback__icon {
-  @extend %icon;
+
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+
+  @media screen and (min-width: 1200px) {
+    fill: currentColor;
     margin-right: 10px;
   }
+}

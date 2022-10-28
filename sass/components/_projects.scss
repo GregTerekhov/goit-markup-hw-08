@@ -1,5 +1,9 @@
 .projects {
-    padding: 94px 0;
+    padding: 60px 0;
+
+    @media screen and (min-width: 1200px) {
+        padding: 94px 0;
+    }
 }
 
 .projects__title {
@@ -8,14 +12,17 @@
 
 .projects__filters-list {
     @extend %list;
-    @include centeredFlex();
-    margin-bottom: 50px;
-}
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 8px;
+    margin-bottom: 40px;
+    color: getColor('text-primary');
 
-.projects__filters-item {
-
-    & + & {
-        margin-left: 8px; 
+    @media screen and (min-width: 1200px) {
+        @include centeredFlex();
+        flex-wrap: nowrap;
+        gap: 8px;
+        margin-bottom: 50px;
     }
 }
 
@@ -89,7 +96,7 @@
 }
 
 .projects__label {
-    @extend %margine-padding-reset;
+    @extend %margin-padding-reset;
     @include fontType($weight: 400, $size: 18px, $lh: 1.556);
 
     padding: 63px 24px;
@@ -105,7 +112,7 @@
 }
 
 .projects__name {
-    @extend %margine-padding-reset;
+    @extend %margin-padding-reset;
     @include fontType($size: 18px, $lh: 2, $ls: 0.06em, $transform: capitalize);
 
     margin-bottom: 4px;
@@ -116,7 +123,7 @@
 }
 
 .projects__category {
-    @extend %margine-padding-reset;
+    @extend %margin-padding-reset;
     @include fontType($weight: 400, $lh: 1.875);
   
     color: getColor('text-secondary');

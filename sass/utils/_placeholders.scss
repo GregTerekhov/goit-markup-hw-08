@@ -1,5 +1,10 @@
+%margin-padding-reset {
+  margin: 0;
+  padding: 0;
+}
+
 %list {
-  @extend %margine-padding-reset;
+  @extend %margin-padding-reset;
   list-style: none;
 }
 
@@ -9,12 +14,8 @@
   height: auto;
 } 
 
-%margine-padding-reset {
-  margin: 0;
-  padding: 0;
-}
-
 %button {
+  @extend %margin-padding-reset;
   font-family: inherit;
   cursor: pointer;
   border: none;

@@ -1,3 +1,36 @@
+.navigation__button {
+  @extend %button;
+  @include centeredFlex();
+  min-width: 40px;
+  min-height: 40px;
+  padding: 10px 0;
+
+  color: getColor('button-mobile-menu');
+  background-color: transparent;
+  outline: none;
+
+  &:hover, &:focus {
+    fill: getColor('accent')
+  }
+
+  .mobile-container & {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: currentColor;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.navigation__container {
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
 .navigation__list {
     @extend %list;
     @include centeredFlex();

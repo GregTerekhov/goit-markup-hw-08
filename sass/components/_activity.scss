@@ -1,9 +1,15 @@
 .activity {
-    padding-bottom: 94px;
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
+
+    @media screen and (min-width: 1200px) {
+        padding-bottom: 94px;
+    }
 }
 
 .activity__title {
-    @extend %margine-padding-reset;
+    @extend %margin-padding-reset;
     @include fontType($size: 36px, $align: center);
     @extend %sec-title-margin
 }
@@ -34,7 +40,7 @@
 }
 
 .activity__label {
-    @extend %margine-padding-reset;
+    @extend %margin-padding-reset;
     @include fontType($size: 14px, $transform: uppercase);
     position: absolute;
     bottom: 0;

@@ -5,16 +5,27 @@
     margin-bottom: 20px;
   
     color: getColor('text-tertiary');
+
+    @media screen and (max-width: 767px) {
+        text-align: center;
+    }
 }
 
 .subscription__form {
+    @extend %margin-padding-reset;
     @include centeredFlex();
+    flex-wrap: wrap;
+    gap: 12px;
+    @media screen and (min-width:1200px) {
+        @include centeredFlex();
+        flex-wrap: nowrap;
+    }
 }
 
 .subscription__input {
     padding: 15px;
 
-    width: 358px;
+    width: 450px;
   
     color: getColor('text-tertiary');
     background-color: getColor('background-secondary');
@@ -29,12 +40,16 @@
       
         color: getColor('placeholder-footer');      
     }
+
+    @media screen and (min-width: 1200px) {
+        width: 358px;
+    }
 }
 
 .subscription__button {
     @include buttonPrimary();
     @include centeredFlex($type: inline-flex);
-    margin-left: 12px;
+    // margin-left: 12px;
 
     &:hover, &:focus {
         background-color: getColor('primary-button-hover');

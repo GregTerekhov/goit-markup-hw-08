@@ -2,10 +2,15 @@
   @include link();
     font: {
       family: 'Raleway', sans-serif;
-      size: 26px;
+      size: 24px;
       weight: 700;
     }
-  line-height: 1.383;
+  line-height: 1.174;
+
+  @media screen and (min-width: 1200px) {
+    font-size: 26px;
+    line-height: 1.383;
+  }
 
   color: getColor('accent');
 

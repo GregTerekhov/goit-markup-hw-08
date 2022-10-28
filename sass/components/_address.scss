@@ -4,9 +4,16 @@
 
 .address__list {
     @extend %list;
+
+    @media screen and (max-width: 479px) {
+        text-align: center;
+    }
 }
 .address__item {
-    width: 231px;
+
+    @media screen and (min-width: 1200px) {
+        width: 231px;
+    }
 }
 .address__link {
     @include link($display: inline-block, $color: getColor('text-footer-contacts'));
@@ -19,11 +26,19 @@
     }
 
     &--map {
-        margin-bottom: 9px;
+        margin-bottom: 8px;
         color: getColor('text-tertiary');
+
+        @media screen and (min-width: 1200px) {
+            margin-bottom: 9px;
+        }
     }
 
     &--mail {
-        margin-bottom: 9px;
+        margin-bottom: 8px;
+
+        @media screen and (min-width: 1200px) {
+            margin-bottom: 9px;
+        }
     }
 }

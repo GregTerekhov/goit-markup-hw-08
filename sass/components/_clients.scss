@@ -1,17 +1,31 @@
 .clients {
-  padding: 94px 0;
+  padding: 60px 0;
+
+  @media screen and (min-width: 1200px) {
+    padding: 94px 0;
+  }
 }
 
 .clients__title {
-    @extend %margine-padding-reset;
-    @include fontType($size: 36px, $align: center);
-    @extend %sec-title-margin;
+    @extend %margin-padding-reset;
+    @include fontType($size: 28px, $align: center);
+    margin-bottom: 30px;
+
+    @media screen and (min-width: 1200px) {
+      font-size: 36px;
+      margin-bottom: 50px;
+    }
   }
 
   .clients__list {
     @extend %list;
     @include centeredFlex();
+    flex-wrap: wrap;
     gap: 30px;
+
+    @media screen and (min-width: 1200px) {
+      flex-wrap: nowrap;
+    }
   }
 
 .clients__logo {
