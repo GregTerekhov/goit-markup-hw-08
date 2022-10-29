@@ -34,7 +34,6 @@
     margin-left: 87px;   
 
     @include respond-to('desktop') {
-      justify-content: space-between;
       margin-left: 93px;
     }
   }
@@ -46,7 +45,7 @@
     margin-right: 95px;
 
     @include respond-to('desktop') {
-      margin: 0;
+      margin: 0;    
     }
 }
 

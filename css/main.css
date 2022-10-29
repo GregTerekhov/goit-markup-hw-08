@@ -416,7 +416,6 @@ summary {
 }
 @media (min-width: 768px) and (min-width: 1200px) {
   .navigation__container {
-    justify-content: space-between;
     margin-left: 93px;
   }
 }
