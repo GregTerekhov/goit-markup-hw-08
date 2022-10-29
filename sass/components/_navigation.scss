@@ -31,10 +31,11 @@
 
   @include respond-to('tablet') {
     @include centeredFlex();
-    margin-left: 87px;   
+    margin-left: 87px;
 
     @include respond-to('desktop') {
       margin-left: 93px;
+      flex-grow: 1;
     }
   }
 }
@@ -45,7 +46,7 @@
     margin-right: 95px;
 
     @include respond-to('desktop') {
-      margin: 0;    
+      margin-right: auto;    
     }
 }
 

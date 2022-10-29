@@ -8,9 +8,13 @@
   color: getColor('text-secondary');
 
   &.tel {
-    @include fontType($weight: 500, $size: 34px, $ls: 0.02em);
+    @include fontType($weight: 500, $size: 26px, $ls: 0.02em);
     color: getColor('accent');
     margin-bottom: 32px;
+
+    @include respond-to('mobile') {
+      font-size: 34px;
+    }
 
     @include respond-to('tablet') {
       color: getColor('text-secondary');
@@ -24,7 +28,11 @@
   }
 
   &.mail {
-    @include fontType($weight: 500, $size: 24px, $ls: 0.02em);
+    @include fontType($weight: 500, $size: 22px, $ls: 0.02em);
+
+    @include respond-to('mobile') {
+      font-size: 24px;
+    }
 
     @include respond-to('tablet') {
       margin-bottom: 10px;

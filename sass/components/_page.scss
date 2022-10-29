@@ -22,6 +22,10 @@
 
   .page__modal-container {
     position: absolute;
-    top: 50%;
+    top: 93px;
     left: 50%;
+
+    @include respond-to('tablet') {
+      top:50%;
+    }
   }

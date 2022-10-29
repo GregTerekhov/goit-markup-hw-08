@@ -38,8 +38,8 @@
 
 .subscription__input {
     padding: 15px;
-
-    width: 450px;
+    width: 100%;
+    max-width: 450px;
   
     color: getColor('text-tertiary');
     background-color: getColor('background-secondary');
@@ -67,6 +67,8 @@
 
 .subscription__button {
     @include buttonPrimary();
+    @include centeredFlex();
+    margin: 0 auto;
 
     &:hover, &:focus {
         background-color: getColor('primary-button-hover');

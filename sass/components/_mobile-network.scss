@@ -9,6 +9,7 @@
 
 .mobile-network__link {
     @include link();
+    @include fontType($weight: 500, $size: 18px, $lh: 1.222, $ls: 0.02em);
     color: getColor('accent');
 }
 

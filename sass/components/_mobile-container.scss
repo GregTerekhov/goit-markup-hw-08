@@ -22,7 +22,14 @@
 }
 
 .mobile-container__wrap {
+    padding: 34px 27px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    @include respond-to('mobile') {
     padding: 48px 40px;
+    }
 }
 
 .mobile-container__mobile-menu {
@@ -30,5 +37,9 @@
 }
 
 .mobile-container__feedback {
+    margin-bottom: 55px;
+
+    @include respond-to('mobile') {
     margin-bottom: 64px;
+    }
 }
