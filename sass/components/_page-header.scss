@@ -5,7 +5,9 @@
 }
 
 .page-header__navigation {
+    @include centeredFlex($justify-content: space-between);
+
     @media screen and (min-width:1200px) {
-        @include centeredFlex($justify-content: start);
+        @include centeredFlex($justify-content: space-between);
     }
 }
