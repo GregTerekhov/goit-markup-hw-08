@@ -18,10 +18,14 @@
     margin-bottom: 40px;
     color: getColor('text-primary');
 
-    @media screen and (min-width: 1200px) {
+    @include respond-to('tablet') {
         @include centeredFlex();
         flex-wrap: nowrap;
         gap: 8px;
+        margin-bottom: 30px;
+    }
+
+    @include respond-to('desktop') {
         margin-bottom: 50px;
     }
 }
@@ -52,11 +56,25 @@
       }
 }
 
-.projects__cards-list {
+.projects__cards {
     @extend %list;
-    @include centeredFlex();
+    @include centeredFlex($justify-content: start);
     flex-wrap: wrap;
     gap: 30px;
+
+    @include respond-to('desktop') {
+        justify-content: center;
+    }    
+}
+
+.projects__item {
+    @include respond-to('tablet') {
+        width: calc((100% - 30px) / 2);
+    }
+
+    @include respond-to('desktop') {
+        width: calc((100% - 60px) / 3);
+    }
 }
 
 .projects__cards-link {
@@ -109,6 +127,16 @@
 
     border: 1px solid getColor('border-cards');
     border-top: none;
+
+    @include respond-to('tablet') {
+        &--bug {
+            padding: 20px 24px 56px;
+        }
+
+        @include respond-to('desktop') {
+            padding: 20px 24px;
+        }
+    }
 }
 
 .projects__name {

@@ -251,12 +251,12 @@ summary {
 }
 
 .projects__category, .projects__name, .projects__label, .subscription__form, .clients__title, .team__descr, .team__name, .team__title, .activity__label, .activity__title, .features__descr, .features__subtitle, .form__input::placeholder,
-.form__textarea::placeholder, .form__input, .form__label, .form__call, .hero__title, .mobile-network__line, .projects__filters-button, .navigation__button, .projects__cards-list, .projects__filters-list, .socials__list, .address__list, .clients__list, .team__socials-list, .team__list, .activity__list, .features__list, .form__panel-list, .mobile-network, .mobile-menu, .feedback, .navigation__feedback, .navigation__list {
+.form__textarea::placeholder, .form__input, .form__label, .form__call, .hero__title, .mobile-network__line, .projects__filters-button, .navigation__button, .projects__cards, .projects__filters-list, .socials__list, .address__list, .clients__list, .team__socials-list, .team__list, .activity__list, .features__list, .form__panel-list, .mobile-network, .mobile-menu, .feedback, .navigation__feedback, .navigation__list {
   margin: 0;
   padding: 0;
 }
 
-.projects__cards-list, .projects__filters-list, .socials__list, .address__list, .clients__list, .team__socials-list, .team__list, .activity__list, .features__list, .form__panel-list, .mobile-network, .mobile-menu, .feedback, .navigation__feedback, .navigation__list {
+.projects__cards, .projects__filters-list, .socials__list, .address__list, .clients__list, .team__socials-list, .team__list, .activity__list, .features__list, .form__panel-list, .mobile-network, .mobile-menu, .feedback, .navigation__feedback, .navigation__list {
   list-style: none;
 }
 
@@ -500,13 +500,12 @@ summary {
 @media (min-width: 768px) {
   .feedback__link.tel {
     color: #757575;
-    margin-bottom: 10px;
+    margin: 0;
     font-size: 12px;
   }
 }
 @media (min-width: 1200px) {
   .feedback__link.tel {
-    margin-bottom: 0;
     font-size: 14px;
   }
 }
@@ -528,6 +527,7 @@ summary {
   .feedback__link.mail {
     margin-bottom: 0;
     font-size: 14px;
+    text-align: center;
   }
 }
 @media (min-width: 768px) {
@@ -1609,13 +1609,18 @@ summary {
   margin-bottom: 40px;
   color: #212121;
 }
-@media screen and (min-width: 1200px) {
+@media (min-width: 768px) {
   .projects__filters-list {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
     gap: 8px;
+    margin-bottom: 30px;
+  }
+}
+@media (min-width: 1200px) {
+  .projects__filters-list {
     margin-bottom: 50px;
   }
 }
@@ -1642,12 +1647,28 @@ summary {
   background-color: #2196f3;
 }
 
-.projects__cards-list {
+.projects__cards {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   flex-wrap: wrap;
   gap: 30px;
+}
+@media (min-width: 1200px) {
+  .projects__cards {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .projects__item {
+    width: calc((100% - 30px) / 2);
+  }
+}
+@media (min-width: 1200px) {
+  .projects__item {
+    width: calc((100% - 60px) / 3);
+  }
 }
 
 .projects__cards-link {
@@ -1696,6 +1717,16 @@ summary {
   padding: 20px 24px;
   border: 1px solid #eeeeee;
   border-top: none;
+}
+@media (min-width: 768px) {
+  .projects__meta--bug {
+    padding: 20px 24px 56px;
+  }
+}
+@media (min-width: 768px) and (min-width: 1200px) {
+  .projects__meta {
+    padding: 20px 24px;
+  }
 }
 
 .projects__name {
