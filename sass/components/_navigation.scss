@@ -26,6 +26,9 @@
 }
 
 .navigation__container {
+  display: flex;
+  justify-content: space-between;
+  
   @media screen and (max-width: 767px) {
     display: none;
   }
@@ -72,5 +75,11 @@
           border-radius: 2px;
         }
     }
+}
+
+.navigation__feedback {
+  @extend %list;
+  @include centeredFlex();
+  gap: 50px;
 }
 

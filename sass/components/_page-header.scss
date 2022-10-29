@@ -5,11 +5,7 @@
 }
 
 .page-header__navigation {
-    @include centeredFlex($justify-content: space-between);
-}
-
-.page-header__feedback {
-    @extend %list;
-    @include centeredFlex();
-    gap: 50px;
+    @media screen and (min-width:1200px) {
+        @include centeredFlex($justify-content: start);
+    }
 }

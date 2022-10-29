@@ -20,6 +20,8 @@
   
     border: 2px solid getColor('border-checkbox');
     border-radius: 3px;
+    
+    transition: background-color 250ms $timing-function;
 
     .checkbox__input:checked + & {
         border: none;

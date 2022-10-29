@@ -298,12 +298,12 @@ summary {
 }
 
 .projects__category, .projects__name, .projects__label, .subscription__form, .clients__title, .team__descr, .team__name, .team__title, .activity__label, .activity__title, .features__descr, .features__subtitle, .form__input::placeholder,
-.form__textarea::placeholder, .form__input, .form__label, .form__call, .hero__title, .projects__filters-button, .navigation__button, .projects__cards-list, .projects__filters-list, .socials__list, .address__list, .clients__list, .team__socials-list, .team__list, .activity__list, .features__list, .form__panel-list, .mobile-network, .mobile-menu, .feedback, .navigation__list, .page-header__feedback {
+.form__textarea::placeholder, .form__input, .form__label, .form__call, .hero__title, .projects__filters-button, .navigation__button, .projects__cards-list, .projects__filters-list, .socials__list, .address__list, .clients__list, .team__socials-list, .team__list, .activity__list, .features__list, .form__panel-list, .mobile-network, .mobile-menu, .feedback, .navigation__feedback, .navigation__list {
   margin: 0;
   padding: 0;
 }
 
-.projects__cards-list, .projects__filters-list, .socials__list, .address__list, .clients__list, .team__socials-list, .team__list, .activity__list, .features__list, .form__panel-list, .mobile-network, .mobile-menu, .feedback, .navigation__list, .page-header__feedback {
+.projects__cards-list, .projects__filters-list, .socials__list, .address__list, .clients__list, .team__socials-list, .team__list, .activity__list, .features__list, .form__panel-list, .mobile-network, .mobile-menu, .feedback, .navigation__feedback, .navigation__list {
   list-style: none;
 }
 
@@ -346,17 +346,12 @@ summary {
   border-bottom: 1px solid #ececec;
 }
 
-.page-header__navigation {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.page-header__feedback {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
+@media screen and (min-width: 1200px) {
+  .page-header__navigation {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
 }
 
 .logo, .page-footer__logo {
@@ -408,6 +403,10 @@ summary {
   }
 }
 
+.navigation__container {
+  display: flex;
+  justify-content: space-between;
+}
 @media screen and (max-width: 767px) {
   .navigation__container {
     display: none;
@@ -458,6 +457,13 @@ summary {
   height: 4px;
   background-color: #2196f3;
   border-radius: 2px;
+}
+
+.navigation__feedback {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
 }
 
 .feedback__link {
@@ -936,6 +942,7 @@ summary {
   margin-right: 7px;
   border: 2px solid #212121;
   border-radius: 3px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .checkbox__input:checked + .checkbox__icon {
   border: none;

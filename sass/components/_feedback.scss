@@ -3,49 +3,49 @@
 }
 
 .feedback__link {
-    @include link($display: inline-block);
+  @include link($display: inline-block);
 
-    color: getColor('text-secondary');
+  color: getColor('text-secondary');
 
-      &.tel {
-        @include fontType($weight: 500, $size: 34px, $ls: 0.02em);
-        color: getColor('accent');
-        margin-bottom: 32px;
-      }
+  &.tel {
+    @include fontType($weight: 500, $size: 34px, $ls: 0.02em);
+    color: getColor('accent');
+    margin-bottom: 32px;
+  }
 
-      &.mail {
-        @include fontType($weight: 500, $size: 24px, $ls: 0.02em);
-      }
+  &.mail {
+    @include fontType($weight: 500, $size: 24px, $ls: 0.02em);
+  }
 
-    @media screen and (min-width: 1200px) {
-      position: relative;
-      @include fontType($weight: 500, $size: 14px, $ls: 0.02em);
-      @include centeredFlex();
-      padding: 32px 0;
+  @media screen and (min-width: 1200px) {
+    position: relative;
+    @include fontType($weight: 500, $size: 14px, $ls: 0.02em);
+    @include centeredFlex();
+    padding: 32px 0;
 
-      &:hover, &:focus {
-        color: getColor('accent');
-      }
+    &:hover, &:focus {
+      color: getColor('accent');
+    }
 
-      &::after {
-        @include pseudo();
-        bottom: -1px;
+    &::after {
+      @include pseudo();
+      bottom: -1px;
 
-        height: 4px;
+      height: 4px;
 
-        background-color: getColor('accent');
+      background-color: getColor('accent');
 
-        border-radius: 2px;
+      border-radius: 2px;
 
-        transform: scaleX(0);
-        transition: background-color 250ms $timing-function,
+      transform: scaleX(0);
+      transition: background-color 250ms $timing-function,
           transform 250ms $timing-function;
-      }
+    }
 
-      &:hover::after, &:focus::after {
-        transform: scaleX(1);
-      }
-    }  
+    &:hover::after, &:focus::after {
+      transform: scaleX(1);
+    }
+  }  
 }
 
 .feedback__icon {
