@@ -7,7 +7,7 @@
     }
   line-height: 1.174;
 
-  @media screen and (min-width: 1200px) {
+  @include respond-to('tablet') {
     font-size: 26px;
     line-height: 1.383;
   }

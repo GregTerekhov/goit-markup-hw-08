@@ -1,10 +1,11 @@
 .form__call {
     @extend %margin-padding-reset;
     @include fontType($size: 20px);
+    text-align: center;
   
     margin-bottom: 12px;
 
-    @media screen and (max-width: 767px) {
+    @include respond-to('desktop') {
         line-height: 1.5;
         text-align: center;
     }

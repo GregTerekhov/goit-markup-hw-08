@@ -26,14 +26,9 @@
 }
 
 .features__item {
-
-    // &:not(:last-child) {
-    //     margin-bottom: 30px;
-    // }
     
     @include respond-to('tablet') {
         width: calc((100% - 30px) / 2);
-        // margin-bottom: 0;
     }
 
     @include respond-to('desktop') {

@@ -11,21 +11,44 @@
     @include fontType($weight: 500, $size: 34px, $ls: 0.02em);
     color: getColor('accent');
     margin-bottom: 32px;
+
+    @include respond-to('tablet') {
+      color: getColor('text-secondary');
+      margin-bottom: 10px;
+      font-size: 12px;
+    }
+
+    @include respond-to('desktop') {
+      margin-bottom: 0;
+      font-size: 14px;
+    }
   }
 
   &.mail {
     @include fontType($weight: 500, $size: 24px, $ls: 0.02em);
+
+    @include respond-to('tablet') {
+      margin-bottom: 10px;
+      font-size: 12px;
+    }
+
+    @include respond-to('desktop') {
+      margin-bottom: 0;
+      font-size: 14px;
+    }
   }
 
-  @media screen and (min-width: 1200px) {
+  @include respond-to('tablet') {
+    &:hover, &:focus {
+      color: getColor('accent');
+    }
+  }
+
+  @include respond-to('desktop') {
     position: relative;
     @include fontType($weight: 500, $size: 14px, $ls: 0.02em);
     @include centeredFlex();
     padding: 32px 0;
-
-    &:hover, &:focus {
-      color: getColor('accent');
-    }
 
     &::after {
       @include pseudo();
@@ -49,13 +72,15 @@
 }
 
 .feedback__icon {
+  display: none;
 
-  @media screen and (max-width: 767px) {
-    display: none;
+  @include respond-to('tablet') {
+    display: inline;
+    fill: currentColor;
+    margin-right: 8px;
   }
 
-  @media screen and (min-width: 1200px) {
-    fill: currentColor;
+  @include respond-to('desktop') {
     margin-right: 10px;
   }
 }

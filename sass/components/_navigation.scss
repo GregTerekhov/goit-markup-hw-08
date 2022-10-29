@@ -1,9 +1,10 @@
 .navigation__button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
   @extend %button;
-  @include centeredFlex();
   min-width: 40px;
   min-height: 40px;
-  padding: 10px 0;
 
   color: getColor('button-mobile-menu');
   background-color: transparent;
@@ -20,24 +21,26 @@
     color: currentColor;
   }
 
-  @media screen and (min-width: 768px) {
+  @include respond-to('tablet') {
     display: none;
   }
 }
 
 .navigation__container {
-  display: flex;
-  justify-content: space-between;
-  
-  @media screen and (max-width: 767px) {
-    display: none;
+  display: none;
+
+  @include respond-to('tablet') {
+    display: flex;    
   }
 }
 
 .navigation__list {
     @extend %list;
     @include centeredFlex();
-    margin-left: 93px;
+
+    @include respond-to('desktop') {
+      margin-left: 93px;
+    }
 }
 
 .navigation__item {
@@ -79,7 +82,10 @@
 
 .navigation__feedback {
   @extend %list;
-  @include centeredFlex();
-  gap: 50px;
+  
+  @include respond-to('desktop') {
+    @include centeredFlex();
+    gap: 50px;
+  }
 }
 

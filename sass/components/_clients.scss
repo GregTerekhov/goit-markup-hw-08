@@ -28,10 +28,22 @@
     }
   }
 
+  .clients__item {
+    width: calc((100% - 30px) / 2);
+
+    @include respond-to('tablet') {
+      width: calc((100% - 60px) / 3);
+  }
+
+  @include respond-to('desktop') {
+      width: calc((100% - 90px) / 4);
+  }
+  }
+
 .clients__logo {
     @include centeredFlex();
-    width: 170px;
-    height: 92px;
+    height: 92px; 
+    // ??????
   
     border: 1px solid getColor('link-nonactive');
     border-radius: 4px;

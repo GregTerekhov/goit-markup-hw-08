@@ -13,10 +13,17 @@
 
 .subscription__form {
     @extend %margin-padding-reset;
-    @include centeredFlex();
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 20px;
+
+    @include respond-to('mobile-end') {
+        text-align: center;
+    }
+
+    @include respond-to('tablet') {
+        @include centeredFlex();
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
 
     @include respond-to('desktop') {
         flex-direction: row;
@@ -48,15 +55,18 @@
         color: getColor('placeholder-footer');      
     }
 
+    @include respond-to('mobile-end') {
+        margin-bottom: 20px;
+    }
+
     @include respond-to('desktop') {
         width: 358px;
+        margin-bottom: 0;
     }
 }
 
 .subscription__button {
     @include buttonPrimary();
-    @include centeredFlex($type: inline-flex);
-    // margin-left: 12px;
 
     &:hover, &:focus {
         background-color: getColor('primary-button-hover');
