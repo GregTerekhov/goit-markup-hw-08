@@ -1,13 +1,19 @@
 .logo {
-  @include link();
+  @include link($display: inline-block);
     font: {
       family: 'Raleway', sans-serif;
       size: 24px;
       weight: 700;
     }
   line-height: 1.174;
+  padding: 16px 0;
 
   @include respond-to('tablet') {
+    display: block;
+    padding: 0;
+  }
+
+  @include respond-to('desktop') {
     font-size: 26px;
     line-height: 1.383;
   }

@@ -315,14 +315,13 @@ summary {
 
 .page-header {
   position: relative;
-  padding: 16px 0;
   border-bottom: 1px solid #ececec;
 }
 
 @media (min-width: 768px) {
   .page-header__navigation {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
   }
 }
@@ -352,14 +351,21 @@ summary {
 .logo, .page-footer__logo {
   text-decoration: none;
   color: inherit;
-  display: block;
+  display: inline-block;
   font-family: "Raleway", sans-serif;
   font-size: 24px;
   font-weight: 700;
   line-height: 1.174;
+  padding: 16px 0;
   color: #2196f3;
 }
 @media (min-width: 768px) {
+  .logo, .page-footer__logo {
+    display: block;
+    padding: 0;
+  }
+}
+@media (min-width: 1200px) {
   .logo, .page-footer__logo {
     font-size: 26px;
     line-height: 1.383;
@@ -403,6 +409,15 @@ summary {
 @media (min-width: 768px) {
   .navigation__container {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 87px;
+  }
+}
+@media (min-width: 768px) and (min-width: 1200px) {
+  .navigation__container {
+    justify-content: space-between;
+    margin-left: 93px;
   }
 }
 
@@ -410,10 +425,11 @@ summary {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 95px;
 }
 @media (min-width: 1200px) {
   .navigation__list {
-    margin-left: 93px;
+    margin: 0;
   }
 }
 

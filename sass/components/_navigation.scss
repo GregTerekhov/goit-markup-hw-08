@@ -30,16 +30,23 @@
   display: none;
 
   @include respond-to('tablet') {
-    display: flex;    
+    @include centeredFlex();
+    margin-left: 87px;   
+
+    @include respond-to('desktop') {
+      justify-content: space-between;
+      margin-left: 93px;
+    }
   }
 }
 
 .navigation__list {
     @extend %list;
     @include centeredFlex();
+    margin-right: 95px;
 
     @include respond-to('desktop') {
-      margin-left: 93px;
+      margin: 0;
     }
 }
 
@@ -47,7 +54,7 @@
     
     & + & {
         margin-left: 50px;
-    }
+  }
 }
 
 .navigation__link {

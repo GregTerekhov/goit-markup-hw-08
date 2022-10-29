@@ -1,6 +1,5 @@
 .page-header {
     position: relative;
-    padding: 16px 0;
 
     border-bottom: 1px solid getColor('border-header');
 }
@@ -8,6 +7,6 @@
 .page-header__navigation {
 
     @include respond-to('tablet') {
-        @include centeredFlex($justify-content: space-between);
+        @include centeredFlex($justify-content: start);
     }
 }
