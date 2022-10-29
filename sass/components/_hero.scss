@@ -38,6 +38,7 @@
     margin-bottom: 30px;
     margin-left: auto;
     margin-right: auto;
+    width: 360px;
 
     font-weight: 900;
     font-size: 26px;
@@ -47,7 +48,7 @@
 
     color: getColor('text-tertiary');
 
-    @media screen and (min-width: 1200px) {
+    @include respond-to('desktop') {
         width: 696px;
         font-size: 44px;
         line-height: 1.363;
@@ -62,7 +63,7 @@
         background-color: getColor('primary-button-hover');
     }
 
-    @media screen and (min-width: 1200px) {
+    @include respond-to('desktop') {
         width: 216px
     }
 }

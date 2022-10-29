@@ -1,7 +1,7 @@
 .clients {
   padding: 60px 0;
 
-  @media screen and (min-width: 1200px) {
+  @include respond-to('desktop') {
     padding: 94px 0;
   }
 }
@@ -11,7 +11,7 @@
     @include fontType($size: 28px, $align: center);
     margin-bottom: 30px;
 
-    @media screen and (min-width: 1200px) {
+    @include respond-to('desktop') {
       font-size: 36px;
       margin-bottom: 50px;
     }
@@ -23,7 +23,7 @@
     flex-wrap: wrap;
     gap: 30px;
 
-    @media screen and (min-width: 1200px) {
+    @include respond-to('desktop') {
       flex-wrap: nowrap;
     }
   }

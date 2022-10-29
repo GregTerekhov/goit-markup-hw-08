@@ -2,7 +2,7 @@
     padding: 60px 0;
     background-color: getColor('background-tertiary');
 
-    @media screen and (min-width: 1200px) {
+    @include respond-to('desktop') {
         padding: 94px 0;
     }
 }
@@ -12,7 +12,7 @@
     @include fontType($size: 28px, $align: center);
     margin-bottom: 30px;
 
-    @media screen and (min-width: 1200px) {
+    @include respond-to('desktop') {
         font-size: 36px;
         margin-bottom: 50px;;
     }
@@ -20,17 +20,33 @@
 
 .team__list {
     @extend %list;
+    @include centeredFlex();
+    flex-direction: column;
+    gap: 30px;
 
-    @media screen and (min-width: 1200px) {
-        @include centeredFlex();
-        gap: 30px;
+    @include respond-to('tablet') {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    @include respond-to('desktop') {
+        flex-wrap: nowrap;
     }
 }
 
 .team__item {
 
-    &:not(:last-child) {
-        margin-bottom: 30px;
+    // &:not(:last-child) {
+    //     margin-bottom: 30px;
+    // }
+    
+    @include respond-to('tablet') {
+        width: calc((100% - 30px) / 2);
+        // margin-bottom: 0;
+    }
+
+    @include respond-to('desktop') {
+        width: calc((100% - 90px) / 4);
     }
 }
 
@@ -48,7 +64,7 @@
   
     border-radius: 0px 0px 4px 4px;
 
-    @media screen and (min-width: 1200px) {
+    @include respond-to('desktop') {
         padding-bottom: 30px;
     }
 }

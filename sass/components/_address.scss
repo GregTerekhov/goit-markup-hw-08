@@ -5,13 +5,13 @@
 .address__list {
     @extend %list;
 
-    @media screen and (max-width: 479px) {
+    @include respond-to('pre-mobile') {
         text-align: center;
     }
 }
 .address__item {
 
-    @media screen and (min-width: 1200px) {
+    @include respond-to('desktop') {
         width: 231px;
     }
 }
@@ -29,7 +29,7 @@
         margin-bottom: 8px;
         color: getColor('text-tertiary');
 
-        @media screen and (min-width: 1200px) {
+        @include respond-to('desktop') {
             margin-bottom: 9px;
         }
     }
@@ -37,7 +37,7 @@
     &--mail {
         margin-bottom: 8px;
 
-        @media screen and (min-width: 1200px) {
+        @include respond-to('desktop') {
             margin-bottom: 9px;
         }
     }

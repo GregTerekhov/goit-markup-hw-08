@@ -6,7 +6,7 @@
   
     color: getColor('text-tertiary');
 
-    @media screen and (max-width: 767px) {
+    @include respond-to('tablet-end') {
         text-align: center;
     }
 }
@@ -14,12 +14,19 @@
 .subscription__form {
     @extend %margin-padding-reset;
     @include centeredFlex();
+    flex-direction: column;
     flex-wrap: wrap;
-    gap: 12px;
-    @media screen and (min-width:1200px) {
-        @include centeredFlex();
+    gap: 20px;
+
+    @include respond-to('desktop') {
+        flex-direction: row;
         flex-wrap: nowrap;
+        gap: 12px;
     }
+}
+
+.subscription__label {
+   @extend %visually-hidden;
 }
 
 .subscription__input {
@@ -41,7 +48,7 @@
         color: getColor('placeholder-footer');      
     }
 
-    @media screen and (min-width: 1200px) {
+    @include respond-to('desktop') {
         width: 358px;
     }
 }

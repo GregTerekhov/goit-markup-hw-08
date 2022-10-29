@@ -1,9 +1,9 @@
 .activity {
-    @media screen and (max-width: 767px) {
+    @include respond-to('tablet-end') {
         display: none;
     }
 
-    @media screen and (min-width: 1200px) {
+    @include respond-to('desktop') {
         padding-bottom: 94px;
     }
 }

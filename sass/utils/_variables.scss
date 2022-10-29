@@ -34,53 +34,12 @@ $colors: (
 
 $timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
-.page {
-    box-sizing: border-box;
-    font-family: "Roboto", sans-serif;
-    letter-spacing: 0.03em;
-  
-    background-color: getColor('background-primary');
-    color: getColor('text-primary');
-
-    &.modal-open {
-      overflow: hidden;
-    }
-  }
-
-.container {
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-
-    @media screen and (min-width: 480px) {
-      width: 480px;
-    }
-
-    @media screen and (min-width: 768px) {
-      width: 768px;
-    }
-
-    @media screen and (min-width: 1200px) {
-      width: 1200px;
-    }
-  }
-
-  .page__backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-  
-    width: 100%;
-    height: 100%;
-  }
-
-  .page__modal-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-  }
-
-  .picture {
-    @extend %picture;
-  }
+$breakpoints: (
+  'pre-mobile': ( max-width: 479px ),
+  'mobile': ( min-width: 480px ),
+  'mobile-end': ( max-width: 767px ),
+  'tablet': ( min-width: 768px ),
+  'tablet-end': ( max-width: 1199px ),
+  'desktop': ( min-width: 1200px ),
+  'wide': ( min-width: 1440px ),
+) !default;
