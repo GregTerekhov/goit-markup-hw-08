@@ -101,7 +101,7 @@
 
 .form__button {
     @include buttonPrimary();
-    @include centeredFlex();
+    @include centeredFlex($type: inline-flex);
 
     &:hover, &:focus {
         background-color: getColor('primary-button-hover');

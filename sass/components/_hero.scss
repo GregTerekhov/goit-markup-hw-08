@@ -8,6 +8,24 @@
     min-height: 600px;
     margin-left: auto;
     margin-right: auto;
+
+    // width: 480px;
+    // height: 400px;
+    // background-image: linear-gradient(
+    //     getColor('gradient-hero'), 
+    //     getColor('gradient-hero')), url('../images/meeting-bgd.jpg');
+    // background-position: center; 
+    // background-size: 480px 400px;
+
+    // @media screen and (min-device-pixel-ratio: 2),
+    //     screen and (-webkit-min-device-pixel-ratio: 2), 
+    //     screen and (-o-min-device-pixel-ratio: 2/1),
+    //     screen and (min-resolution: 192dpi),
+    //     screen and (min-resolution: 2dppx) {
+    //         .hero__overlay {
+    //             background-image: url('../images/meeting-bgd2x.jpg');
+    //         }
+    // }
   
     background-image: linear-gradient(
         getColor('gradient-hero'), 
