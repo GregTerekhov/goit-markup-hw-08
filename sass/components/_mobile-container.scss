@@ -23,6 +23,7 @@
 
 .mobile-container__box {
     max-width: 480px;
+    position: relative;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -30,14 +31,13 @@
 }
 
 .mobile-container__wrap {
-    padding: 25px 27px;
+    max-width: 480px;
+    padding: 48px 40px;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     flex-direction: column;
     height: 100%;
-
-    @include respond-to('little') {
-    padding: 8px 40px 48px;
-    }
 }
 
 .mobile-container__mobile-menu {

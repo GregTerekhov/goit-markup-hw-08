@@ -342,24 +342,19 @@ summary {
   padding-left: 15px;
   padding-right: 15px;
 }
-@media (min-width: 320px) {
-  .container {
-    max-width: 320px;
-  }
-}
 @media (min-width: 480px) {
   .container {
-    max-width: 480px;
+    width: 480px;
   }
 }
 @media (min-width: 768px) {
   .container {
-    max-width: 768px;
+    width: 768px;
   }
 }
 @media (min-width: 1200px) {
   .container {
-    max-width: 1200px;
+    width: 1200px;
   }
 }
 
@@ -413,6 +408,9 @@ summary {
   fill: #2196f3;
 }
 .mobile-container .navigation__button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
   color: currentColor;
 }
 @media (min-width: 768px) {
@@ -637,6 +635,7 @@ summary {
 
 .mobile-container__box {
   max-width: 480px;
+  position: relative;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -644,15 +643,13 @@ summary {
 }
 
 .mobile-container__wrap {
-  padding: 25px 27px;
+  max-width: 480px;
+  padding: 48px 40px;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   flex-direction: column;
   height: 100%;
-}
-@media (min-width: 480px) {
-  .mobile-container__wrap {
-    padding: 8px 40px 48px;
-  }
 }
 
 .mobile-container__mobile-menu {
@@ -680,7 +677,7 @@ summary {
 .mobile-menu__link {
   text-decoration: none;
   color: inherit;
-  display: block;
+  display: inline-block;
   font-weight: 400;
   font-size: 26px;
   line-height: 1.172;
