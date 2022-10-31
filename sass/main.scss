@@ -1,28 +1,33 @@
-@import './utils/variables';
-@import './base/normalise';
-@import './utils/placeholders';
-@import './utils/mixins';
-@import './utils/picture';
-@import './components/page';
-@import './components/page-header';
-@import './components/container';
-@import './components/logo';
-@import './components/navigation';
-@import './components/feedback';
-@import './components/mobile-container';
-@import './components/mobile-menu';
-@import './components/mobile-network';
-@import './components/hero';
-@import './components/backdrop';
-@import './components/modal-container';
-@import './components/form';
-@import './components/checkbox';
-@import './components/features';
-@import './components/activity';
-@import './components/team';
-@import './components/clients';
-@import './components/page-footer';
-@import './components/address';
-@import './components/socials';
-@import './components/subscription';
-@import './components/projects';
+@import 
+ './base/normalise';
+
+@import 
+ './utils/variables',
+ './utils/mixins',
+ './utils/placeholders',
+ './utils/picture';
+
+@import 
+ './components/page',
+ './components/page-header',
+ './components/container',
+ './components/logo',
+ './components/navigation',
+ './components/feedback',
+ './components/mobile-container',
+ './components/mobile-menu',
+ './components/mobile-network',
+ './components/hero',
+ './components/backdrop',
+ './components/modal-container',
+ './components/form',
+ './components/checkbox',
+ './components/features',
+ './components/activity',
+ './components/team',
+ './components/clients',
+ './components/page-footer',
+ './components/address',
+ './components/socials',
+ './components/subscription',
+ './components/projects';
