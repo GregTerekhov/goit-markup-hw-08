@@ -1803,6 +1803,8 @@ summary {
 
 .projects__overlay {
   position: absolute;
+  top: 0;
+  left: 0;
   background-color: rgba(33, 150, 243, 0.9);
   opacity: 0;
   pointer-events: none;
@@ -1816,7 +1818,7 @@ summary {
 
 .projects__label {
   font-weight: 400;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.556;
   letter-spacing: inherit;
   text-align: start;
@@ -1824,19 +1826,9 @@ summary {
   padding: 77px 24px;
   color: #ffffff;
 }
-@media screen and (min-width: 375px) {
-  .projects__label {
-    font-size: 16px;
-  }
-}
-@media (min-width: 480px) {
-  .projects__label {
-    font-size: 18px;
-  }
-}
 @media (min-width: 768px) {
   .projects__label {
-    padding: 77px 24px 49px;
+    padding: 49px 24px 77px;
   }
 }
 @media (min-width: 1200px) {
