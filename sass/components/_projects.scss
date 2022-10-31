@@ -119,11 +119,19 @@
 
 .projects__label {
     @extend %margin-padding-reset;
-    @include fontType($weight: 400, $size: 18px, $lh: 1.556);
+    @include fontType($weight: 400, $size: 14px, $lh: 1.556);
 
     padding: 77px 24px;
 
     color: getColor('text-tertiary');
+
+    @media screen and (min-width: 375px) {
+        font-size: 16px;
+    }
+
+    @include respond-to('mobile') {
+        font-size: 18px;
+    }
 
     @include respond-to('tablet') {
         padding: 77px 24px 49px;

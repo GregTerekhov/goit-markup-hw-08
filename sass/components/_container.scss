@@ -5,14 +5,14 @@
     padding-right: 15px;
 
     @include respond-to('mobile') {
-      width: 480px;
+      max-width: 480px;
     }
 
     @include respond-to('tablet') {
-      width: 768px;
+      max-width: 768px;
     }
 
     @include respond-to('desktop') {
-      width: 1200px;
+      max-width: 1200px;
     }
   }
