@@ -1,12 +1,10 @@
 .page-header {
-    position: relative;
-
     border-bottom: 1px solid getColor('border-header');
 }
 
 .page-header__navigation {
-
-    @include respond-to('tablet') {
-        @include centeredFlex($justify-content: start);
+    
+    @include respond-to ('medium') {
+        @include centeredFlex($justify-content: flex-start);
     }
 }

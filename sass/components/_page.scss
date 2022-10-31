@@ -25,7 +25,7 @@
     top: 93px;
     left: 50%;
 
-    @include respond-to('desktop') {
+    @include respond-to('large') {
       top: 50%;
     }
   }

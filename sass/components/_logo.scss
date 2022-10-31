@@ -8,12 +8,12 @@
   line-height: 1.174;
   padding: 16px 0;
 
-  @include respond-to('tablet') {
+  @include respond-to('medium') {
     display: block;
     padding: 0;
   }
 
-  @include respond-to('desktop') {
+  @include respond-to('large') {
     font-size: 26px;
     line-height: 1.383;
   }

@@ -18,12 +18,12 @@
     color: getColor('accent');
     margin-bottom: 25px;
 
-    @include respond-to('mobile') {
+    @include respond-to('little') {
       font-weight: 500;
       font-size: 34px;
     }
 
-    @include respond-to('tablet') {
+    @include respond-to('medium') {
       color: getColor('text-secondary');
       margin: 0;
       font-size: 12px;
@@ -33,7 +33,7 @@
       color: getColor('accent');
     }
 
-    @include respond-to('desktop') {
+    @include respond-to('large') {
       font-size: 14px;
     }
   }
@@ -41,24 +41,24 @@
   &.mail {
     @include fontType($weight: 400, $ls: 0.02em);
 
-    @include respond-to('mobile') {
+    @include respond-to('little') {
       font-weight: 400;
       font-size: 24px;
     }
 
-    @include respond-to('tablet') {
+    @include respond-to('medium') {
       margin-bottom: 10px;
       font-size: 12px;
     }
 
-    @include respond-to('desktop') {
+    @include respond-to('large') {
       margin-bottom: 0;
       font-size: 14px;
       text-align: center;
     }
   }
 
-  @include respond-to('desktop') {
+  @include respond-to('large') {
     position: relative;
     @include fontType($weight: 500, $size: 14px, $ls: 0.02em);
     @include centeredFlex();
@@ -88,13 +88,13 @@
 .feedback__icon {
   display: none;
 
-  @include respond-to('tablet') {
+  @include respond-to('medium') {
     display: inline;
     fill: currentColor;
     margin-right: 8px;
   }
 
-  @include respond-to('desktop') {
+  @include respond-to('large') {
     margin-right: 10px;
   }
 }

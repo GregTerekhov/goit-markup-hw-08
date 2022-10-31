@@ -10,7 +10,7 @@
         pointer-events: none;
     }
 
-    @include respond-to('tablet-end') {
+    @include respond-to('pre-large') {
         padding: 94px 15px;
         overflow-y: scroll;
     }

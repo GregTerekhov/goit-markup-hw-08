@@ -6,19 +6,19 @@
 
 .page-footer__box {    
     
-    @include respond-to('desktop') {
+    @include respond-to('large') {
         @include centeredFlex($justify-content: space-between, $align-items: baseline);
     }
 }
 
 .page-footer__info {
 
-    @include respond-to('tablet') {
+    @include respond-to('medium') {
         @include centeredFlex($justify-content: space-between, $align-items: baseline);
         margin-bottom: 60px;
     }
 
-    @include respond-to('desktop') {
+    @include respond-to('large') {
         margin-bottom: 0;
     }
 }
@@ -27,11 +27,11 @@
     text-align: center;
     margin-bottom: 60px;
 
-    @include respond-to('tablet') {
+    @include respond-to('medium') {
         margin-bottom: 0;
     }
 
-    @include respond-to('desktop') {
+    @include respond-to('large') {
         margin-right: 70px;
         text-align: left;
     }
@@ -46,11 +46,11 @@
 .page-footer__socials {
     margin-bottom: 60px;
 
-    @include respond-to('tablet') {
+    @include respond-to('medium') {
         margin-bottom: 0;
     }
     
-    @include respond-to('desktop') {
+    @include respond-to('large') {
         margin-right: 93px;
     }
 }

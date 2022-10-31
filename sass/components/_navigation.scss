@@ -1,10 +1,12 @@
+.navigation__wrap {
+  @include centeredFlex($justify-content: space-between);
+}
+
 .navigation__button {
-  position: absolute;
-  top: 10px;
-  right: 15px;
   @extend %button;
-  min-width: 40px;
-  min-height: 40px;
+  @include centeredFlex();
+  width: 40px;
+  height: 40px;
 
   color: getColor('button-mobile-menu');
   background-color: transparent;
@@ -15,13 +17,10 @@
   }
 
   .mobile-container & {
-    position: absolute;
-    top: 10px;
-    right: 15px;
     color: currentColor;
   }
 
-  @include respond-to('tablet') {
+  @include respond-to('medium') {
     display: none;
   }
 }
@@ -29,11 +28,11 @@
 .navigation__container {
   display: none;
 
-  @include respond-to('tablet') {
+  @include respond-to('medium') {
     @include centeredFlex();
     margin-left: auto;
 
-    @include respond-to('desktop') {
+    @include respond-to('large') {
       margin-left: 93px;
       flex-grow: 1;
     }
@@ -45,7 +44,7 @@
     @include centeredFlex();
     margin-right: 95px;
 
-    @include respond-to('desktop') {
+    @include respond-to('large') {
       margin-right: auto;    
     }
 }
@@ -90,7 +89,7 @@
 .navigation__feedback {
   @extend %list;
   
-  @include respond-to('desktop') {
+  @include respond-to('large') {
     @include centeredFlex();
     gap: 50px;
   }

@@ -6,7 +6,7 @@
 
     color: getColor('text-tertiary');
 
-    @media screen and (max-width: 767px) {
+    @include respond-to('pre-medium') {
         text-align: center;
     }
 }

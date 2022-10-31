@@ -14,11 +14,11 @@
         transform: translate(-50%, -50%) scale(0.5) rotate(180deg);
     }
 
-    @include respond-to('pre-mobile') {
+    @include respond-to('pre-little') {
         width: 320px;
     }
 
-    @include respond-to('desktop') {
+    @include respond-to('large') {
         width: 528px;
 
         transform: translate(-50%, -50%);

@@ -16,9 +16,17 @@
         transform: translateX(0); 
     }
 
-    @include respond-to('tablet') {
+    @include respond-to('medium') {
         display: none;
     }
+}
+
+.mobile-container__box {
+    max-width: 480px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
 }
 
 .mobile-container__wrap {
@@ -27,8 +35,8 @@
     flex-direction: column;
     height: 100%;
 
-    @include respond-to('mobile') {
-    padding: 48px 40px;
+    @include respond-to('little') {
+    padding: 8px 40px 48px;
     }
 }
 
@@ -39,7 +47,7 @@
 .mobile-container__feedback {
     margin-bottom: 30px;
 
-    @include respond-to('mobile') {
+    @include respond-to('little') {
     margin-bottom: 64px;
     }
 }

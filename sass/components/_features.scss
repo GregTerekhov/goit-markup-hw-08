@@ -1,7 +1,7 @@
 .features {
     padding: 60px 0;
 
-    @include respond-to('desktop') {
+    @include respond-to('large') {
         padding: 94px 0;
     }
 }
@@ -16,23 +16,23 @@
     flex-direction: column;
     gap: 30px;
 
-    @include respond-to('tablet') {
+    @include respond-to('medium') {
         flex-direction: row;
         flex-wrap: wrap;
     }
 
-    @include respond-to('desktop') {
+    @include respond-to('large') {
         flex-wrap: nowrap;    
     }
 }
 
 .features__item {
     
-    @include respond-to('tablet') {
+    @include respond-to('medium') {
         width: calc((100% - 30px) / 2);
     }
 
-    @include respond-to('desktop') {
+    @include respond-to('large') {
         width: calc((100% - 90px) / 4);
     }
 }
@@ -52,7 +52,7 @@
     @include fontType($size: 14px, $transform: uppercase);
     margin-bottom: 10px;
 
-    @include respond-to('mobile-end') {
+    @include respond-to('pre-medium') {
         text-align: center;
     }
 }

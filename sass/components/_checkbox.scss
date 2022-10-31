@@ -4,7 +4,7 @@
   
     color: getColor('text-secondary');
 
-    @include respond-to('desktop') {
+    @include respond-to('large') {
         font-size: 14px;
         line-height: 1.714;
     }

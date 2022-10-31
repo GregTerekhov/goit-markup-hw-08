@@ -1,9 +1,9 @@
 .activity {
-    @include respond-to('tablet-end') {
+    @include respond-to('pre-large') {
         display: none;
     }
 
-    @include respond-to('desktop') {
+    @include respond-to('large') {
         padding-bottom: 94px;
     }
 }

@@ -33,7 +33,7 @@
                     getColor('gradient-hero')), url('../../images/mobile/hero-img/mobile-hero3x.jpg');
     }
 
-    @include respond-to('mobile') {
+    @include respond-to('little') {
             max-width: 768px;
             min-height: 400px;
             background-image: linear-gradient(
@@ -57,7 +57,7 @@
             }        
     }
 
-    @include respond-to('tablet') {
+    @include respond-to('medium') {
             max-width: 1600px;
             min-height: 600px;
             background-image: linear-gradient(
@@ -97,7 +97,7 @@
 
     color: getColor('text-tertiary');
 
-    @include respond-to('desktop') {
+    @include respond-to('large') {
         max-width: 696px;
         font-size: 44px;
         line-height: 1.363;
@@ -112,7 +112,7 @@
         background-color: getColor('primary-button-hover');
     }
 
-    @include respond-to('desktop') {
+    @include respond-to('large') {
         width: 216px
     }
 }

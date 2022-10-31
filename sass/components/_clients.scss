@@ -1,7 +1,7 @@
 .clients {
   padding: 60px 0;
 
-  @include respond-to('desktop') {
+  @include respond-to('large') {
     padding: 94px 0;
   }
 }
@@ -11,7 +11,7 @@
     @include fontType($size: 28px, $align: center);
     margin-bottom: 30px;
 
-    @include respond-to('desktop') {
+    @include respond-to('large') {
         font-size: 36px;
         margin-bottom: 50px;
     }
@@ -23,7 +23,7 @@
     flex-wrap: wrap;
     gap: 30px;
 
-    @include respond-to('desktop') {
+    @include respond-to('large') {
       flex-wrap: nowrap;
     }
   }
@@ -31,11 +31,11 @@
   .clients__item {
     width: calc((100% - 30px) / 2);
 
-    @include respond-to('tablet') {
+    @include respond-to('medium') {
       width: calc((100% - 60px) / 3);
   }
 
-  @include respond-to('desktop') {
+  @include respond-to('large') {
       width: calc((100% - 90px) / 4);
   }
   }

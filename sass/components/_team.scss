@@ -2,7 +2,7 @@
     padding: 60px 0;
     background-color: getColor('background-tertiary');
 
-    @include respond-to('desktop') {
+    @include respond-to('large') {
         padding: 94px 0;
     }
 }
@@ -12,7 +12,7 @@
     @include fontType($size: 28px, $align: center);
     margin-bottom: 30px;
 
-    @include respond-to('desktop') {
+    @include respond-to('large') {
         font-size: 36px;
         margin-bottom: 50px;;
     }
@@ -24,23 +24,23 @@
     flex-direction: column;
     gap: 30px;
 
-    @include respond-to('tablet') {
+    @include respond-to('medium') {
         flex-direction: row;
         flex-wrap: wrap;
     }
 
-    @include respond-to('desktop') {
+    @include respond-to('large') {
         flex-wrap: nowrap;
     }
 }
 
 .team__item {
     
-    @include respond-to('tablet') {
+    @include respond-to('medium') {
         width: calc((100% - 30px) / 2);
     }
 
-    @include respond-to('desktop') {
+    @include respond-to('large') {
         width: calc((100% - 90px) / 4);
     }
 }
@@ -59,7 +59,7 @@
   
     border-radius: 0px 0px 4px 4px;
 
-    @include respond-to('desktop') {
+    @include respond-to('large') {
         padding-bottom: 30px;
     }
 }

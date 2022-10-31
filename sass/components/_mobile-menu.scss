@@ -5,7 +5,7 @@
 .mobile-menu__item:not(:last-child) {
   margin-bottom: 20px;
 
-  @include respond-to('mobile') {
+  @include respond-to('little') {
     margin-bottom: 32px;
   }
 }
@@ -20,8 +20,12 @@
       color: getColor('accent');
     }
 
-    @include respond-to('mobile') {
+    @include respond-to('little') {
       font-weight: 500;
+      font-size: 30px;
+    }
+
+    @include respond-to('small') {
       font-size: 40px;
     }    
     

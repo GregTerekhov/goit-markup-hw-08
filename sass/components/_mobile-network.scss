@@ -12,7 +12,7 @@
     @include fontType($weight: 400, $size: 12px, $lh: 1.222, $ls: 0.02em);
     color: getColor('accent');
 
-    @include respond-to('mobile') {
+    @include respond-to('little') {
         font-weight: 500;
         font-size: 18px;
     }

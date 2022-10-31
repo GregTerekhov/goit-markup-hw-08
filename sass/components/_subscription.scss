@@ -6,7 +6,7 @@
   
     color: getColor('text-tertiary');
 
-    @include respond-to('tablet-end') {
+    @include respond-to('pre-large') {
         text-align: center;
     }
 }
@@ -14,18 +14,18 @@
 .subscription__form {
     @extend %margin-padding-reset;
 
-    @include respond-to('mobile-end') {
+    @include respond-to('pre-medium') {
         text-align: center;
     }
 
-    @include respond-to('tablet') {
+    @include respond-to('medium') {
         @include centeredFlex();
         flex-direction: column;
         flex-wrap: wrap;
         gap: 20px;
     }
 
-    @include respond-to('desktop') {
+    @include respond-to('large') {
         flex-direction: row;
         flex-wrap: nowrap;
         gap: 12px;
@@ -55,11 +55,11 @@
         color: getColor('placeholder-footer');      
     }
 
-    @include respond-to('mobile-end') {
+    @include respond-to('pre-medium') {
         margin-bottom: 20px;
     }
 
-    @include respond-to('desktop') {
+    @include respond-to('large') {
         width: 358px;
         margin-bottom: 0;
     }
