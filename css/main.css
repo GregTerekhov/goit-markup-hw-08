@@ -1844,7 +1844,7 @@ summary {
 }
 @media (min-width: 768px) {
   .projects__label {
-    padding: 49px 24px 77px;
+    padding: 49px 24px 77px 24px;
   }
 }
 @media (min-width: 1200px) {
