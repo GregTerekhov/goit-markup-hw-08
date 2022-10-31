@@ -127,7 +127,7 @@
     color: getColor('text-tertiary');
 
     @include respond-to('medium') {
-        padding: 49px 24px 77px 24px;
+        padding: 48px 24px 77px 24px;
     }
 
     @include respond-to('large') {
