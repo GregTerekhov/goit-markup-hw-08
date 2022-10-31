@@ -10,7 +10,7 @@
         pointer-events: none;
     }
 
-    @include respond-to('mobile-end') {
+    @include respond-to('tablet-end') {
         padding: 94px 15px;
         overflow-y: scroll;
     }

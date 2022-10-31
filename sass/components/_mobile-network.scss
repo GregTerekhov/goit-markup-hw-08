@@ -9,8 +9,13 @@
 
 .mobile-network__link {
     @include link();
-    @include fontType($weight: 500, $size: 18px, $lh: 1.222, $ls: 0.02em);
+    @include fontType($weight: 400, $size: 12px, $lh: 1.222, $ls: 0.02em);
     color: getColor('accent');
+
+    @include respond-to('mobile') {
+        font-weight: 500;
+        font-size: 18px;
+    }
 }
 
 .mobile-network__line {

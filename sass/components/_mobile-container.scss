@@ -22,7 +22,7 @@
 }
 
 .mobile-container__wrap {
-    padding: 34px 27px;
+    padding: 25px 27px;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -37,7 +37,7 @@
 }
 
 .mobile-container__feedback {
-    margin-bottom: 55px;
+    margin-bottom: 30px;
 
     @include respond-to('mobile') {
     margin-bottom: 64px;

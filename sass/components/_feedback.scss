@@ -7,12 +7,19 @@
 
   color: getColor('text-secondary');
 
-  &.tel {
-    @include fontType($weight: 500, $size: 26px, $ls: 0.02em);
+  transition: color 250ms $timing-function;
+
+  &:hover, &:focus {
     color: getColor('accent');
-    margin-bottom: 32px;
+  }
+
+  &.tel {
+    @include fontType($weight: 400, $size: 18px, $ls: 0.02em);
+    color: getColor('accent');
+    margin-bottom: 25px;
 
     @include respond-to('mobile') {
+      font-weight: 500;
       font-size: 34px;
     }
 
@@ -22,15 +29,20 @@
       font-size: 12px;
     }
 
+    &:hover, &:focus {
+      color: getColor('accent');
+    }
+
     @include respond-to('desktop') {
       font-size: 14px;
     }
   }
 
   &.mail {
-    @include fontType($weight: 500, $size: 22px, $ls: 0.02em);
+    @include fontType($weight: 400, $ls: 0.02em);
 
     @include respond-to('mobile') {
+      font-weight: 400;
       font-size: 24px;
     }
 
@@ -43,12 +55,6 @@
       margin-bottom: 0;
       font-size: 14px;
       text-align: center;
-    }
-  }
-
-  @include respond-to('tablet') {
-    &:hover, &:focus {
-      color: getColor('accent');
     }
   }
 

@@ -4,7 +4,7 @@
   
     color: getColor('text-secondary');
 
-    @media screen and (min-width: 1120px) {
+    @include respond-to('desktop') {
         font-size: 14px;
         line-height: 1.714;
     }

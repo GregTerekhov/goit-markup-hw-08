@@ -14,12 +14,14 @@
         transform: translate(-50%, -50%) scale(0.5) rotate(180deg);
     }
 
-    @include respond-to('tablet') {
-        transform: translate(-50%, -50%);
+    @include respond-to('pre-mobile') {
+        width: 320px;
     }
 
-    @media screen and (min-width: 1200px) {
+    @include respond-to('desktop') {
         width: 528px;
+
+        transform: translate(-50%, -50%);
     }
 }
 

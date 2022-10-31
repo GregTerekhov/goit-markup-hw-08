@@ -25,7 +25,7 @@
     top: 93px;
     left: 50%;
 
-    @include respond-to('tablet') {
-      top:50%;
+    @include respond-to('desktop') {
+      top: 50%;
     }
   }

@@ -1,7 +1,7 @@
 .projects {
     padding: 60px 0;
 
-    @media screen and (min-width: 1200px) {
+    @include respond-to('desktop') {
         padding: 94px 0;
     }
 }
@@ -58,9 +58,13 @@
 
 .projects__cards {
     @extend %list;
-    @include centeredFlex($justify-content: start);
+    @include centeredFlex();
     flex-wrap: wrap;
     gap: 30px;
+
+    @include respond-to('tablet') {
+        justify-content: start;
+    }
 
     @include respond-to('desktop') {
         justify-content: center;
@@ -117,9 +121,17 @@
     @extend %margin-padding-reset;
     @include fontType($weight: 400, $size: 18px, $lh: 1.556);
 
-    padding: 63px 24px;
+    padding: 77px 24px;
 
     color: getColor('text-tertiary');
+
+    @include respond-to('tablet') {
+        padding: 77px 24px 49px;
+    }
+
+    @include respond-to('desktop') {
+        padding: 63px 24px;
+    }
 }
 
 .projects__meta {

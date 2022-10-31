@@ -31,7 +31,7 @@
 
   @include respond-to('tablet') {
     @include centeredFlex();
-    margin-left: 87px;
+    margin-left: auto;
 
     @include respond-to('desktop') {
       margin-left: 93px;

@@ -22,7 +22,8 @@
     }
 
     @include respond-to('desktop') {
-        flex-wrap: nowrap;    }
+        flex-wrap: nowrap;    
+    }
 }
 
 .features__item {
