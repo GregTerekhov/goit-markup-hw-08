@@ -34,14 +34,11 @@ $logo-font-stack: 'Raleway', sans-serif;
 $timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
 $breakpoints: (
-  'tiny': ( min-width: 320px ),
   'pre-little': ( max-width: 479px ),
   'little': ( min-width: 480px ),
   'small': ( min-width: 576px ),
   'pre-medium': ( max-width: 767px ),
   'medium': ( min-width: 768px ),
-  'big': ( min-width: 960px ),
   'pre-large': ( max-width: 1199px ),
   'large': ( min-width: 1200px ),
-  'wide': ( min-width: 1440px ),
 ) !default;

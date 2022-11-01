@@ -13,7 +13,7 @@
   outline: none;
   transition: color 250ms $timing-function;
 
-  &:hover, &:focus {
+  @include hoFus {
     fill: getColor('accent')
   }
 
