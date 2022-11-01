@@ -4,7 +4,7 @@
 
 .page-header__navigation {
     
-    @include respond-to ('medium') {
+    @include respondTo ('medium') {
         @include centeredFlex($justify-content: flex-start);
     }
 }

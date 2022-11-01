@@ -1,46 +1,26 @@
-.team {
-    padding: 60px 0;
-    background-color: getColor('background-tertiary');
-
-    @include respond-to('large') {
-        padding: 94px 0;
-    }
-}
-
-.team__title {
-    @extend %margin-padding-reset;
-    @include fontType($size: 28px, $align: center);
-    margin-bottom: 30px;
-
-    @include respond-to('large') {
-        font-size: 36px;
-        margin-bottom: 50px;;
-    }
-}
-
 .team__list {
     @extend %list;
     @include centeredFlex();
     flex-direction: column;
     gap: 30px;
 
-    @include respond-to('medium') {
+    @include respondTo('medium') {
         flex-direction: row;
         flex-wrap: wrap;
     }
 
-    @include respond-to('large') {
+    @include respondTo('large') {
         flex-wrap: nowrap;
     }
 }
 
 .team__item {
     
-    @include respond-to('medium') {
+    @include respondTo('medium') {
         width: calc((100% - 30px) / 2);
     }
 
-    @include respond-to('large') {
+    @include respondTo('large') {
         width: calc((100% - 90px) / 4);
     }
 }
@@ -59,7 +39,7 @@
   
     border-radius: 0px 0px 4px 4px;
 
-    @include respond-to('large') {
+    @include respondTo('large') {
         padding-bottom: 30px;
     }
 }
@@ -88,7 +68,7 @@
     @include centeredFlex();
     @include socialLinks($color: getColor('link-nonactive'), $background: getColor('background-primary'));
 
-    &:hover, &:focus {
+    @include hoFus {
         background-color: getColor('accent');
         color: getColor('social-icons-hover');
     }
@@ -96,6 +76,5 @@
 
 .team__icon {
     @extend %icon;
-
     transition: fill 250ms $timing-function;
 }

@@ -1,12 +1,8 @@
 .socials__call {
-    @include fontType($size: 14px, $transform: uppercase);
-
+    @include textUpperCase($color: getColor('text-tertiary'), $mb: 20px);
     display: block;
-    margin-bottom: 20px;  
 
-    color: getColor('text-tertiary');
-
-    @include respond-to('pre-medium') {
+    @include respondTo('pre-medium') {
         text-align: center;
     }
 }
@@ -21,7 +17,7 @@
     @include centeredFlex();
     @include socialLinks($color: getColor('social-icons-hover'), $background: getColor('background-footer-network'));
 
-    &:hover, &:focus {
+    @include hoFus {
         background-color: getColor('accent');
     }
 }

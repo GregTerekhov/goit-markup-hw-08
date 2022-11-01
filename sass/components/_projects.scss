@@ -1,15 +1,3 @@
-.projects {
-    padding: 60px 0;
-
-    @include respond-to('large') {
-        padding: 94px 0;
-    }
-}
-
-.projects__title {
-    @extend %visually-hidden;
-}
-
 .projects__filters-list {
     @extend %list;
     display: flex;
@@ -18,42 +6,40 @@
     margin-bottom: 40px;
     color: getColor('text-primary');
 
-    @include respond-to('medium') {
+    @include respondTo('medium') {
         @include centeredFlex();
         flex-wrap: nowrap;
         gap: 8px;
         margin-bottom: 30px;
     }
 
-    @include respond-to('large') {
+    @include respondTo('large') {
         margin-bottom: 50px;
     }
 }
 
 .projects__filters-button {
     @extend %button;
-    @include fontType($weight: 500, $lh: 1.625, $align: center);
+    @include fontType($weight: 500,$lh: 1.625,$align: center);
     padding: 6px 22px;
-  
     background-color: getColor('background-tertiary');
-
     border-radius: 4px;
+    transition: background-color 250ms $timing-function;
+    transition: color 250ms $timing-function;
+    transition: box-shadow 250ms $timing-function;
     
-    transition: color 250ms $timing-function,
-      background-color 250ms $timing-function,
-      box-shadow 250ms $timing-function;
-    
-      &:hover, &:focus {
+    @include hoFus {
         color: getColor('text-tertiary');
         background-color: getColor('accent');
         box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
           0px 2px 2px rgba(0, 0, 0, 0.12);
-      }
+    }
 
-      &--current {
+
+    &--current {
         color: getColor('text-tertiary');
         background-color: getColor('accent');
-      }
+    }
 }
 
 .projects__cards {
@@ -62,21 +48,21 @@
     flex-wrap: wrap;
     gap: 30px;
 
-    @include respond-to('medium') {
+    @include respondTo('medium') {
         justify-content: flex-start;
     }
 
-    @include respond-to('large') {
+    @include respondTo('large') {
         justify-content: center;
     }    
 }
 
 .projects__item {
-    @include respond-to('medium') {
+    @include respondTo('medium') {
         width: calc((100% - 30px) / 2);
     }
 
-    @include respond-to('large') {
+    @include respondTo('large') {
         width: calc((100% - 60px) / 3);
     }
 }
@@ -86,7 +72,7 @@
     
     transition: box-shadow 250ms $timing-function;
 
-    &:hover, &:focus {
+    @include hoFus {
         box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
     }
 }
@@ -108,8 +94,7 @@
     pointer-events: none;
   
     transform: translateY(100%);
-    transition: transform 250ms $timing-function,
-      opacity 250ms $timing-function;
+    transition: transform 250ms $timing-function, opacity 250ms $timing-function;
 
     .projects__cards-link:hover &,
     .projects__cards-link:focus & {
@@ -126,11 +111,11 @@
 
     color: getColor('text-tertiary');
 
-    @include respond-to('medium') {
+    @include respondTo('medium') {
         padding: 48px 24px 77px 24px;
     }
 
-    @include respond-to('large') {
+    @include respondTo('large') {
         padding: 63px 24px;
     }
 }
@@ -138,15 +123,15 @@
 .projects__meta {
     padding: 20px 24px;
 
-    border: 1px solid getColor('border-cards');
+    @include borderStyle($color: getColor('border-cards'), $rad: 0);
     border-top: none;
 
     &--bug {
-        @include respond-to('medium') {
+        @include respondTo('medium') {
             padding: 20px 24px 56px;
         }
 
-        @include respond-to('large') {
+        @include respondTo('large') {
             padding: 20px 24px;
         }
     }

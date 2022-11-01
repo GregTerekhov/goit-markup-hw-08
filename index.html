@@ -84,17 +84,15 @@
           <div class="mobile-container js-menu-container" id="mobile-menu">
             <div class="mobile-container__wrap">
               <!-- Кнопка закриття меню -->
-              <div class="mobile-container__box">
-                <button class="navigation__button js-close-menu" type="button">
-                  <svg
-                    width="40"
-                    height="40"
-                    aria-label="Перемикач мобільного меню"
-                  >
-                    <use href="./images/icons.svg#icon-menu-close"></use>
-                  </svg>
-                </button>
-              </div>
+              <button class="navigation__button js-close-menu" type="button">
+                <svg
+                  width="40"
+                  height="40"
+                  aria-label="Перемикач мобільного меню"
+                >
+                  <use href="./images/icons.svg#icon-menu-close"></use>
+                </svg>
+              </button>
               <!-- Мобільне меню -->
               <ul class="mobile-menu mobile-container__mobile-menu">
                 <li class="mobile-menu__item">
@@ -271,9 +269,9 @@
         </div>
       </div>
       <!--Наші переваги-->
-      <section class="features">
+      <section class="section features">
         <div class="container">
-          <h2 class="features__title">Наші переваги</h2>
+          <h2 class="features__title visually-hidden">Наші переваги</h2>
           <ul class="features__list">
             <li class="features__item">
               <div class="features__thumb">
@@ -326,7 +324,7 @@
         </div>
       </section>
       <!--Чим ми займаємося-->
-      <section class="activity">
+      <section class="section activity">
         <div class="container">
           <h2 class="activity__title">Чим ми займаємося</h2>
           <ul class="activity__list">
@@ -415,9 +413,9 @@
         </div>
       </section>
       <!--Наша команда-->
-      <section class="team">
+      <section class="section team">
         <div class="container">
-          <h2 class="team__title">Наша команда</h2>
+          <h2 class="team__title title">Наша команда</h2>
           <ul class="team__list">
             <li class="team__item">
               <div class="team__wrap">
@@ -815,9 +813,9 @@
         </div>
       </section>
       <!--Постійні клієнти-->
-      <section class="clients">
+      <section class="section clients">
         <div class="container">
-          <h2 class="clients__title">Постійні клієнти</h2>
+          <h2 class="clients__title title">Постійні клієнти</h2>
           <ul class="clients__list">
             <li class="clients__item">
               <a href="#" class="clients__logo">
@@ -866,7 +864,7 @@
       </section>
     </main>
     <!--Підвал-->
-    <footer class="page-footer">
+    <footer class="section page-footer">
       <div class="container page-footer__box">
         <div class="page-footer__info">
           <!-- Адреса та контактна інформація -->
@@ -939,7 +937,10 @@
         <div class="subscription">
           <b class="subscription__call">Підпишіться на розсилку</b>
           <form class="subscription__form" action="#" method="post">
-            <label class="subscription__label" for="user-email"></label>
+            <label
+              class="subscription__label visually-hidden"
+              for="user-email"
+            ></label>
             <input
               class="subscription__input"
               type="email"

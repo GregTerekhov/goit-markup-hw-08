@@ -9,7 +9,7 @@
 
   transition: color 250ms $timing-function;
 
-  &:hover, &:focus {
+  @include hoFus {
     color: getColor('accent');
   }
 
@@ -18,22 +18,22 @@
     color: getColor('accent');
     margin-bottom: 25px;
 
-    @include respond-to('little') {
+    @include respondTo('little') {
       font-weight: 500;
       font-size: 34px;
     }
 
-    @include respond-to('medium') {
+    @include respondTo('medium') {
       color: getColor('text-secondary');
       margin: 0;
       font-size: 12px;
     }
 
-    &:hover, &:focus {
+    @include hoFus {
       color: getColor('accent');
     }
 
-    @include respond-to('large') {
+    @include respondTo('large') {
       font-size: 14px;
     }
   }
@@ -41,45 +41,43 @@
   &.mail {
     @include fontType($weight: 400, $ls: 0.02em);
 
-    @include respond-to('little') {
+    @include respondTo('little') {
       font-weight: 400;
       font-size: 24px;
     }
 
-    @include respond-to('medium') {
+    @include respondTo('medium') {
       margin-bottom: 10px;
       font-size: 12px;
     }
 
-    @include respond-to('large') {
+    @include respondTo('large') {
       margin-bottom: 0;
       font-size: 14px;
       text-align: center;
     }
   }
 
-  @include respond-to('large') {
+  @include respondTo('large') {
     position: relative;
     @include fontType($weight: 500, $size: 14px, $ls: 0.02em);
     @include centeredFlex();
     padding: 32px 0;
 
-    &::after {
-      @include pseudo();
-      bottom: -1px;
+  &::after {
+    @include pseudo();
+    bottom: -1px;
+    height: 4px;
+    background-color: getColor('accent');
+    border-radius: 2px;
+    transform: scaleX(0);
+      
+    transition: transform 250ms $timing-function;     
+    transition: background-color 250ms $timing-function;
+  }
 
-      height: 4px;
-
-      background-color: getColor('accent');
-
-      border-radius: 2px;
-
-      transform: scaleX(0);
-      transition: background-color 250ms $timing-function,
-          transform 250ms $timing-function;
-    }
-
-    &:hover::after, &:focus::after {
+    &:hover::after, 
+    &:focus::after {
       transform: scaleX(1);
     }
   }  
@@ -88,13 +86,13 @@
 .feedback__icon {
   display: none;
 
-  @include respond-to('medium') {
+  @include respondTo('medium') {
     display: inline;
     fill: currentColor;
     margin-right: 8px;
   }
 
-  @include respond-to('large') {
+  @include respondTo('large') {
     margin-right: 10px;
   }
 }

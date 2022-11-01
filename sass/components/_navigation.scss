@@ -11,6 +11,7 @@
   color: getColor('button-mobile-menu');
   background-color: transparent;
   outline: none;
+  transition: color 250ms $timing-function;
 
   &:hover, &:focus {
     fill: getColor('accent')
@@ -21,9 +22,11 @@
     top: 10px;
     right: 15px;
     color: currentColor;
+
+    transition: color 250ms $timing-function;
   }
 
-  @include respond-to('medium') {
+  @include respondTo('medium') {
     display: none;
   }
 }
@@ -31,11 +34,11 @@
 .navigation__container {
   display: none;
 
-  @include respond-to('medium') {
+  @include respondTo('medium') {
     @include centeredFlex();
     margin-left: auto;
 
-    @include respond-to('large') {
+    @include respondTo('large') {
       margin-left: 93px;
       flex-grow: 1;
     }
@@ -47,7 +50,7 @@
     @include centeredFlex();
     margin-right: 95px;
 
-    @include respond-to('large') {
+    @include respondTo('large') {
       margin-right: auto;    
     }
 }
@@ -67,32 +70,32 @@
 
   transition: color 250ms $timing-function;
 
-    &:hover, &:focus {
-      color: getColor('accent');
+  @include hoFus {
+    color: getColor('accent');
+  }
+
+  &--current {
+    position: relative;
+    @include centeredFlex();
+
+    color: getColor('accent');
+
+    &::after {
+      @include pseudo();
+      bottom: -1px;
+
+      height: 4px;
+
+      background-color: getColor('accent');
+      border-radius: 2px;
     }
-
-    &--current {
-      position: relative;
-      @include centeredFlex();
-
-      color: getColor('accent');
-
-        &::after {
-          @include pseudo();
-          bottom: -1px;
-
-          height: 4px;
-
-          background-color: getColor('accent');
-          border-radius: 2px;
-        }
-    }
+  }
 }
 
 .navigation__feedback {
   @extend %list;
   
-  @include respond-to('large') {
+  @include respondTo('large') {
     @include centeredFlex();
     gap: 50px;
   }

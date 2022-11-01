@@ -1,29 +1,10 @@
-.clients {
-  padding: 60px 0;
-
-  @include respond-to('large') {
-    padding: 94px 0;
-  }
-}
-
-.clients__title {
-    @extend %margin-padding-reset;
-    @include fontType($size: 28px, $align: center);
-    margin-bottom: 30px;
-
-    @include respond-to('large') {
-        font-size: 36px;
-        margin-bottom: 50px;
-    }
-  }
-
-  .clients__list {
+.clients__list {
     @extend %list;
     @include centeredFlex();
     flex-wrap: wrap;
     gap: 30px;
 
-    @include respond-to('large') {
+    @include respondTo('large') {
       flex-wrap: nowrap;
     }
   }
@@ -31,32 +12,31 @@
   .clients__item {
     width: calc((100% - 30px) / 2);
 
-    @include respond-to('medium') {
+    @include respondTo('medium') {
       width: calc((100% - 60px) / 3);
   }
 
-  @include respond-to('large') {
+  @include respondTo('large') {
       width: calc((100% - 90px) / 4);
   }
   }
 
 .clients__logo {
-    @include centeredFlex();
-    padding: 16px 0;
+  @include centeredFlex();
+  padding: 16px 0;
   
-    border: 1px solid getColor('link-nonactive');
-    border-radius: 4px;
-    color: getColor('link-nonactive');
+  @include borderStyle ($color: getColor('link-nonactive'));
+  color: getColor('link-nonactive');
   
-    transition: border 250ms $timing-function,
-      color 250ms $timing-function;
+  transition: color 250ms $timing-function;
+  transition: border-color 250ms $timing-function;
 
-      &:hover, &:focus {
-        border-color: getColor('accent');
-        color: getColor('accent');
-      }
+  @include hoFus {
+    border-color: getColor('accent');
+    color: getColor('accent');
+  }
 }
 
 .clients__icon {
-    fill: currentColor;
+    @extend %icon;
 }

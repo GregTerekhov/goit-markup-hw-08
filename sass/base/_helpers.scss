@@ -1,0 +1,38 @@
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    @include respondTo('little') {
+      width: 480px;
+    }
+
+    @include respondTo('medium') {
+      width: 768px;
+    }
+
+    @include respondTo('large') {
+      width: 1200px;
+    }
+  }
+
+  .visually-hidden {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
+    margin: -1px;
+  }
+
+  .picture {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}

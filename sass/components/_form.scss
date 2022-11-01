@@ -1,13 +1,11 @@
 .form__call {
     @extend %margin-padding-reset;
-    @include fontType($size: 20px);
-    text-align: center;
+    @include fontType($size: 20px, $align: center);
   
     margin-bottom: 12px;
 
-    @include respond-to('large') {
+    @include respondTo('large') {
         line-height: 1.5;
-        text-align: center;
     }
 }
 
@@ -40,13 +38,12 @@
     padding: 12px 12px 12px 42px;
     width: 100%;
   
-    border: 1px solid getColor('border-modal-input');
-    border-radius: 4px;
+    @include borderStyle($color: getColor('border-modal-input'));
   
     transition: border 250ms $timing-function;
 
     &:focus {
-        border: 1px solid getColor('accent');
+        border-color: getColor('accent');
         outline: none;
     }
 }
@@ -55,7 +52,7 @@
     position: absolute;
     top: 50%;
     left: 12px;
-  
+    
     transform: translateY(-50%);
     transition: fill 250ms $timing-function;
 
@@ -76,13 +73,12 @@
   
     resize: none;
     background-color: getColor('background-primary');
-    border: 1px solid getColor('border-modal-input');
-    border-radius: 4px;
+    @include borderStyle($color: getColor('border-modal-input'));
   
     transition: border 250ms $timing-function;
 
     &:focus {
-        border: 1px solid getColor('accent');
+        border-color: getColor('accent');
         outline: none;
     }
 }
@@ -104,7 +100,7 @@
     @include buttonPrimary();
     @include centeredFlex($type: inline-flex);
 
-    &:hover, &:focus {
+    @include hoFus {
         background-color: getColor('primary-button-hover');
     }
 }

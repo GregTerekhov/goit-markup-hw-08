@@ -1,12 +1,8 @@
 .subscription__call {
-    @include fontType($size: 14px, $transform: uppercase);
-
+    @include textUpperCase($color: getColor('text-tertiary'), $mb: 20px);
     display: block;
-    margin-bottom: 20px;
-  
-    color: getColor('text-tertiary');
 
-    @include respond-to('pre-large') {
+    @include respondTo('pre-large') {
         text-align: center;
     }
 }
@@ -14,26 +10,22 @@
 .subscription__form {
     @extend %margin-padding-reset;
 
-    @include respond-to('pre-medium') {
+    @include respondTo('pre-medium') {
         text-align: center;
     }
 
-    @include respond-to('medium') {
+    @include respondTo('medium') {
         @include centeredFlex();
         flex-direction: column;
         flex-wrap: wrap;
         gap: 20px;
     }
 
-    @include respond-to('large') {
+    @include respondTo('large') {
         flex-direction: row;
         flex-wrap: nowrap;
         gap: 12px;
     }
-}
-
-.subscription__label {
-   @extend %visually-hidden;
 }
 
 .subscription__input {
@@ -44,9 +36,8 @@
     color: getColor('text-tertiary');
     background-color: getColor('background-secondary');
   
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    @include borderStyle($color: getColor('border-subscr-input'));
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
-    border-radius: 4px;
 
     &::placeholder {
         font-size: 16px;
@@ -55,11 +46,11 @@
         color: getColor('placeholder-footer');      
     }
 
-    @include respond-to('pre-medium') {
+    @include respondTo('pre-medium') {
         margin-bottom: 20px;
     }
 
-    @include respond-to('large') {
+    @include respondTo('large') {
         width: 358px;
         margin-bottom: 0;
     }
@@ -70,7 +61,7 @@
     @include centeredFlex();
     margin: 0 auto;
 
-    &:hover, &:focus {
+    @include hoFus {
         background-color: getColor('primary-button-hover');
     }
 }

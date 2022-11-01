@@ -16,21 +16,13 @@
         transform: translateX(0); 
     }
 
-    @include respond-to('medium') {
+    @include respondTo('medium') {
         display: none;
     }
 }
 
-.mobile-container__box {
-    max-width: 480px;
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row-reverse;
-}
-
 .mobile-container__wrap {
+    position: relative;
     max-width: 480px;
     padding: 48px 40px;
     margin-left: auto;
@@ -47,7 +39,7 @@
 .mobile-container__feedback {
     margin-bottom: 30px;
 
-    @include respond-to('little') {
+    @include respondTo('little') {
     margin-bottom: 64px;
     }
 }

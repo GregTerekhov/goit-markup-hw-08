@@ -1,38 +1,26 @@
-.features {
-    padding: 60px 0;
-
-    @include respond-to('large') {
-        padding: 94px 0;
-    }
-}
-
-.features__title {
-    @extend %visually-hidden;
-}
-
 .features__list {
     @extend %list;
     @include centeredFlex($align-items: flex-start);
     flex-direction: column;
     gap: 30px;
 
-    @include respond-to('medium') {
+    @include respondTo('medium') {
         flex-direction: row;
         flex-wrap: wrap;
     }
 
-    @include respond-to('large') {
+    @include respondTo('large') {
         flex-wrap: nowrap;    
     }
 }
 
 .features__item {
     
-    @include respond-to('medium') {
+    @include respondTo('medium') {
         width: calc((100% - 30px) / 2);
     }
 
-    @include respond-to('large') {
+    @include respondTo('large') {
         width: calc((100% - 90px) / 4);
     }
 }
@@ -48,11 +36,9 @@
 }
 
 .features__subtitle {
-    @extend %margin-padding-reset;
-    @include fontType($size: 14px, $transform: uppercase);
-    margin-bottom: 10px;
+    @include textUpperCase($color: getColor('text-tertiary'), $mb: 10px);
 
-    @include respond-to('pre-medium') {
+    @include respondTo('pre-medium') {
         text-align: center;
     }
 }

@@ -5,7 +5,7 @@
 .mobile-menu__item:not(:last-child) {
   margin-bottom: 20px;
 
-  @include respond-to('little') {
+  @include respondTo('little') {
     margin-bottom: 32px;
   }
 }
@@ -13,26 +13,25 @@
 .mobile-menu__link {
     @include link($display: inline-block);
     @include fontType($weight: 400, $size: 26px, $ls: 0.02em);
-
     transition: color 250ms $timing-function;
 
-    &:hover, &:focus {
+    @include hoFus {
       color: getColor('accent');
     }
 
-    @include respond-to('little') {
+    @include respondTo('little') {
       font-weight: 500;
       font-size: 30px;
     }
 
-    @include respond-to('small') {
+    @include respondTo('small') {
       font-size: 40px;
     }    
     
     &--current {
       color: getColor('accent');
 
-      @media screen and (min-width: 1200px) {
+      @include respondTo('large') {
         position: relative;
         @include centeredFlex();
 

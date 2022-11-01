@@ -4,7 +4,7 @@
   
     color: getColor('text-secondary');
 
-    @include respond-to('large') {
+    @include respondTo('large') {
         font-size: 14px;
         line-height: 1.714;
     }
@@ -17,9 +17,8 @@
 .checkbox__icon {
     display: inline-block;
     margin-right: 7px;
-  
-    border: 2px solid getColor('border-checkbox');
-    border-radius: 3px;
+
+    @include borderStyle ($width: 2px, $color: getColor('border-checkbox'), $rad: 3px);
     
     transition: background-color 250ms $timing-function;
 

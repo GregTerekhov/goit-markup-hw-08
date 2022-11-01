@@ -8,17 +8,17 @@
     border-radius: 4px;
   
     transform: translateX(-50%) scale(1) rotate(0);
-    transition: transform 500ms $timing-function;
+    transition: transform 250ms $timing-function;
 
     .backdrop.is-hidden & {
         transform: translate(-50%, -50%) scale(0.5) rotate(180deg);
     }
 
-    @include respond-to('pre-little') {
+    @include respondTo('pre-little') {
         width: 320px;
     }
 
-    @include respond-to('large') {
+    @include respondTo('large') {
         width: 528px;
 
         transform: translate(-50%, -50%);
@@ -36,19 +36,18 @@
     right: 8px;
   
     @include centeredFlex();
+    @extend %button;
   
     padding: 6px;
   
     fill: getColor('button-modal-close');
     background-color: getColor('background-primary');
   
-    border: 1px solid getColor('border-button-close');
-    border-radius: 50%;
-    cursor: pointer;
+    @include borderStyle($color: getColor('border-button-close'), $rad: 50%);
   
     transition: color 250ms $timing-function;
 
-    &:hover, &:focus {
+    @include hoFus {
         color: getColor('accent');
     }
 }

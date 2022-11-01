@@ -1,17 +1,7 @@
-.activity {
-    @include respond-to('pre-large') {
-        display: none;
-    }
-
-    @include respond-to('large') {
-        padding-bottom: 94px;
-    }
-}
-
 .activity__title {
     @extend %margin-padding-reset;
     @include fontType($size: 36px, $align: center);
-    @extend %sec-title-margin
+    @extend %sec-title-margin;
 }
 
 .activity__list {
@@ -40,12 +30,9 @@
 }
 
 .activity__label {
-    @extend %margin-padding-reset;
-    @include fontType($size: 14px, $transform: uppercase);
+    @include textUpperCase($color: getColor('text-tertiary'), $mb: 0);
     position: absolute;
     bottom: 0;
 
     padding: 27px 0;
-
-    color: getColor('text-tertiary');
 }

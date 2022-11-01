@@ -1,41 +1,26 @@
+// Міксин центрування за флексом
 @mixin centeredFlex ($type: flex, $justify-content: center, $align-items: center) {
     display: $type;
     justify-content: $justify-content;
     align-items: $align-items;
 }
 
+// Міксин псевдоелементів
 @mixin pseudo($display: block, $pos: absolute, $content: '', $width: 100%){
     content: $content;
     display: $display;
     position: $pos;
     width: $width;
-  }
-
-@mixin buttonPrimary($width: 200px) {
-    padding: 0;
-    width: $width;
-    height: 50px;
-    font-family: inherit;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 1.875;
-    letter-spacing: 0.06em;
-    text-align: center;
-    cursor: pointer;
-    border: none;
-    border-radius: 4px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-    color: getColor('text-tertiary');
-    background-color: getColor('accent');
-    transition: background-color 250ms $timing-function, box-shadow 250ms $timing-function;
 }
 
+// Міксин посилань
 @mixin link($display: block, $decor: none, $color: inherit) {
     text-decoration: $decor;
     color: $color;
     display: $display;
 }
 
+// Міксин для іконок-посилань на соцмережі
 @mixin socialLinks($width: 44px, $height: 44px, $color, $background) {
     width: $width;
     height: $height;
@@ -46,6 +31,7 @@
     background-color 250ms $timing-function;
 }
 
+// Міксин для ховання елементів
 @mixin appearance($val: none) {
     position: absolute;
 	-webkit-appearance: $val;
@@ -53,7 +39,8 @@
 	appearance: $val;
 }
 
-@mixin fontType($weight: 700, $size: 16px, $lh: 1.172, $ls: inherit, $align: start, $transform: none) {
+// Міксин стилей шрифту
+@mixin fontType($weight: 700, $size: 16px, $lh: 1.172, $ls: 0.03em, $align: start, $transform: none) {
     font-weight: $weight;
     font-size: $size;
     line-height: $lh;
@@ -104,7 +91,8 @@
 // .form__label, .form__input, .form__textarea, .form__input::placeholder, .form__textarea::placeholder
 // font-size: 12px; line-height: 1.172; letter-spacing: 0.01em;
 
-@mixin respond-to($breakpoint) {
+//Міксин, який виводить необхідну точку злому 
+@mixin respondTo($breakpoint) {
     @if map-has-key($breakpoints, $breakpoint) {
         @media #{inspect(map-get($breakpoints, $breakpoint))} {
             @content;
@@ -114,4 +102,78 @@
     @else {
         @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. " + "Available breakpoints are: #{map-keys($breakpoints)}.";
     }
+}
+
+// Міксин стилей бордера
+@mixin borderStyle ($width: 1px, $style: solid, $color, $rad: 4px) {
+    border-width: $width;
+    border-style: $style;
+    border-color: $color;
+    border-radius: $rad;
+}
+
+// Міксин центрування елементів, заголовків та підзаголовків
+@mixin centeredElement($maxwidth, $min-height) {
+    @extend %margin-padding-reset;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $maxwidth;
+    min-height: $min-height;
+}
+
+// Міксин центрування за абсолютним позиціонуванням
+@mixin centeredAbsolute($width, $height, $top: 50%, $left: 50%) {
+    position: absolute;
+    left: $left;
+    top: $top;
+    height: $height;
+    width: $width;
+}
+
+// Міксин ховера та фокуса
+@mixin hoFus {
+    &:hover,
+    &:focus {
+      @content;
+    }
+  }
+
+// Міксин розміру та стилей кнопки
+@mixin buttonSize($padding-y, $padding-x, $font-size, $line-height, $border-radius) {
+    padding: $padding-y $padding-x;
+    font-size: $font-size;
+    line-height: $line-height;
+    // Manually declare to provide an override to the browser default
+    @if $enable-rounded {
+      border-radius: $border-radius;
+    } @else {
+      border-radius: 0;
+    }
+  }
+  // Головни стилі кнопок
+@mixin buttonPrimary($width: 200px) {
+    padding: 0;
+    width: $width;
+    height: 50px;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.875;
+    letter-spacing: 0.06em;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    color: getColor('text-tertiary');
+    background-color: getColor('accent');
+    transition: background-color 250ms $timing-function, box-shadow 250ms $timing-function;
+}
+
+// Міксин підзаголовків прописними літерами
+@mixin textUpperCase($color, $mb) {
+    @extend %margin-padding-reset;
+    @include fontType($size: 14px, $transform: uppercase);
+    color: $color;
+    margin-bottom: $mb;
 }

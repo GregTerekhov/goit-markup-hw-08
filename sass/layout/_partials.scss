@@ -1,0 +1,38 @@
+.section {
+    padding: 60px 0;
+    
+    &.team {
+        background-color: getColor('background-tertiary');
+    }
+
+    &.activity {
+        @include respondTo('pre-large') {
+            display: none;
+        }
+
+        @include respondTo('large') {
+            padding-bottom: 94px;
+        }
+    }
+
+    @include respondTo('large') {
+        padding: 94px 0;
+    }
+}
+
+.section.page-footer {
+    background-color: getColor('background-secondary');
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.title {
+    @extend %margin-padding-reset;
+    @include fontType($size: 28px, $align: center);
+    margin-bottom: 30px;
+
+    @include respondTo('large') {
+        font-size: 36px;
+        margin-bottom: 50px;
+    }
+}

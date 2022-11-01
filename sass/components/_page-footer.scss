@@ -1,24 +1,18 @@
-.page-footer {
-    background-color: getColor('background-secondary');
-    padding-top: 60px;
-    padding-bottom: 60px;
-}
-
 .page-footer__box {    
     
-    @include respond-to('large') {
+    @include respondTo('large') {
         @include centeredFlex($justify-content: space-between, $align-items: baseline);
     }
 }
 
 .page-footer__info {
 
-    @include respond-to('medium') {
+    @include respondTo('medium') {
         @include centeredFlex($justify-content: space-between, $align-items: baseline);
         margin-bottom: 60px;
     }
 
-    @include respond-to('large') {
+    @include respondTo('large') {
         margin-bottom: 0;
     }
 }
@@ -27,11 +21,11 @@
     text-align: center;
     margin-bottom: 60px;
 
-    @include respond-to('medium') {
+    @include respondTo('medium') {
         margin-bottom: 0;
     }
 
-    @include respond-to('large') {
+    @include respondTo('large') {
         margin-right: 70px;
         text-align: left;
     }
@@ -46,11 +40,11 @@
 .page-footer__socials {
     margin-bottom: 60px;
 
-    @include respond-to('medium') {
+    @include respondTo('medium') {
         margin-bottom: 0;
     }
     
-    @include respond-to('large') {
+    @include respondTo('large') {
         margin-right: 93px;
     }
 }

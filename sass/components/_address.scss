@@ -5,23 +5,22 @@
 .address__list {
     @extend %list;
 
-    @include respond-to('pre-little') {
+    @include respondTo('pre-little') {
         text-align: center;
     }
 }
 .address__item {
 
-    @include respond-to('large') {
+    @include respondTo('large') {
         width: 231px;
     }
 }
 .address__link {
     @include link($display: inline-block, $color: getColor('text-footer-contacts'));
     @include fontType($weight: 400, $size: 14px, $lh: 1.714);
-    
     transition: color 250ms $timing-function;
 
-    &:hover, &:focus {
+    @include hoFus {
         color: getColor('accent');
     }
 
@@ -29,7 +28,7 @@
         margin-bottom: 8px;
         color: getColor('text-tertiary');
 
-        @include respond-to('large') {
+        @include respondTo('large') {
             margin-bottom: 9px;
         }
     }
@@ -37,7 +36,7 @@
     &--mail {
         margin-bottom: 8px;
 
-        @include respond-to('large') {
+        @include respondTo('large') {
             margin-bottom: 9px;
         }
     }
