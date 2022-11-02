@@ -145,6 +145,8 @@
     font-size: $font-size;
     line-height: $line-height;
     background-color: $bgc;
+    border: none;
+    cursor: pointer;
     // Manually declare to provide an override to the browser default
     @if $enable-rounded {
       border-radius: $border-radius;
@@ -152,23 +154,15 @@
       border-radius: 0;
     }
   }
-  // Головни стилі кнопок
-@mixin buttonPrimary($width: 200px) {
-    padding: 0;
+  // Стилі головної кнопки
+@mixin buttonPrimary($width: 200px, $height: 50px, $letter-spacing: 0.06em, $color: getColor('text-tertiary')) {
+    @include buttonSize(700, 0, 0, 16px, 1.875, getColor('accent'), 4px);
     width: $width;
-    height: 50px;
-    font-family: inherit;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 1.875;
-    letter-spacing: 0.06em;
+    height: $height;
+    letter-spacing: $letter-spacing;
+    color: $color;
     text-align: center;
-    cursor: pointer;
-    border: none;
-    border-radius: 4px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-    color: getColor('text-tertiary');
-    background-color: getColor('accent');
     transition: background-color 250ms $timing-function, box-shadow 250ms $timing-function;
 }
 
@@ -178,4 +172,13 @@
     @include fontType($size: 14px, $transform: uppercase);
     color: $color;
     margin-bottom: $mb;
+}
+
+// Міксин для списків у флекс-контейнері
+@mixin flexList($flex-wrap: wrap, $flex-direction: row) {
+    @extend %margin-padding-reset;
+    @include centeredFlex();
+    flex-wrap: $flex-wrap;
+    flex-direction: $flex-direction;
+    list-style: none;
 }

@@ -1,13 +1,5 @@
-.activity__title {
-    @extend %margin-padding-reset;
-    @include fontType($size: 36px, $align: center);
-    @extend %sec-title-margin;
-}
-
 .activity__list {
-    @extend %list;
-    @include centeredFlex();
-    flex-wrap: wrap;
+    @include flexList();
     gap: 30px;
 }
 

@@ -1,9 +1,5 @@
 .mobile-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+    @include centeredAbsolute(100vw, 100vh, 0, 0);
 
     background-color: getColor('background-primary');
     z-index: 999;

@@ -1,7 +1,5 @@
 .team__list {
-    @extend %list;
-    @include centeredFlex();
-    flex-direction: column;
+    @include flexList($flex-direction: column);
     gap: 30px;
 
     @include respondTo('medium') {

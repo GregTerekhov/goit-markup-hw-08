@@ -1,25 +1,23 @@
 .clients__list {
-    @extend %list;
-    @include centeredFlex();
-    flex-wrap: wrap;
-    gap: 30px;
+  @include flexList();
+  gap: 30px;
 
-    @include respondTo('large') {
-      flex-wrap: nowrap;
-    }
+  @include respondTo('large') {
+    flex-wrap: nowrap;
   }
+}
 
-  .clients__item {
-    width: calc((100% - 30px) / 2);
+.clients__item {
+  width: calc((100% - 30px) / 2);
 
-    @include respondTo('medium') {
-      width: calc((100% - 60px) / 3);
+  @include respondTo('medium') {
+    width: calc((100% - 60px) / 3);
   }
 
   @include respondTo('large') {
-      width: calc((100% - 90px) / 4);
+    width: calc((100% - 90px) / 4);
   }
-  }
+}
 
 .clients__logo {
   @include centeredFlex();

@@ -1,6 +1,5 @@
 .mobile-network {
-    @extend %list;
-    display: flex;
+    @include flexList($flex-wrap: nowrap);
 }
 
 .mobile-network__item {

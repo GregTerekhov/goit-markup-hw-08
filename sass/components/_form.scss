@@ -10,9 +10,7 @@
 }
 
 .form__panel-list {
-    @extend %list;
-    display: flex;
-    flex-direction: column;
+    @include flexList($flex-wrap: nowrap, $flex-direction: column);
     gap: 10px;
   
     width: 100%;

@@ -1,7 +1,6 @@
 .features__list {
-    @extend %list;
-    @include centeredFlex($align-items: flex-start);
-    flex-direction: column;
+    @include flexList($flex-wrap: nowrap, $flex-direction: column);
+    align-items: flex-start;
     gap: 30px;
 
     @include respondTo('medium') {

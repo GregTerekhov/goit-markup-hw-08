@@ -36,9 +36,10 @@
     right: 8px;
   
     @include centeredFlex();
-    @extend %button;
   
     padding: 6px;
+    cursor: pointer;
+    border: none;
   
     fill: getColor('button-modal-close');
     background-color: getColor('background-primary');

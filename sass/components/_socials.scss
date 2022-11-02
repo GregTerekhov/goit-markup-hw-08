@@ -8,8 +8,7 @@
 }
 
 .socials__list {
-    @extend %list;
-    @include centeredFlex();
+    @include flexList($flex-wrap: nowrap);
     gap: 10px;
 }
 

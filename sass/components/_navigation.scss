@@ -3,13 +3,14 @@
 }
 
 .navigation__button {
-  @extend %button;
   @include centeredFlex();
   width: 40px;
   height: 40px;
 
   color: getColor('button-mobile-menu');
   background-color: transparent;
+  cursor: pointer;
+  border: none;
   outline: none;
   transition: color 250ms $timing-function;
 
@@ -46,8 +47,7 @@
 }
 
 .navigation__list {
-    @extend %list;
-    @include centeredFlex();
+    @include flexList($flex-wrap: nowrap);
     margin-right: 95px;
 
     @include respondTo('large') {

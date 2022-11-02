@@ -1,7 +1,5 @@
 .projects__filters-list {
-    @extend %list;
-    display: flex;
-    flex-wrap: wrap;
+    @include flexList();
     gap: 15px 8px;
     margin-bottom: 40px;
     color: getColor('text-primary');
@@ -37,9 +35,7 @@
 }
 
 .projects__cards {
-    @extend %list;
-    @include centeredFlex();
-    flex-wrap: wrap;
+    @include flexList();
     gap: 30px;
 
     @include respondTo('medium') {
@@ -52,6 +48,7 @@
 }
 
 .projects__item {
+
     @include respondTo('medium') {
         width: calc((100% - 30px) / 2);
     }
