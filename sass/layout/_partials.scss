@@ -1,8 +1,14 @@
 .section {
     padding: 60px 0;
     
-    &.team {
-        background-color: getColor('background-tertiary');
+    @include respondTo('large') {
+        padding: 94px 0;
+    }
+
+    &.features {
+        @include respondTo('large') {
+            padding-bottom: 0;
+        }
     }
 
     &.activity {
@@ -15,15 +21,15 @@
         }
     }
 
-    @include respondTo('large') {
-        padding: 94px 0;
+    &.team {
+        background-color: getColor('background-tertiary');
     }
-}
 
-.section.page-footer {
-    background-color: getColor('background-secondary');
-    padding-top: 60px;
-    padding-bottom: 60px;
+    &.page-footer {
+        background-color: getColor('background-secondary');
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
 }
 
 .title {

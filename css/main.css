@@ -348,8 +348,15 @@ summary {
 .section {
   padding: 60px 0;
 }
-.section.team {
-  background-color: #f5f4fa;
+@media (min-width: 1200px) {
+  .section {
+    padding: 94px 0;
+  }
+}
+@media (min-width: 1200px) {
+  .section.features {
+    padding-bottom: 0;
+  }
 }
 @media (max-width: 1199px) {
   .section.activity {
@@ -361,12 +368,9 @@ summary {
     padding-bottom: 94px;
   }
 }
-@media (min-width: 1200px) {
-  .section {
-    padding: 94px 0;
-  }
+.section.team {
+  background-color: #f5f4fa;
 }
-
 .section.page-footer {
   background-color: #2f303a;
   padding-top: 60px;
