@@ -19,14 +19,9 @@
 }
 
 .projects__filters-button {
-    @extend %button;
-    @include fontType($weight: 500,$lh: 1.625,$align: center);
-    padding: 6px 22px;
-    background-color: getColor('background-tertiary');
-    border-radius: 4px;
-    transition: background-color 250ms $timing-function;
-    transition: color 250ms $timing-function;
-    transition: box-shadow 250ms $timing-function;
+    @include buttonSize($weight: 500, $padding-y: 6px, $padding-x: 22px, $font-size: 16px, $line-height: 1.625, $bgc: getColor('background-tertiary'), $border-radius: 4px);
+
+    transition: background-color 250ms $timing-function, color 250ms $timing-function, box-shadow 250ms $timing-function;
     
     @include hoFus {
         color: getColor('text-tertiary');
@@ -34,7 +29,6 @@
         box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
           0px 2px 2px rgba(0, 0, 0, 0.12);
     }
-
 
     &--current {
         color: getColor('text-tertiary');

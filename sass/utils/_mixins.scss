@@ -139,10 +139,12 @@
   }
 
 // Міксин розміру та стилей кнопки
-@mixin buttonSize($padding-y, $padding-x, $font-size, $line-height, $border-radius) {
+@mixin buttonSize($weight, $padding-y, $padding-x, $font-size, $line-height, $bgc, $border-radius) {
+    font-weight: $weight;
     padding: $padding-y $padding-x;
     font-size: $font-size;
     line-height: $line-height;
+    background-color: $bgc;
     // Manually declare to provide an override to the browser default
     @if $enable-rounded {
       border-radius: $border-radius;

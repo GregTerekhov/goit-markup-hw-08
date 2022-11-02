@@ -8,13 +8,6 @@
   list-style: none;
 }
 
-%button {
-  @extend %margin-padding-reset;
-  font-family: inherit;
-  cursor: pointer;
-  border: none;
-}
-
 %icon {
   fill: currentColor;
 }
