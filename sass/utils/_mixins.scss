@@ -171,7 +171,7 @@
 }
 
 // Міксин підзаголовків прописними літерами
-@mixin textUpperCase($color, $mb) {
+@mixin textUpperCase($color: inherit, $mb) {
     @extend %margin-padding-reset;
     @include fontType($size: 14px, $transform: uppercase);
     color: $color;

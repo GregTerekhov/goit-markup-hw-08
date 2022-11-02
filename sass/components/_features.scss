@@ -36,7 +36,7 @@
 }
 
 .features__subtitle {
-    @include textUpperCase($color: getColor('text-tertiary'), $mb: 10px);
+    @include textUpperCase($mb: 10px);
 
     @include respondTo('pre-medium') {
         text-align: center;

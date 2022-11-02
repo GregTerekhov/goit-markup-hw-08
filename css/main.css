@@ -1322,7 +1322,7 @@ summary {
   letter-spacing: 0.03em;
   text-align: start;
   text-transform: uppercase;
-  color: #ffffff;
+  color: inherit;
   margin-bottom: 10px;
 }
 @media (max-width: 767px) {
