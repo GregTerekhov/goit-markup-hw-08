@@ -1,36 +1,11 @@
 @import 
- './utils/variables',
- './utils/functions',
- './utils/placeholders',
- './utils/mixins';
+'./utils/main';
 
 @import 
- './base/normalise',
- './base/typography',
- './base/helpers';
+ './base/base';
 
 @import
-'./layout/page',
-'./layout/partials';
+'./layout/main';
  
 @import 
- './components/page-header',
- './components/logo',
- './components/navigation',
- './components/contacts',
- './components/mobile-container',
- './components/mobile-menu',
- './components/mobile-network',
- './components/hero',
- './components/backdrop',
- './components/modal-container',
- './components/form',
- './components/checkbox',
- './components/features',
- './components/activity',
- './components/socials',
- './components/team',
- './components/clients',
- './components/page-footer',
- './components/subscription',
- './components/projects';
+ './components/main';
