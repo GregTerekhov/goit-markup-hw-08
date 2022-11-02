@@ -42,3 +42,13 @@
         margin-bottom: 50px;
     }
 }
+
+.button {
+    @include buttonPrimary();
+    @include centeredFlex();
+    margin: 0 auto;
+
+    @include hoFus {
+        background-color: getColor('primary-button-hover');
+    }
+}

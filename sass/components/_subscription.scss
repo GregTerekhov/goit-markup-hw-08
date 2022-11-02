@@ -56,16 +56,6 @@
     }
 }
 
-.subscription__button {
-    @include buttonPrimary();
-    @include centeredFlex();
-    margin: 0 auto;
-
-    @include hoFus {
-        background-color: getColor('primary-button-hover');
-    }
-}
-
 .subscription__icon {
     @extend %icon;
     margin-left: 10px;

@@ -97,12 +97,6 @@
 }
 
 .hero__button {
-    @include buttonPrimary();
-    @include centeredFlex($type: inline-flex);
-
-    @include hoFus {
-        background-color: getColor('primary-button-hover');
-    }
 
     @include respondTo('large') {
         width: 216px

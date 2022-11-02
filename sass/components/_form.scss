@@ -95,12 +95,3 @@
     margin-top: 20px;
     margin-bottom: 30px;
 }
-
-.form__button {
-    @include buttonPrimary();
-    @include centeredFlex($type: inline-flex);
-
-    @include hoFus {
-        background-color: getColor('primary-button-hover');
-    }
-}

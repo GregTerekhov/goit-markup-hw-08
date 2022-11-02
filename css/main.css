@@ -393,6 +393,32 @@ summary {
   }
 }
 
+.button {
+  padding: 0;
+  width: 200px;
+  height: 50px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.875;
+  letter-spacing: 0.06em;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  color: #ffffff;
+  background-color: #2196f3;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.button:hover, .button:focus {
+  background-color: #188ce8;
+}
+
 .page-header {
   border-bottom: 1px solid #ececec;
 }
@@ -976,30 +1002,6 @@ summary {
   }
 }
 
-.hero__button {
-  padding: 0;
-  width: 200px;
-  height: 50px;
-  font-family: inherit;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.875;
-  letter-spacing: 0.06em;
-  text-align: center;
-  cursor: pointer;
-  border: none;
-  border-radius: 4px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  color: #ffffff;
-  background-color: #2196f3;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-.hero__button:hover, .hero__button:focus {
-  background-color: #188ce8;
-}
 @media (min-width: 1200px) {
   .hero__button {
     width: 216px;
@@ -1203,31 +1205,6 @@ summary {
 .form__checkbox {
   margin-top: 20px;
   margin-bottom: 30px;
-}
-
-.form__button {
-  padding: 0;
-  width: 200px;
-  height: 50px;
-  font-family: inherit;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.875;
-  letter-spacing: 0.06em;
-  text-align: center;
-  cursor: pointer;
-  border: none;
-  border-radius: 4px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  color: #ffffff;
-  background-color: #2196f3;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-.form__button:hover, .form__button:focus {
-  background-color: #188ce8;
 }
 
 .checkbox__label {
@@ -1702,32 +1679,6 @@ summary {
     width: 358px;
     margin-bottom: 0;
   }
-}
-
-.subscription__button {
-  padding: 0;
-  width: 200px;
-  height: 50px;
-  font-family: inherit;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.875;
-  letter-spacing: 0.06em;
-  text-align: center;
-  cursor: pointer;
-  border: none;
-  border-radius: 4px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  color: #ffffff;
-  background-color: #2196f3;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-}
-.subscription__button:hover, .subscription__button:focus {
-  background-color: #188ce8;
 }
 
 .subscription__icon {
