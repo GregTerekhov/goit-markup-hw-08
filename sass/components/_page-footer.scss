@@ -37,6 +37,16 @@
     margin-bottom: 20px;
 }
 
+.page-footer__contacts {
+    font-style: normal; 
+}
+
+.page-footer__item {
+    @include respondTo('large') {
+        width: 231px;
+    }
+}
+
 .page-footer__socials {
     margin-bottom: 60px;
 

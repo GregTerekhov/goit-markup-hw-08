@@ -58,23 +58,14 @@
     color: getColor('text-secondary');
 }
 
-.team__socials-list {
-    @extend %list;
-    @include centeredFlex();
-    gap: 10px;
-}
-
 .team__link {
-    @include centeredFlex();
     @include socialLinks($color: getColor('link-nonactive'), $background: getColor('background-primary'));
 
     @include hoFus {
-        background-color: getColor('accent');
         color: getColor('social-icons-hover');
     }
 }
 
 .team__icon {
-    @extend %icon;
     transition: fill 250ms $timing-function;
 }

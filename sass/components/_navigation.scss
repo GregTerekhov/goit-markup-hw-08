@@ -91,13 +91,3 @@
     }
   }
 }
-
-.navigation__feedback {
-  @extend %list;
-  
-  @include respondTo('large') {
-    @include centeredFlex();
-    gap: 50px;
-  }
-}
-

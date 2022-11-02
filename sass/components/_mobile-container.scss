@@ -30,16 +30,28 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+
+    @include respondTo('pre-little') {
+        padding: 55px 30px;
+    }
+
+    @include respondTo('small') {
+        padding: 30px 15px;
+    }
 }
 
 .mobile-container__mobile-menu {
     margin-bottom: auto;
 }
 
-.mobile-container__feedback {
-    margin-bottom: 30px;
+.mobile-container__contacts {
+    margin-bottom: 40px;
 
     @include respondTo('little') {
-    margin-bottom: 64px;
+        margin-bottom: 64px;
     }
+
+    @include respondTo('small') {
+        margin-bottom: 35px;
+        }
 }

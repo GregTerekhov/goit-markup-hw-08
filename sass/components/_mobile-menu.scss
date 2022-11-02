@@ -3,10 +3,14 @@
 }
 
 .mobile-menu__item:not(:last-child) {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 
   @include respondTo('little') {
     margin-bottom: 32px;
+  }
+
+  @include respondTo('small') {
+    margin-bottom: 25px;
   }
 }
 
@@ -19,14 +23,20 @@
       color: getColor('accent');
     }
 
-    @include respondTo('little') {
-      font-weight: 500;
+    @include respondTo('pre-little') {
+      font-weight: 700;
       font-size: 30px;
     }
 
-    @include respondTo('small') {
+    @include respondTo('little') {
+      font-weight: 500;
       font-size: 40px;
-    }    
+    }   
+
+    @include respondTo('small') {
+      font-weight: 400;
+      font-size: 30px;
+    } 
     
     &--current {
       color: getColor('accent');

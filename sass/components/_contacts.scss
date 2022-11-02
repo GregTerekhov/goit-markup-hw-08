@@ -1,0 +1,150 @@
+.contacts__list {
+    @extend %list;
+}
+
+.contacts__link {
+    @include link($display: inline-block);
+    @include fontType($weight: 400, $ls: 0.02em);
+    transition: color 250ms $timing-function;
+
+    &--header {
+        @include link($display: inline-block);
+        color: getColor('text-secondary');
+
+        @include hoFus {
+            color: getColor('accent');
+        }
+
+        @include respondTo('medium') {
+            @include centeredFlex($justify-content: flex-start);
+        }
+
+        @include respondTo('large') {
+            position: relative;
+            justify-content: center;
+            @include fontType($weight: 500, $size: 14px, $ls: 0.02em);
+            padding: 32px 0;
+
+            &::after {
+                @include pseudo();
+                bottom: -1px;
+                height: 4px;
+                background-color: getColor('accent');
+                border-radius: 2px;
+                transform: scaleX(0);
+                  
+                transition: transform 250ms $timing-function, background-color 250ms $timing-function;
+            }
+
+            &:hover::after, &:focus::after {
+                transform: scaleX(1);
+            }
+        }
+
+        &.header-mail {
+            font-weight: 400;
+            font-size: 25px;
+
+            @include respondTo('little') {
+                font-size: 28px;
+            }
+
+            @include respondTo('small') {
+                font-size: 20px;
+            }
+          
+            @include respondTo('medium') {
+                margin-bottom: 10px;
+                font-size: 12px;
+            }
+          
+            @include respondTo('large') {
+                margin-bottom: 0;
+                font-size: 14px;
+                text-align: center;
+            }
+        }
+    
+        &.header-tel {
+            font-weight: 400;
+            font-size: 25px;
+            color: getColor('accent');
+            margin-bottom: 30px;
+            
+            @include respondTo('little') {
+                font-weight: 500;
+                font-size: 34px;
+            }
+
+            @include respondTo('small') {
+                margin-bottom: 25px;
+                font-weight: 400;
+                font-size: 24px;
+            }
+    
+            @include respondTo('medium') {
+                color: getColor('text-secondary');
+                margin: 0;
+                font-size: 12px;
+    
+                @include hoFus {
+                    color: getColor('accent');
+                }
+            }
+    
+            @include respondTo('large') {
+                font-size: 14px;
+            }
+        }
+    }
+
+    &--footer {
+        @include link($display: inline-block, $color: getColor('text-footer-contacts'));
+        font-size: 14px;
+        line-height: 1.714;
+        letter-spacing: 0.03em;
+
+        @include respondTo('pre-little') {
+            text-align: center;
+        }
+
+        @include hoFus {
+            color: getColor('accent');
+        }
+
+        &.footer-map {
+            margin-bottom: 8px;
+            color: getColor('text-tertiary');
+
+            @include hoFus {
+                color: getColor('accent');
+            }
+    
+            @include respondTo('large') {
+                margin-bottom: 9px;
+            }
+        }
+    
+        &.footer-mail {
+            margin-bottom: 8px;
+    
+            @include respondTo('large') {
+                margin-bottom: 9px;
+            }
+        }
+    }
+}
+
+.contacts__icon {
+    display: none;
+  
+    @include respondTo('medium') {
+      display: inline;
+      fill: currentColor;
+      margin-right: 8px;
+    }
+  
+    @include respondTo('large') {
+      margin-right: 10px;
+    }
+  }
