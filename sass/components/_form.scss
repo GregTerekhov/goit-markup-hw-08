@@ -10,7 +10,9 @@
 }
 
 .form__panel-list {
-    @include flexList($flex-wrap: nowrap, $flex-direction: column);
+    @extend %list;
+    display: flex;
+    flex-direction: column;
     gap: 10px;
   
     width: 100%;
@@ -37,8 +39,7 @@
     width: 100%;
   
     @include borderStyle($color: getColor('border-modal-input'));
-  
-    transition: border 250ms $timing-function;
+    @include transition(border 250ms $timing-function);
 
     &:focus {
         border-color: getColor('accent');
@@ -52,7 +53,7 @@
     left: 12px;
     
     transform: translateY(-50%);
-    transition: fill 250ms $timing-function;
+    @include transition(fill 250ms $timing-function);
 
     .form__input:focus ~ & {
         fill: getColor('accent');
@@ -72,8 +73,7 @@
     resize: none;
     background-color: getColor('background-primary');
     @include borderStyle($color: getColor('border-modal-input'));
-  
-    transition: border 250ms $timing-function;
+    @include transition(border 250ms $timing-function);
 
     &:focus {
         border-color: getColor('accent');

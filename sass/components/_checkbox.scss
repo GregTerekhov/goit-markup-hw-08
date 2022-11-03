@@ -11,7 +11,7 @@
 }
 
 .checkbox__input {
-    @include appearance();
+    @extend %appearance;
 }
 
 .checkbox__icon {
@@ -19,8 +19,7 @@
     margin-right: 7px;
 
     @include borderStyle ($width: 2px, $color: getColor('border-checkbox'), $rad: 3px);
-    
-    transition: background-color 250ms $timing-function;
+    @include transition(background-color);
 
     .checkbox__input:checked + & {
         border: none;

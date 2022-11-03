@@ -1,3 +1,5 @@
+// Global mixins
+
 // Міксин центрування за флексом
 @mixin centeredFlex ($type: flex, $justify-content: center, $align-items: center) {
     display: $type;
@@ -5,11 +7,35 @@
     align-items: $align-items;
 }
 
+// Міксини позиціонування
+@mixin position($position, $args) {
+    @each $o in top right bottom left {
+      $i: index($args, $o);
+   
+      @if $i and $i + 1<= length($args) and type-of(nth($args, $i + 1)) == number  {
+        #{$o}: nth($args, $i + 1);
+      }
+    }
+    position: $position;
+  }
+   
+  @mixin absolute($args) {
+    @include position(absolute, $args);
+  }
+   
+  @mixin fixed($args) {
+    @include position(fixed, $args);
+  }
+   
+  @mixin relative($args) {
+    @include position(relative, $args);
+  }
+
 // Міксин псевдоелементів
-@mixin pseudo($display: block, $pos: absolute, $content: '', $width: 100%){
-    content: $content;
+@mixin pseudo($display: block, $width: 100%){
+    @include absolute(0);
+    content: '';
     display: $display;
-    position: $pos;
     width: $width;
 }
 
@@ -20,6 +46,15 @@
     display: $display;
 }
 
+// Міксин для transition
+@mixin transition($props...) {
+    @extend %transit-values;
+    transition-property: $props;
+    -moz-transition-property: $props;
+    -webkit-transition--moz-transition-property: $props;
+    -o-transition--moz-transition-property: $props;
+}
+
 // Міксин для іконок-посилань на соцмережі
 @mixin socialLinks($width: 44px, $height: 44px, $color, $background) {
     width: $width;
@@ -27,16 +62,8 @@
     color: $color;
     background-color: $background;
     border-radius: 50%;
-    transition: color 250ms $timing-function,
-    background-color 250ms $timing-function;
-}
-
-// Міксин для ховання елементів
-@mixin appearance($val: none) {
-    position: absolute;
-	-webkit-appearance: $val;
-	-moz-appearance: $val;
-	appearance: $val;
+    @include transition(color 250ms $timing-function,
+    background-color 250ms $timing-function)
 }
 
 // Міксин стилей шрифту

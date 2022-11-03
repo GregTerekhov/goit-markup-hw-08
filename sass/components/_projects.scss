@@ -5,8 +5,6 @@
     color: getColor('text-primary');
 
     @include respondTo('medium') {
-        @include centeredFlex();
-        flex-wrap: nowrap;
         gap: 8px;
         margin-bottom: 30px;
     }

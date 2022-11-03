@@ -9,17 +9,39 @@
 }
 
 .projects__category, .projects__name, .projects__label, .projects__cards, .projects__filters-list, .subscription__form, .subscription__call, .clients__list, .team__descr, .team__name, .team__list, .socials__list, .socials__call, .activity__label, .activity__list, .features__descr, .features__subtitle, .features__list, .form__input::placeholder,
-.form__textarea::placeholder, .form__input, .form__label, .form__panel-list, .form__call, .hero__overlay, .mobile-network__line, .mobile-network, .navigation__list, .title, .mobile-menu, .contacts__list {
+.form__textarea::placeholder, .form__input, .form__label, .form__call, .hero__overlay, .mobile-network__line, .mobile-network, .navigation__list, .title, .form__panel-list, .mobile-menu, .contacts__list {
   margin: 0;
   padding: 0;
 }
 
-.mobile-menu, .contacts__list {
+.form__panel-list, .mobile-menu, .contacts__list {
   list-style: none;
 }
 
-.subscription__icon, .clients__icon, .socials__icon, .modal-container__icon {
+.subscription__icon, .clients__icon, .team__icon, .socials__icon, .modal-container__icon {
   fill: currentColor;
+}
+
+.backdrop.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.clients__logo, .team__link, .socials__link, .checkbox__icon, .form__textarea, .form__icon, .form__input, .backdrop {
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition-duration: 250ms;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -moz-transition-duration: 250ms;
+  -moz-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.checkbox__input {
+  position: absolute;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 /*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
@@ -559,9 +581,9 @@ summary {
   color: #2196f3;
 }
 .navigation__link--current::after {
+  position: absolute;
   content: "";
   display: block;
-  position: absolute;
   width: 100%;
   bottom: -1px;
   height: 4px;
@@ -610,9 +632,9 @@ summary {
     padding: 32px 0;
   }
   .contacts__link--header::after {
+    position: absolute;
     content: "";
     display: block;
-    position: absolute;
     width: 100%;
     bottom: -1px;
     height: 4px;
@@ -857,9 +879,9 @@ summary {
     align-items: center;
   }
   .mobile-menu__link--current::after {
+    position: absolute;
     content: "";
     display: block;
-    position: absolute;
     width: 100%;
     bottom: -1px;
     height: 4px;
@@ -1010,12 +1032,10 @@ summary {
 .backdrop {
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.backdrop.is-hidden {
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
+  transition-property: opacity, visibility;
+  -moz-transition-property: opacity, visibility;
+  -webkit-transition--moz-transition-property: opacity, visibility;
+  -o-transition--moz-transition-property: opacity, visibility;
 }
 @media (max-width: 1199px) {
   .backdrop {
@@ -1094,11 +1114,7 @@ summary {
 
 .form__panel-list {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
   flex-direction: column;
-  list-style: none;
   gap: 10px;
   width: 100%;
 }
@@ -1133,7 +1149,10 @@ summary {
   border-style: solid;
   border-color: rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  -moz-transition-property: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition--moz-transition-property: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  -o-transition--moz-transition-property: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .form__input:focus {
   border-color: #2196f3;
@@ -1145,7 +1164,10 @@ summary {
   top: 50%;
   left: 12px;
   transform: translateY(-50%);
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  -moz-transition-property: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition--moz-transition-property: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  -o-transition--moz-transition-property: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .form__input:focus ~ .form__icon {
   fill: #2196f3;
@@ -1169,7 +1191,10 @@ summary {
   border-style: solid;
   border-color: rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  -moz-transition-property: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition--moz-transition-property: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  -o-transition--moz-transition-property: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .form__textarea:focus {
   border-color: #2196f3;
@@ -1231,13 +1256,6 @@ summary {
   }
 }
 
-.checkbox__input {
-  position: absolute;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
 .checkbox__icon {
   display: inline-block;
   margin-right: 7px;
@@ -1245,7 +1263,10 @@ summary {
   border-style: solid;
   border-color: #212121;
   border-radius: 3px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: background-color;
+  -moz-transition-property: background-color;
+  -webkit-transition--moz-transition-property: background-color;
+  -o-transition--moz-transition-property: background-color;
 }
 .checkbox__input:checked + .checkbox__icon {
   border: none;
@@ -1345,11 +1366,12 @@ summary {
   z-index: -1;
 }
 .activity__thumb::before {
+  position: absolute;
   content: "";
   display: block;
-  position: absolute;
   width: 100%;
   bottom: 0;
+  position: absolute;
   height: 70px;
   background-color: rgba(47, 48, 58, 0.8);
 }
@@ -1363,8 +1385,8 @@ summary {
   text-transform: uppercase;
   color: #ffffff;
   margin-bottom: 0;
-  position: absolute;
   bottom: 0;
+  position: absolute;
   padding: 27px 0;
 }
 
@@ -1404,7 +1426,10 @@ summary {
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  -moz-transition-property: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition--moz-transition-property: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  -o-transition--moz-transition-property: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .socials__link:hover, .socials__link:focus {
   background-color: #2196f3;
@@ -1486,7 +1511,10 @@ summary {
   color: #afb1b8;
   background-color: #ffffff;
   border-radius: 50%;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  -moz-transition-property: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition--moz-transition-property: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  -o-transition--moz-transition-property: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team__link:hover, .team__link:focus {
   color: #ffffff;
@@ -1535,8 +1563,10 @@ summary {
   border-color: #afb1b8;
   border-radius: 4px;
   color: #afb1b8;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: color, border-color;
+  -moz-transition-property: color, border-color;
+  -webkit-transition--moz-transition-property: color, border-color;
+  -o-transition--moz-transition-property: color, border-color;
 }
 .clients__logo:hover, .clients__logo:focus {
   border-color: #2196f3;
@@ -1706,10 +1736,6 @@ summary {
 }
 @media (min-width: 768px) {
   .projects__filters-list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
     gap: 8px;
     margin-bottom: 30px;
   }

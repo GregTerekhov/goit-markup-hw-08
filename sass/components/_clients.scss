@@ -26,8 +26,7 @@
   @include borderStyle ($color: getColor('link-nonactive'));
   color: getColor('link-nonactive');
   
-  transition: color 250ms $timing-function;
-  transition: border-color 250ms $timing-function;
+  @include transition(color, border-color);
 
   @include hoFus {
     border-color: getColor('accent');

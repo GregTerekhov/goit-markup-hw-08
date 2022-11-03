@@ -4,7 +4,7 @@
 }
 
 .activity__thumb {
-    position: relative;
+    @include relative(0);
     overflow: hidden;
   
     @include centeredFlex();
@@ -13,7 +13,7 @@
 
     &::before {
         @include pseudo();
-        bottom: 0;
+        @include absolute(bottom 0);
       
         height: 70px;
       
@@ -23,8 +23,7 @@
 
 .activity__label {
     @include textUpperCase($color: getColor('text-tertiary'), $mb: 0);
-    position: absolute;
-    bottom: 0;
+    @include absolute (bottom 0);
 
     padding: 27px 0;
 }
