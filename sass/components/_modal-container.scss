@@ -35,10 +35,6 @@
     @include centeredFlex();
     @include controlBtn($padding-y: 6px, $padding-x: 6px, $color: getColor('button-modal-close'), $bgc: getColor('background-primary'));
     @include borderStyle($color: getColor('border-button-close'), $rad: 50%);
-  
-    @include hoFus {
-        color: getColor('accent');
-    }
 }
 
 .modal-container__icon {

@@ -53,16 +53,10 @@
   &--current {
     @include relative(0);
     @include centeredFlex();
-    @extend %current-link;
+    color: getColor('accent');
 
     &::after {
-      @include pseudo();
-      @include absolute(bottom -1px);
-
-      height: 4px;
-
-      background-color: getColor('accent');
-      @include rounded(2px);
+      @include decorElement;
     }
   }
 }

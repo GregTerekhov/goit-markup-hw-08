@@ -12,11 +12,8 @@
     z-index: -1;
 
     &::before {
-        @include pseudo();
-        @include absolute(bottom 0 right 0);
-      
-        height: 70px;
-        background-color: getColor('background-activity-label');
+        @include decorElement ($height: 70px, $bgc: getColor('background-activity-label'));
+        bottom: 0;
     }
 }
 

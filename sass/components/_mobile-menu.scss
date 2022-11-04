@@ -34,6 +34,9 @@
     } 
     
     &--current {
-      @extend %current-link;
+      color: getColor('accent');
+      @include hoFus {
+        color: getColor('mobile-link-hover');
+    }
     }
 }

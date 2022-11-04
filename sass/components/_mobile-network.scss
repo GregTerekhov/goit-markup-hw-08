@@ -10,6 +10,9 @@
 .mobile-network__link {
     @include link();
     @include fontType($weight: 400, $size: 12px, $lh: 1.222, $ls: 0.02em, $color: getColor('accent'));
+    @include hoFus {
+        color: getColor('mobile-link-hover');
+    }
 
     @include respondTo('little') {
         font-weight: 500;
