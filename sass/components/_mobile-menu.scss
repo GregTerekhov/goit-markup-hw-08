@@ -17,7 +17,6 @@
 .mobile-menu__link {
     @include link($display: inline-block);
     @include fontType($weight: 400, $size: 26px, $ls: 0.02em);
-    transition: color 250ms $timing-function;
 
     @include hoFus {
       color: getColor('accent');
@@ -42,12 +41,12 @@
       color: getColor('accent');
 
       @include respondTo('large') {
-        position: relative;
+        @include relative(0);
         @include centeredFlex();
 
         &::after {
           @include pseudo();
-          bottom: -1px;
+          @include absolute(bottom -1px);
 
           height: 4px;
 

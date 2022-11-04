@@ -13,10 +13,9 @@
 
     &::before {
         @include pseudo();
-        @include absolute(bottom 0);
+        @include absolute(bottom 0 right 0);
       
         height: 70px;
-      
         background-color: getColor('background-activity-label');
     }
 }

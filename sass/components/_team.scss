@@ -50,21 +50,11 @@
 
 .team__descr {
     @extend %margin-padding-reset;
-    @include fontType($weight: 400, $align: center, $transform: capitalize);
+    @include fontType($weight: 400, $align: center, $transform: capitalize, $color: getColor('text-secondary'));
     margin-bottom: 16px;
-  
-    color: getColor('text-secondary');
-}
-
-.team__link {
-    @include socialLinks($color: getColor('link-nonactive'), $background: getColor('background-primary'));
-
-    @include hoFus {
-        color: getColor('social-icons-hover');
-    }
 }
 
 .team__icon {
     @extend %icon;
-    transition: fill 250ms $timing-function;
+    @include transition(fill);
 }

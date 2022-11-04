@@ -1,5 +1,6 @@
 .mobile-network {
-    @include flexList($flex-wrap: nowrap);
+    @extend %margin-padding-reset;
+    display: flex;
 }
 
 .mobile-network__item {
@@ -8,8 +9,7 @@
 
 .mobile-network__link {
     @include link();
-    @include fontType($weight: 400, $size: 12px, $lh: 1.222, $ls: 0.02em);
-    color: getColor('accent');
+    @include fontType($weight: 400, $size: 12px, $lh: 1.222, $ls: 0.02em, $color: getColor('accent'));
 
     @include respondTo('little') {
         font-weight: 500;

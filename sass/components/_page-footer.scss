@@ -58,3 +58,8 @@
         margin-right: 93px;
     }
 }
+
+.page-footer__link {
+    background-color: getColor('background-footer-network');
+    color: getColor('social-icons-white');
+}

@@ -20,15 +20,13 @@
 
 .form__label {
     @extend %margin-padding-reset;
-    @include fontType($weight: 400, $size: 12px, $ls: 0.01em);
+    @include fontType($weight: 400, $size: 12px, $ls: 0.01em, $color: getColor('text-secondary'));
     display: block;
     margin-bottom: 4px;
-  
-    color: getColor('text-secondary');
 }
 
 .form__field {
-    position: relative;
+    @include relative(0);
 }
 
 .form__input {
@@ -39,7 +37,7 @@
     width: 100%;
   
     @include borderStyle($color: getColor('border-modal-input'));
-    @include transition(border 250ms $timing-function);
+    @include transition(border);
 
     &:focus {
         border-color: getColor('accent');
@@ -48,12 +46,10 @@
 }
 
 .form__icon {
-    position: absolute;
-    top: 50%;
-    left: 12px;
+    @include absolute(top 50% left 12px);
     
     transform: translateY(-50%);
-    @include transition(fill 250ms $timing-function);
+    @include transition(fill);
 
     .form__input:focus ~ & {
         fill: getColor('accent');
@@ -73,7 +69,7 @@
     resize: none;
     background-color: getColor('background-primary');
     @include borderStyle($color: getColor('border-modal-input'));
-    @include transition(border 250ms $timing-function);
+    @include transition(border);
 
     &:focus {
         border-color: getColor('accent');
@@ -84,9 +80,7 @@
 .form__input::placeholder, 
 .form__textarea::placeholder {
     @extend %margin-padding-reset;
-    @include fontType($weight: 400, $size: 14px, $ls: 0.01em);
-  
-    color: getColor('placeholder-modal');
+    @include fontType($weight: 400, $size: 14px, $ls: 0.01em, $color: getColor('placeholder-modal'));
 }
 
 .form__checkbox {

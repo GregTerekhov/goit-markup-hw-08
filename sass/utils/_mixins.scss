@@ -1,79 +1,197 @@
-// Global mixins
+//Міксин, який виводить необхідну точку злому 
+@mixin respondTo($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+      @media #{inspect(map-get($breakpoints, $breakpoint))} {
+          @content;
+      }
+  }
+
+  @else {
+      @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. " + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+// Міксини позиціонування--------------------------------
+@mixin position($position, $args) {
+  @each $o in top right bottom left {
+    $i: index($args, $o);
+   
+    @if $i and $i + 1<= length($args) and type-of(nth($args, $i + 1)) == number  {
+      #{$o}: nth($args, $i + 1);
+    }
+  }
+  position: $position;
+}
+   
+@mixin absolute ($args) {
+  @include position(absolute, $args);
+}
+   
+@mixin fixed ($args) {
+  @include position(fixed, $args);
+}
+   
+@mixin relative ($args) {
+  @include position(relative, $args);
+}
+
+// Міксини центрування--------------------------------------
+// Міксин центрування за абсолютним позиціонуванням
+@mixin centeredAbsolute ($width, $height, $top: 50%, $left: 50%) {
+  position: absolute;
+  left: $left;
+  top: $top;
+  height: $height;
+  width: $width;
+}
+
+// Міксин центрування елементів, заголовків та підзаголовків
+@mixin centeredElement ($maxwidth, $min-height) {
+  @extend %margin-padding-reset;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $maxwidth;
+  min-height: $min-height;
+}
 
 // Міксин центрування за флексом
 @mixin centeredFlex ($type: flex, $justify-content: center, $align-items: center) {
-    display: $type;
-    justify-content: $justify-content;
-    align-items: $align-items;
+  display: $type;
+  justify-content: $justify-content;
+  align-items: $align-items;
 }
 
-// Міксини позиціонування
-@mixin position($position, $args) {
-    @each $o in top right bottom left {
-      $i: index($args, $o);
-   
-      @if $i and $i + 1<= length($args) and type-of(nth($args, $i + 1)) == number  {
-        #{$o}: nth($args, $i + 1);
-      }
-    }
-    position: $position;
-  }
-   
-  @mixin absolute($args) {
-    @include position(absolute, $args);
-  }
-   
-  @mixin fixed($args) {
-    @include position(fixed, $args);
-  }
-   
-  @mixin relative($args) {
-    @include position(relative, $args);
-  }
+// Міксин списків------------------------------------------
+// Міксин для списків у флекс-контейнері
+@mixin flexList ($flex-wrap: wrap, $flex-direction: row) {
+  @extend %margin-padding-reset;
+  @include centeredFlex();
+  flex-wrap: $flex-wrap;
+  flex-direction: $flex-direction;
+  list-style: none;
+}
 
+// Міксини псевдо-------------------------------------------
 // Міксин псевдоелементів
-@mixin pseudo($display: block, $width: 100%){
+@mixin pseudo ($display: block, $width: 100%){
     @include absolute(0);
     content: '';
     display: $display;
     width: $width;
 }
 
-// Міксин посилань
-@mixin link($display: block, $decor: none, $color: inherit) {
+// Міксин псевдокласів ховеру та фокусу
+@mixin hoFus {
+  &:hover,
+   &:focus {
+    @content;
+  }
+}
+
+// Міксини переходів та анімації-----------------------------
+// Міксин для transition
+@mixin transition ($props...) {
+  -webkit-transition-property: $props;    
+  -o-transition-property: $props;    
+  transition-property: $props;
+  -webkit-transition-duration: 250ms;
+  -o-transition-duration: 250ms;
+     transition-duration: 250ms; 
+-webkit-transition-timing-function: $timing-function; 
+  -o-transition-timing-function: $timing-function; 
+     transition-timing-function: $timing-function;
+}
+
+// // Міксин translate-opacity
+// @mixin transformOpacity () {
+//   transform: $transform;
+//   opacity: $opacity;
+// }
+
+// Міксини стилей посилань-----------------------------------
+// Загальний міксин посилань
+@mixin link ($display: block, $decor: none, $color: inherit) {
     text-decoration: $decor;
     color: $color;
     display: $display;
-}
-
-// Міксин для transition
-@mixin transition($props...) {
-    @extend %transit-values;
-    transition-property: $props;
-    -moz-transition-property: $props;
-    -webkit-transition--moz-transition-property: $props;
-    -o-transition--moz-transition-property: $props;
+    @include transition(color);
 }
 
 // Міксин для іконок-посилань на соцмережі
-@mixin socialLinks($width: 44px, $height: 44px, $color, $background) {
+@mixin socialLinks ($width: 44px, $height: 44px, $color, $background) {
     width: $width;
     height: $height;
     color: $color;
     background-color: $background;
     border-radius: 50%;
-    @include transition(color 250ms $timing-function,
-    background-color 250ms $timing-function)
+    @include transition(color, background-color)
 }
 
+// Міксини кнопок-------------------------------------------
+// Міксин розміру та стилей кнопки
+@mixin buttonSize ($weight, $padding-y, $padding-x, $font-size, $line-height, $bgc, $border-radius) {
+  font-weight: $weight;
+  padding: $padding-y $padding-x;
+  font-size: $font-size;
+  line-height: $line-height;
+  background-color: $bgc;
+  border: none;
+  cursor: pointer;
+  // Manually declare to provide an override to the browser default
+  @if $enable-rounded {
+    border-radius: $border-radius;
+  } @else {
+    border-radius: 0;
+  }
+}
+
+// Міксин стилей головної кнопки
+@mixin buttonPrimary ($width: 200px, $height: 50px, $letter-spacing: 0.06em, $color: getColor('text-tertiary')) {
+  @include buttonSize(700, 0, 0, 16px, 1.875, getColor('accent'), 4px);
+  width: $width;
+  height: $height;
+  letter-spacing: $letter-spacing;
+  color: $color;
+  text-align: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  @include transition(background-color, box-shadow);
+  @include hoFus() {
+    background-color: getColor('primary-button-hover')
+  }
+}
+
+// Міксин кнопок управління
+@mixin controlBtn ($width: auto, $height: auto, $padding-y: 0, $padding-x: 0, $color, $bgc: transparent, $border: none, $outline: none) {
+  width: $width;
+  height: $height;
+  padding: $padding-y $padding-x;
+  color: $color;
+  background-color: $bgc;
+  cursor: pointer;
+  border: $border;
+  outline: $outline;
+  @include transition(color);
+}
+
+// Міксини декоративних елементів----------------------------
+// Міксин стилей бордера
+@mixin borderStyle ($width: 1px, $style: solid, $color, $rad: 4px) {
+  border-width: $width;
+  border-style: $style;
+  border-color: $color;
+  border-radius: $rad;
+}
+
+// Міксини шрифтів--------------------------------------------
 // Міксин стилей шрифту
-@mixin fontType($weight: 700, $size: 16px, $lh: 1.172, $ls: 0.03em, $align: start, $transform: none) {
+@mixin fontType ($weight: 700, $size: 16px, $lh: 1.172, $ls: 0.03em, $align: start, $transform: none, $color: inherit) {
     font-weight: $weight;
     font-size: $size;
     line-height: $lh;
     letter-spacing: $ls;
     text-align: $align;
     text-transform: $transform;
+    color: $color;
 }
 
 // .activity__title, .clients__title, .team__title
@@ -118,94 +236,29 @@
 // .form__label, .form__input, .form__textarea, .form__input::placeholder, .form__textarea::placeholder
 // font-size: 12px; line-height: 1.172; letter-spacing: 0.01em;
 
-//Міксин, який виводить необхідну точку злому 
-@mixin respondTo($breakpoint) {
-    @if map-has-key($breakpoints, $breakpoint) {
-        @media #{inspect(map-get($breakpoints, $breakpoint))} {
-            @content;
-        }
-    }
-
-    @else {
-        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. " + "Available breakpoints are: #{map-keys($breakpoints)}.";
-    }
-}
-
-// Міксин стилей бордера
-@mixin borderStyle ($width: 1px, $style: solid, $color, $rad: 4px) {
-    border-width: $width;
-    border-style: $style;
-    border-color: $color;
-    border-radius: $rad;
-}
-
-// Міксин центрування елементів, заголовків та підзаголовків
-@mixin centeredElement($maxwidth, $min-height) {
-    @extend %margin-padding-reset;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: $maxwidth;
-    min-height: $min-height;
-}
-
-// Міксин центрування за абсолютним позиціонуванням
-@mixin centeredAbsolute($width, $height, $top: 50%, $left: 50%) {
-    position: absolute;
-    left: $left;
-    top: $top;
-    height: $height;
-    width: $width;
-}
-
-// Міксин ховера та фокуса
-@mixin hoFus {
-    &:hover,
-    &:focus {
-      @content;
-    }
-  }
-
-// Міксин розміру та стилей кнопки
-@mixin buttonSize($weight, $padding-y, $padding-x, $font-size, $line-height, $bgc, $border-radius) {
-    font-weight: $weight;
-    padding: $padding-y $padding-x;
-    font-size: $font-size;
-    line-height: $line-height;
-    background-color: $bgc;
-    border: none;
-    cursor: pointer;
-    // Manually declare to provide an override to the browser default
-    @if $enable-rounded {
-      border-radius: $border-radius;
-    } @else {
-      border-radius: 0;
-    }
-  }
-  // Стилі головної кнопки
-@mixin buttonPrimary($width: 200px, $height: 50px, $letter-spacing: 0.06em, $color: getColor('text-tertiary')) {
-    @include buttonSize(700, 0, 0, 16px, 1.875, getColor('accent'), 4px);
-    width: $width;
-    height: $height;
-    letter-spacing: $letter-spacing;
-    color: $color;
-    text-align: center;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-    transition: background-color 250ms $timing-function, box-shadow 250ms $timing-function;
-}
-
 // Міксин підзаголовків прописними літерами
-@mixin textUpperCase($color: inherit, $mb) {
+@mixin textUpperCase ($color: inherit, $mb) {
     @extend %margin-padding-reset;
     @include fontType($size: 14px, $transform: uppercase);
     color: $color;
     margin-bottom: $mb;
 }
 
-// Міксин для списків у флекс-контейнері
-@mixin flexList($flex-wrap: wrap, $flex-direction: row) {
-    @extend %margin-padding-reset;
-    @include centeredFlex();
-    flex-wrap: $flex-wrap;
-    flex-direction: $flex-direction;
-    list-style: none;
-}
+// box-shadow
+// .team__wrap {
+  // box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+// }
+
+// .modal-container {
+//   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+// }
+
+// .subscription__input {
+//   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+// }
+
+// .projects__cards-link {
+//   @include hoFus {
+//       box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+//   }
+// }

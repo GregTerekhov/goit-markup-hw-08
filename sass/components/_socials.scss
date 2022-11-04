@@ -14,10 +14,11 @@
 
 .socials__link {
     @include centeredFlex();
-    @include socialLinks($color: getColor('social-icons-hover'), $background: getColor('background-footer-network'));
+    @include socialLinks($color: getColor('link-nonactive'), $background: getColor('background-primary'));
 
     @include hoFus {
         background-color: getColor('accent');
+        color: getColor('social-icons-white')
     }
 }
 

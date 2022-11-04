@@ -18,15 +18,6 @@
   pointer-events: none;
 }
 
-%transit-values {
-  transition-duration: 250ms; 
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  -webkit-transition-duration: 250ms;
-  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); 
-  -moz-transition-duration: 250ms;
-  -moz-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 %appearance {
   position: absolute;
   -webkit-appearance: none;

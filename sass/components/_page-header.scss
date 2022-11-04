@@ -1,5 +1,5 @@
 .page-header {
-    border-bottom: 1px solid getColor('border-header');
+    @include borderStyle($color: getColor('border-header'), $rad: 0);
 }
 
 .page-header__navigation {

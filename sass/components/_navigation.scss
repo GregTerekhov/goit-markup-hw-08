@@ -4,27 +4,15 @@
 
 .navigation__button {
   @include centeredFlex();
-  width: 40px;
-  height: 40px;
-
-  color: getColor('button-mobile-menu');
-  background-color: transparent;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  transition: color 250ms $timing-function;
+  @include controlBtn($width: 40px, $height: 40px, $color: getColor('button-mobile-menu'));
 
   @include hoFus {
     fill: getColor('accent')
   }
 
   .mobile-container & {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    color: currentColor;
-
-    transition: color 250ms $timing-function;
+    @include absolute(top 10px right 15px);
+    fill: currentColor;
   }
 
   @include respondTo('medium') {
@@ -48,18 +36,12 @@
 
 .navigation__list {
     @include flexList($flex-wrap: nowrap);
+    gap: 50px;
     margin-right: 95px;
 
     @include respondTo('large') {
       margin-right: auto;    
     }
-}
-
-.navigation__item {
-    
-    & + & {
-        margin-left: 50px;
-  }
 }
 
 .navigation__link {
@@ -68,21 +50,19 @@
   padding-top: 32px;
   padding-bottom: 32px;
 
-  transition: color 250ms $timing-function;
-
   @include hoFus {
     color: getColor('accent');
   }
 
   &--current {
-    position: relative;
+    @include relative(0);
     @include centeredFlex();
 
     color: getColor('accent');
 
     &::after {
       @include pseudo();
-      bottom: -1px;
+      @include absolute(bottom -1px);
 
       height: 4px;
 

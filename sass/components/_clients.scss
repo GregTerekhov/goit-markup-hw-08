@@ -25,9 +25,7 @@
   
   @include borderStyle ($color: getColor('link-nonactive'));
   color: getColor('link-nonactive');
-  
   @include transition(color, border-color);
-
   @include hoFus {
     border-color: getColor('accent');
     color: getColor('accent');

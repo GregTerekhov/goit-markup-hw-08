@@ -5,11 +5,9 @@
 .contacts__link {
     @include link($display: inline-block);
     @include fontType($weight: 400, $ls: 0.02em);
-    @include transition(color);
 
     &--header {
-        @include link($display: inline-block);
-        color: getColor('text-secondary');
+        @include link($display: inline-block, $color: getColor('text-secondary'));
 
         @include hoFus {
             color: getColor('accent');
@@ -20,14 +18,14 @@
         }
 
         @include respondTo('large') {
-            position: relative;
+            @include relative(0);
             justify-content: center;
             @include fontType($weight: 500, $size: 14px, $ls: 0.02em);
             padding: 32px 0;
 
             &::after {
                 @include pseudo();
-                bottom: -1px;
+                @include absolute(bottom -1px);
                 height: 4px;
                 background-color: getColor('accent');
                 border-radius: 2px;

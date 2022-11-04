@@ -1,10 +1,8 @@
 .logo {
   @include link($display: inline-block);
-  @include fontType($size: 24px, $lh: 1.174);
+  @include fontType($size: 24px, $lh: 1.174, $color: getColor('accent'));
   font-family: $logo-font-stack;
   padding: 16px 0;
-
-  color: getColor('accent');
 
   @include respondTo('medium') {
     display: block;

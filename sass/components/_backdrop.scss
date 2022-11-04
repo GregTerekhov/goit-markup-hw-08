@@ -1,16 +1,12 @@
 .backdrop {
     background-color: getColor('background-modal-overlay');
-  
+    padding: 94px 15px;
     opacity: 1;
     @include transition(opacity, visibility);
+    overflow-y: scroll;
 
     &.is-hidden {
         @extend %is-hidden;
-    }
-
-    @include respondTo('pre-large') {
-        padding: 94px 15px;
-        overflow-y: scroll;
     }
 }
 

@@ -15,9 +15,7 @@
     }
 
     @include respondTo('medium') {
-        @include centeredFlex();
-        flex-direction: column;
-        flex-wrap: wrap;
+        @include flexList($flex-direction: column);
         gap: 20px;
     }
 

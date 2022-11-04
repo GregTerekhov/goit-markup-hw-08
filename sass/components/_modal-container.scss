@@ -8,7 +8,7 @@
     border-radius: 4px;
   
     transform: translateX(-50%) scale(1) rotate(0);
-    transition: transform 250ms $timing-function;
+    @include transition(transform);
 
     .backdrop.is-hidden & {
         transform: translate(-50%, -50%) scale(0.5) rotate(180deg);
@@ -31,23 +31,11 @@
 }
 
 .modal-container__button {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-  
+    @include absolute(top 8px right 8px);
     @include centeredFlex();
-  
-    padding: 6px;
-    cursor: pointer;
-    border: none;
-  
-    fill: getColor('button-modal-close');
-    background-color: getColor('background-primary');
-  
+    @include controlBtn($padding-x: 6px, $padding-y: 6px, $color: getColor('button-modal-close'), $bgc: getColor('background-primary'));
     @include borderStyle($color: getColor('border-button-close'), $rad: 50%);
   
-    transition: color 250ms $timing-function;
-
     @include hoFus {
         color: getColor('accent');
     }
