@@ -21,9 +21,7 @@
 
 .checkbox__text {
     @extend %margin-padding-reset;
-    @include fontType($weight: 400, $size: 12px);
-  
-    color: getColor('text-secondary');
+    @include fontType($weight: 400, $size: 12px, $color: getColor('text-secondary'));
 
     @include respondTo('large') {
         font-size: 14px;

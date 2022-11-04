@@ -24,18 +24,16 @@
 }
 
 .team__wrap {
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 0px 0px 4px 4px;
+    @include boxShadow(1);
+    @include rounded(0px 0px 4px 4px);
 }
 
 .team__meta {
     padding-top: 30px;
     padding-bottom: 24px;
-  
     background-color: getColor('background-primary');
   
-    border-radius: 0px 0px 4px 4px;
+    @include rounded(0px 0px 4px 4px);
 
     @include respondTo('large') {
         padding-bottom: 30px;

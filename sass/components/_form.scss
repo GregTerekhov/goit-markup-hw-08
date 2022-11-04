@@ -30,19 +30,8 @@
 }
 
 .form__input {
-    @extend %margin-padding-reset;
     @include fontType($weight: 400, $size: 14px, $ls: 0.01em);
-    display: block;
-    padding: 12px 12px 12px 42px;
-    width: 100%;
-  
-    @include borderStyle($color: getColor('border-modal-input'));
-    @include transition(border);
-
-    &:focus {
-        border-color: getColor('accent');
-        outline: none;
-    }
+    @include inputText(12px, 12px, 12px, 42px)
 }
 
 .form__icon {
@@ -58,23 +47,8 @@
 
 .form__textarea {
     @include fontType($weight: 400, $size: 14px, $ls: 0.01em);
-    display: block;
-
-    width: 100%;
+    @include inputText(12px, 16px, 12px, 16px);
     height: 120px;
-    padding: 12px 16px;
-  
-    font-family: inherit;
-  
-    resize: none;
-    background-color: getColor('background-primary');
-    @include borderStyle($color: getColor('border-modal-input'));
-    @include transition(border);
-
-    &:focus {
-        border-color: getColor('accent');
-        outline: none;
-    }
 }
 
 .form__input::placeholder, 

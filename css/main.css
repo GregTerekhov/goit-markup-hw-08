@@ -8,8 +8,8 @@
   padding: 0;
 }
 
-.projects__category, .projects__name, .projects__label, .projects__cards, .projects__filters-list, .subscription__form, .subscription__call, .clients__list, .team__descr, .team__name, .team__list, .socials__list, .socials__call, .activity__label, .activity__list, .features__descr, .features__subtitle, .features__list, .checkbox__text, .form__input::placeholder,
-.form__textarea::placeholder, .form__input, .form__label, .form__call, .hero__title, .hero__overlay, .mobile-network__line, .mobile-network, .mobile-container__wrap, .navigation__list, .title, .form__panel-list, .mobile-menu, .contacts__list {
+.projects__category, .projects__name, .projects__label, .projects__cards, .projects__filters-list, .subscription__input, .subscription__form, .subscription__call, .clients__list, .team__descr, .team__name, .team__list, .socials__list, .socials__call, .activity__label, .activity__list, .features__descr, .features__subtitle, .features__list, .checkbox__text, .form__input::placeholder,
+.form__textarea::placeholder, .form__textarea, .form__input, .form__label, .form__call, .hero__title, .hero__overlay, .mobile-network__line, .mobile-network, .mobile-container__wrap, .navigation__list, .title, .form__panel-list, .mobile-menu, .contacts__list {
   margin: 0;
   padding: 0;
 }
@@ -20,6 +20,10 @@
 
 .subscription__icon, .clients__icon, .team__icon, .socials__icon, .modal-container__icon {
   fill: currentColor;
+}
+
+.mobile-menu__link--current, .navigation__link--current {
+  color: #2196f3;
 }
 
 .backdrop.is-hidden {
@@ -465,6 +469,9 @@ summary {
   font-family: "Raleway", sans-serif;
   padding: 16px 0;
 }
+.logo:hover, .page-footer__logo:hover, .logo:focus, .page-footer__logo:focus {
+  color: #2196f3;
+}
 @media (min-width: 768px) {
   .logo, .page-footer__logo {
     display: block;
@@ -513,7 +520,7 @@ summary {
   top: 10px;
   right: 15px;
   position: absolute;
-  fill: currentColor;
+  color: currentColor;
 }
 @media (min-width: 768px) {
   .navigation__button {
@@ -580,7 +587,6 @@ summary {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #2196f3;
 }
 .navigation__link--current::after {
   position: absolute;
@@ -608,6 +614,9 @@ summary {
   text-align: start;
   text-transform: none;
   color: inherit;
+}
+.contacts__link:hover, .contacts__link:focus {
+  color: #2196f3;
 }
 .contacts__link--header {
   text-decoration: none;
@@ -731,13 +740,13 @@ summary {
   line-height: 1.714;
   letter-spacing: 0.03em;
 }
+.contacts__link--footer:hover, .contacts__link--footer:focus {
+  color: #2196f3;
+}
 @media (max-width: 479px) {
   .contacts__link--footer {
     text-align: center;
   }
-}
-.contacts__link--footer:hover, .contacts__link--footer:focus {
-  color: #2196f3;
 }
 .contacts__link--footer.footer-map {
   margin-bottom: 8px;
@@ -889,29 +898,6 @@ summary {
     font-size: 30px;
   }
 }
-.mobile-menu__link--current {
-  color: #2196f3;
-}
-@media (min-width: 1200px) {
-  .mobile-menu__link--current {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .mobile-menu__link--current::after {
-    position: absolute;
-    content: "";
-    display: block;
-    width: 100%;
-    bottom: -1px;
-    position: absolute;
-    height: 4px;
-    background-color: #2196f3;
-    border-radius: 2px;
-  }
-}
-
 .mobile-network {
   display: flex;
 }
@@ -935,6 +921,9 @@ summary {
   letter-spacing: 0.02em;
   text-align: start;
   text-transform: none;
+  color: #2196f3;
+}
+.mobile-network__link:hover, .mobile-network__link:focus {
   color: #2196f3;
 }
 @media (min-width: 480px) {
@@ -1169,8 +1158,12 @@ summary {
   text-transform: none;
   color: inherit;
   display: block;
-  padding: 12px 12px 12px 42px;
   width: 100%;
+  padding: 12px 12px 12px 42px;
+  font-family: inherit;
+  resize: none;
+  background-color: #ffffff;
+  color: inherit;
   border-width: 1px;
   border-style: solid;
   border-color: rgba(33, 33, 33, 0.2);
@@ -1207,11 +1200,11 @@ summary {
   color: inherit;
   display: block;
   width: 100%;
-  height: 120px;
-  padding: 12px 16px;
+  padding: 12px 16px 12px 16px;
   font-family: inherit;
   resize: none;
   background-color: #ffffff;
+  color: inherit;
   border-width: 1px;
   border-style: solid;
   border-color: rgba(33, 33, 33, 0.2);
@@ -1219,6 +1212,7 @@ summary {
   transition-property: border;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  height: 120px;
 }
 .form__textarea:focus {
   border-color: #2196f3;
@@ -1290,7 +1284,6 @@ summary {
   letter-spacing: 0.03em;
   text-align: start;
   text-transform: none;
-  color: inherit;
   color: #757575;
 }
 @media (min-width: 1200px) {
@@ -1307,6 +1300,9 @@ summary {
   transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.checkbox__contract-terms:hover, .checkbox__contract-terms:focus {
+  color: #2196f3;
 }
 
 .features__list {
@@ -1579,11 +1575,11 @@ summary {
   justify-content: center;
   align-items: center;
   padding: 16px 0;
+  color: #afb1b8;
   border-width: 1px;
   border-style: solid;
   border-color: #afb1b8;
   border-radius: 4px;
-  color: #afb1b8;
   transition-property: color, border-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1708,16 +1704,27 @@ summary {
 }
 
 .subscription__input {
-  padding: 15px;
+  display: block;
   width: 100%;
-  max-width: 450px;
-  color: #ffffff;
+  padding: 15px 15px 15px 15px;
+  font-family: inherit;
+  resize: none;
   background-color: #2f303a;
+  color: #ffffff;
   border-width: 1px;
   border-style: solid;
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  transition-property: border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  border-color: rgba(255, 255, 255, 0.3);
+  max-width: 450px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+}
+.subscription__input:focus {
+  border-color: #2196f3;
+  outline: none;
 }
 .subscription__input::-moz-placeholder {
   font-size: 16px;
@@ -1841,6 +1848,9 @@ summary {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .projects__cards-link:hover, .projects__cards-link:focus {
+  color: #2196f3;
+}
+.projects__cards-link:hover, .projects__cards-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
@@ -1918,7 +1928,7 @@ summary {
   letter-spacing: 0.06em;
   text-align: start;
   text-transform: capitalize;
-  color: inherit;
+  color: #212121;
   margin-bottom: 4px;
 }
 .projects__name--lowercase-letter {

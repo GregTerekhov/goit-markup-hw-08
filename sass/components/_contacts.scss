@@ -9,10 +9,6 @@
     &--header {
         @include link($display: inline-block, $color: getColor('text-secondary'));
 
-        @include hoFus {
-            color: getColor('accent');
-        }
-
         @include respondTo('medium') {
             @include centeredFlex($justify-content: flex-start);
         }
@@ -28,7 +24,7 @@
                 @include absolute(bottom -1px);
                 height: 4px;
                 background-color: getColor('accent');
-                border-radius: 2px;
+                @include rounded(2px);
                 transform: scaleX(0);
                   
                 @include transition(transform, background-color);
@@ -104,10 +100,6 @@
 
         @include respondTo('pre-little') {
             text-align: center;
-        }
-
-        @include hoFus {
-            color: getColor('accent');
         }
 
         &.footer-map {

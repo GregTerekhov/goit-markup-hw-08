@@ -12,7 +12,7 @@
 
   .mobile-container & {
     @include absolute(top 10px right 15px);
-    fill: currentColor;
+    color: currentColor;
   }
 
   @include respondTo('medium') {
@@ -50,15 +50,10 @@
   padding-top: 32px;
   padding-bottom: 32px;
 
-  @include hoFus {
-    color: getColor('accent');
-  }
-
   &--current {
     @include relative(0);
     @include centeredFlex();
-
-    color: getColor('accent');
+    @extend %current-link;
 
     &::after {
       @include pseudo();
@@ -67,7 +62,7 @@
       height: 4px;
 
       background-color: getColor('accent');
-      border-radius: 2px;
+      @include rounded(2px);
     }
   }
 }

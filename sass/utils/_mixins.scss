@@ -72,7 +72,7 @@
 }
 
 // Міксини псевдо-------------------------------------------
-// Міксин псевдоелементів
+// Загальний міксин псевдоелементів
 @mixin pseudo ($display: block, $width: 100%){
     @include absolute(0);
     content: '';
@@ -115,6 +115,9 @@
     color: $color;
     display: $display;
     @include transition(color);
+    @include hoFus() {
+      color: getColor('accent');
+    }
 }
 
 // Міксин для іконок-посилань на соцмережі
@@ -174,12 +177,53 @@
 }
 
 // Міксини декоративних елементів----------------------------
+// Міксин радіуса бордера
+@mixin rounded($radius...) {
+  -webkit-border-radius: $radius; 
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
 // Міксин стилей бордера
 @mixin borderStyle ($width: 1px, $style: solid, $color, $rad: 4px) {
   border-width: $width;
   border-style: $style;
   border-color: $color;
   border-radius: $rad;
+}
+
+// Міксин box-shadow
+@mixin boxShadow ($type) {
+  @if $type == 1 {
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  } @else if $type == 2 {
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+  } @else if $type == 3 {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+  } @else if $type == 4 {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  }
+}
+
+// Міксин псевдоелементів підкреслення
+
+// Міксини форм-----------------------------------------------
+// Міксин стилей input, textarea
+@mixin inputText($padding-t, $padding-r, $padding-b, $padding-l, $bgc: getColor('background-primary'), $color: inherit) {
+  @extend %margin-padding-reset;
+  display: block;
+  width: 100%;
+  padding: $padding-t $padding-r $padding-b $padding-l;
+  font-family: inherit;
+  resize: none;
+  background-color: $bgc;
+  color: $color;
+  @include borderStyle($color: getColor('border-modal-input'));
+  @include transition(border);
+  &:focus {
+    border-color: getColor('accent');
+    outline: none;
+  }
 }
 
 // Міксини шрифтів--------------------------------------------
@@ -244,21 +288,16 @@
     margin-bottom: $mb;
 }
 
-// box-shadow
-// .team__wrap {
-  // box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-// }
-
-// .modal-container {
-//   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-// }
-
-// .subscription__input {
-//   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
-// }
-
-// .projects__cards-link {
-//   @include hoFus {
-//       box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-//   }
-// }
+/// Mixin to prefix a property
+/// @author Kitty Giraudel
+/// @param {String} $property - Property name
+/// @param {*} $value - Property value
+/// @param {List} $prefixes (()) - List of prefixes to print
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+ 
+  // Output standard non-prefixed declaration
+  #{$property}: $value;
+}

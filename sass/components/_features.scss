@@ -30,7 +30,7 @@
     text-align: center;
 
     background-color: getColor('background-tertiary');
-    border-radius: 4px;
+    @include rounded(4px);
 }
 
 .features__subtitle {

@@ -18,10 +18,6 @@
     @include link($display: inline-block);
     @include fontType($weight: 400, $size: 26px, $ls: 0.02em);
 
-    @include hoFus {
-      color: getColor('accent');
-    }
-
     @include respondTo('pre-little') {
       font-weight: 700;
       font-size: 30px;
@@ -38,21 +34,6 @@
     } 
     
     &--current {
-      color: getColor('accent');
-
-      @include respondTo('large') {
-        @include relative(0);
-        @include centeredFlex();
-
-        &::after {
-          @include pseudo();
-          @include absolute(bottom -1px);
-
-          height: 4px;
-
-          background-color: getColor('accent');
-          border-radius: 2px;
-        }
-      }
+      @extend %current-link;
     }
 }

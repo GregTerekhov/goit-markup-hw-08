@@ -23,8 +23,7 @@
     @include hoFus {
         color: getColor('text-tertiary');
         background-color: getColor('accent');
-        box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-          0px 2px 2px rgba(0, 0, 0, 0.12);
+        @include boxShadow(2);
     }
 
     &--current {
@@ -61,7 +60,7 @@
     @include link();
     @include transition(box-shadow);
     @include hoFus {
-        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+        @include boxShadow(3);
     }
 }
 
@@ -122,7 +121,7 @@
 
 .projects__name {
     @extend %margin-padding-reset;
-    @include fontType($size: 18px, $lh: 2, $ls: 0.06em, $transform: capitalize);
+    @include fontType($size: 18px, $lh: 2, $ls: 0.06em, $transform: capitalize, $color: getColor('text-primary'));
 
     margin-bottom: 4px;
 
