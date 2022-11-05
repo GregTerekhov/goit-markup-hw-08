@@ -11,6 +11,23 @@
   }
 }
 
+/// Mixin to prefix several properties at once
+/// @author Kitty Giraudel
+/// @param {Map} $declarations - Declarations to prefix
+/// @param {List} $prefixes (()) - List of prefixes to print
+@mixin prefix($declarations, $prefixes: ()) {
+  @each $property, $value in $declarations {
+    @each $prefix in $prefixes {
+      #{'-' + $prefix + '-' + $property}: $value;
+    }
+
+    // Output standard non-prefixed declaration
+    #{$property}: $value;
+  }
+}
+
+
+
 // Міксини позиціонування--------------------------------
 @mixin position($position, $args) {
   @each $o in top right bottom left {
@@ -307,20 +324,6 @@
     @include fontType($size: 14px, $transform: uppercase);
     color: $color;
     margin-bottom: $mb;
-}
-
-/// Mixin to prefix a property
-/// @author Kitty Giraudel
-/// @param {String} $property - Property name
-/// @param {*} $value - Property value
-/// @param {List} $prefixes (()) - List of prefixes to print
-@mixin prefix($property, $value, $prefixes: ()) {
-  @each $prefix in $prefixes {
-    #{'-' + $prefix + '-' + $property}: $value;
-  }
- 
-  // Output standard non-prefixed declaration
-  #{$property}: $value;
 }
 
 // // Міксин калькуляції розмірів контенту
