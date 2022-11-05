@@ -15,7 +15,7 @@
 }
 
 .mobile-menu__link {
-    @include link($display: inline-block);
+    @include link();
     @include fontType($weight: 400, $size: 26px, $ls: 0.02em);
 
     @include respondTo('pre-little') {

@@ -3,12 +3,12 @@
 }
 
 .contacts__link {
-    @include link($display: inline-block);
+    @include link();
     @include fontType($weight: 400, $ls: 0.02em);
 
     &--header {
         position: relative;
-        @include link($display: inline-block, $color: getColor('text-secondary'));
+        @include link($color: getColor('text-secondary'));
 
         @include respondTo('medium') {
             @include centeredFlex($justify-content: flex-start);
@@ -133,7 +133,7 @@
     display: none;
   
     @include respondTo('medium') {
-        display: inline;
+        display: block;
         fill: currentColor;
         @include margin(null, 8px, null, null);
     }

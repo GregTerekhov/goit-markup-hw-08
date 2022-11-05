@@ -1,13 +1,17 @@
 .mobile-container {
-    @include centeredAbsolute($width: 100vw, $height: 100vh, $top: 0, $left: 0);
+    @include centeredAbsolute($position: fixed, $width: 100vw, $height: 100vh, $top: 0, $left: 0);
 
     background-color: getColor('background-primary');
     z-index: 999;
 
+    @extend %is-hidden;
     transform: translateX(100%);
-    @include transition(transform);
+    @include transition(transform, opacity, visibility);
 
     &.is-open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: initial;
         transform: translateX(0); 
     }
 
@@ -17,10 +21,9 @@
 }
 
 .mobile-container__wrap {
-    position: relative;
+    @include relative(0);
     @include centeredElement($maxwidth: 480px, $min-height: 100%);
     @include centeredFlex($align-items: normal);
-    // @include relative(0);
     @include padding(48px, 40px, 48px, 40px);
     flex-direction: column;
 

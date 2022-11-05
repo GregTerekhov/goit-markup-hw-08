@@ -18,13 +18,13 @@
         }
     }
 
-    // @include respondTo('pre-little') {
-    //     min-width: 320px;
-    // }
+    @include respondTo('pre-little') {
+        width: 320px;
+    }
 
     @include respondTo('large') {
         width: 528px;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%) scale(1) rotate(0);
     }
 }
 

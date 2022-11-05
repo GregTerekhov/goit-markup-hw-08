@@ -33,7 +33,7 @@
 
 .page-footer__logo {
     @extend .logo;
-    display: inline-block;
+    display: block;
     @include margin(null, null, 20px, null);
 }
 
