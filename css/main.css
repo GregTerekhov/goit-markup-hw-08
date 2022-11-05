@@ -295,7 +295,7 @@ summary {
 }
 @media (min-width: 480px) {
   .container {
-    min-width: 480px;
+    width: 480px;
   }
 }
 @media (min-width: 768px) {
@@ -1013,7 +1013,6 @@ summary {
 @media (min-width: 480px) {
   .hero__overlay {
     max-width: 768px;
-    min-height: 400px;
     background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../../images/tablet/hero-img/tablet-hero.jpg");
   }
 }

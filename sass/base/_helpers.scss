@@ -3,7 +3,7 @@
     @include padding (null, 15px, null, 15px);
 
     @include respondTo('little') {
-      min-width: 480px;
+      width: 480px;
     }
 
     @include respondTo('medium') {

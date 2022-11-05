@@ -33,7 +33,6 @@
 
     @include respondTo('little') {
             max-width: 768px;
-            min-height: 400px;
             background-image: linear-gradient(
         getColor('gradient-hero'), 
         getColor('gradient-hero')), url('../../images/tablet/hero-img/tablet-hero.jpg');
