@@ -9,24 +9,24 @@
 
     @include respondTo('medium') {
         @include centeredFlex($justify-content: space-between, $align-items: baseline);
-        margin-bottom: 60px;
+        @include margin(null, null, 60px, null);
     }
 
     @include respondTo('large') {
-        margin-bottom: 0;
+        @include margin(null, null, 0, null);
     }
 }
 
 .page-footer__wrap {
     text-align: center;
-    margin-bottom: 60px;
+    @include margin(null, null, 60px, null);
 
     @include respondTo('medium') {
-        margin-bottom: 0;
+        @include margin(null, null, 0, null);
     }
 
     @include respondTo('large') {
-        margin-right: 70px;
+        @include margin(null, 70px, null, null);
         text-align: left;
     }
 }
@@ -34,7 +34,7 @@
 .page-footer__logo {
     @extend .logo;
     display: inline-block;
-    margin-bottom: 20px;
+    @include margin(null, null, 20px, null);
 }
 
 .page-footer__contacts {
@@ -48,14 +48,14 @@
 }
 
 .page-footer__socials {
-    margin-bottom: 60px;
+    @include margin(null, null, 60px, null);
 
     @include respondTo('medium') {
-        margin-bottom: 0;
+        @include margin(null, null, 0, null);
     }
     
     @include respondTo('large') {
-        margin-right: 93px;
+        @include margin(null, 93px, null, null);
     }
 }
 

@@ -83,7 +83,7 @@
 .hero__title {
     @include centeredElement($maxwidth: 360px, $min-height: max-content);
     @include fontType($weight: 900, $size: 26px, $lh: 1.615, $ls: 0.06em, $align: center, $transform: uppercase, $color: getColor('text-tertiary'));
-    margin-bottom: 30px;
+    @include margin(null, null, 30px, null);
 
     @include respondTo('large') {
         max-width: 696px;

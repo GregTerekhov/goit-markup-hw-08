@@ -1,5 +1,5 @@
 .mobile-container {
-    @include centeredAbsolute(100vw, 100vh, 0, 0);
+    @include centeredAbsolute($width: 100vw, $height: 100vh, $top: 0, $left: 0);
 
     background-color: getColor('background-primary');
     z-index: 999;
@@ -21,30 +21,30 @@
     @include centeredElement($maxwidth: 480px, $min-height: 100%);
     @include centeredFlex($align-items: normal);
     // @include relative(0);
-    padding: 48px 40px;
+    @include padding(48px, 40px, 48px, 40px);
     flex-direction: column;
 
     @include respondTo('pre-little') {
-        padding: 55px 30px;
+        @include padding(55px, 30px, 55px, 30px);
     }
 
     @include respondTo('small') {
-        padding: 30px 15px;
+        @include padding(30px, 15px, 30px, 15px);
     }
 }
 
 .mobile-container__mobile-menu {
-    margin-bottom: auto;
+    @include margin(null, null, auto, null);
 }
 
 .mobile-container__contacts {
-    margin-bottom: 40px;
+    @include margin(null, null, 40px, null);
 
     @include respondTo('little') {
-        margin-bottom: 64px;
+        @include margin(null, null, 64px, null);
     }
 
     @include respondTo('small') {
-        margin-bottom: 35px;
-        }
+        @include margin(null, null, 35px, null);
+    }
 }

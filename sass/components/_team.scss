@@ -29,8 +29,7 @@
 }
 
 .team__meta {
-    padding-top: 30px;
-    padding-bottom: 24px;
+    @include padding(30px, null, 24px, null);
     background-color: getColor('background-primary');
   
     @include rounded(0px 0px 4px 4px);
@@ -43,13 +42,13 @@
 .team__name {
     @extend %margin-padding-reset;
     @include fontType($weight: 500, $align: center);
-    margin-bottom: 10px;
+    @include margin(null, null, 10px, null);
 }
 
 .team__descr {
     @extend %margin-padding-reset;
     @include fontType($weight: 400, $align: center, $transform: capitalize, $color: getColor('text-secondary'));
-    margin-bottom: 16px;
+    @include margin(null, null, 16px, null);
 }
 
 .team__icon {

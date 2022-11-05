@@ -25,10 +25,10 @@
 
   @include respondTo('medium') {
     @include centeredFlex();
-    margin-left: auto;
+    @include margin(null, null, null, auto);
 
     @include respondTo('large') {
-      margin-left: 93px;
+      @include margin(null, null, null, 93px);
       flex-grow: 1;
     }
   }
@@ -37,18 +37,17 @@
 .navigation__list {
     @include flexList($flex-wrap: nowrap);
     gap: 50px;
-    margin-right: 95px;
+    @include margin(null, 95px, null, null);
 
     @include respondTo('large') {
-      margin-right: auto;    
+      @include margin(null, auto, null, null);  
     }
 }
 
 .navigation__link {
   @include link();
   @include fontType($weight: 500, $size: 14px, $ls: 0.02em);
-  padding-top: 32px;
-  padding-bottom: 32px;
+  @include padding(32px, null, 32px, null);
 
   &--current {
     @include relative(0);

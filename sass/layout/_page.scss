@@ -1,13 +1,10 @@
   .page__backdrop {
-    @include fixed(top 0 left 0);
-    width: 100%;
-    height: 100%;
+    @include centeredAbsolute($position: fixed, $width: 100%,
+    $height: 100%, $top: 0, $left: 0);
   }
 
   .page__modal-container {
-    position: absolute;
-    top: 93px;
-    left: 50%;
+    @include absolute(top 93px left 50%);
 
     @include respondTo('large') {
       top: 50%;

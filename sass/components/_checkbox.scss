@@ -8,7 +8,7 @@
 
 .checkbox__icon {
     display: inline-block;
-    margin-right: 7px;
+    @include margin(null, 7px, null, null);
 
     @include borderStyle($width: 2px, $color: getColor('border-checkbox'), $rad: 3px);
     @include transition(background-color);

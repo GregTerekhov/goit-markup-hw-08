@@ -21,9 +21,8 @@
 
 .clients__logo {
   @include centeredFlex();
-  padding: 16px 0;
+  @include padding(16px, null, 16px, null);
   color: getColor('link-nonactive');
-  
   @include borderStyle ($color: getColor('link-nonactive'));
   @include transition(color, border-color);
   @include hoFus {

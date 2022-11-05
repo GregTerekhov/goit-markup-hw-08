@@ -20,6 +20,5 @@
 .activity__label {
     @include textUpperCase($color: getColor('text-tertiary'), $mb: 0);
     @include absolute (bottom 0);
-
-    padding: 27px 0;
+    @include padding(27px, null, 27px, null);
 }

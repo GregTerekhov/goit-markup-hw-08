@@ -18,7 +18,7 @@
             @include relative(0);
             justify-content: center;
             @include fontType($weight: 500, $size: 14px, $ls: 0.02em);
-            padding: 32px 0;
+            @include padding(32px, null, 32px, null);
 
             &::after {
                 @include decorElement;
@@ -46,12 +46,15 @@
           
             @include respondTo('medium') {
                 color: getColor('text-secondary');
-                margin-bottom: 10px;
+                @include margin(null, null, 10px, null);
                 font-size: 12px;
+                @include hoFus() {
+                    color: getColor('accent');
+                }
             }
           
             @include respondTo('large') {
-                margin-bottom: 0;
+                @include margin(null, null, 0, null);
                 font-size: 14px;
                 text-align: center;
             }
@@ -61,7 +64,7 @@
             font-weight: 400;
             font-size: 25px;
             color: getColor('accent');
-            margin-bottom: 30px;
+            @include margin(null, null, 30px, null);
             @include hoFus {
                 color: getColor('mobile-link-hover');
             }
@@ -72,7 +75,7 @@
             }
 
             @include respondTo('small') {
-                margin-bottom: 25px;
+                @include margin(null, null, 25px, null);
                 font-weight: 400;
                 font-size: 24px;
             }
@@ -104,7 +107,7 @@
         }
 
         &.footer-map {
-            margin-bottom: 8px;
+            @include margin(null, null, 8px, null);
             color: getColor('text-tertiary');
 
             @include hoFus {
@@ -112,15 +115,15 @@
             }
     
             @include respondTo('large') {
-                margin-bottom: 9px;
+                @include margin(null, null, 9px, null);
             }
         }
     
         &.footer-mail {
-            margin-bottom: 8px;
+            @include margin(null, null, 8px, null);
     
             @include respondTo('large') {
-                margin-bottom: 9px;
+                @include margin(null, null, 9px, null);
             }
         }
     }
@@ -132,10 +135,10 @@
     @include respondTo('medium') {
         display: inline;
         fill: currentColor;
-        margin-right: 8px;
+        @include margin(null, 8px, null, null);
     }
   
     @include respondTo('large') {
-        margin-right: 10px;
+        @include margin(null, 10px, null, null);
     }
 }

@@ -1,6 +1,6 @@
 .modal-container {
     width: 450px;
-    padding: 40px;
+    @include padding(40px, 40px, 40px, 40px);
   
     background-color: getColor('background-primary');
   
@@ -11,16 +11,19 @@
     @include transition(transform);
 
     .backdrop.is-hidden & {
-        transform: translate(-50%, -50%) scale(0.5) rotate(180deg);
+        transform: translateX(-50%) scale(0.5) rotate(180deg);
+
+        @include respondTo('large') {
+            transform: translate(-50%, -50%) scale(0.5) rotate(180deg);
+        }
     }
 
-    @include respondTo('pre-little') {
-        width: 320px;
-    }
+    // @include respondTo('pre-little') {
+    //     min-width: 320px;
+    // }
 
     @include respondTo('large') {
         width: 528px;
-
         transform: translate(-50%, -50%);
     }
 }

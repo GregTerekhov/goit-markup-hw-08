@@ -1,11 +1,9 @@
 .container {
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    @include margin (null, auto, null, auto);
+    @include padding (null, 15px, null, 15px);
 
     @include respondTo('little') {
-      width: 480px;
+      min-width: 480px;
     }
 
     @include respondTo('medium') {

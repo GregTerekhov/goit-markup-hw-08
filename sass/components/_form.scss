@@ -1,8 +1,7 @@
 .form__call {
     @extend %margin-padding-reset;
     @include fontType($size: 20px, $align: center);
-  
-    margin-bottom: 12px;
+    @include margin(null, null, 12px, null);
 
     @include respondTo('large') {
         line-height: 1.5;
@@ -22,7 +21,7 @@
     @extend %margin-padding-reset;
     @include fontType($weight: 400, $size: 12px, $ls: 0.01em, $color: getColor('text-secondary'));
     display: block;
-    margin-bottom: 4px;
+    @include margin(null, null, 4px, null);
 }
 
 .form__field {
@@ -58,6 +57,5 @@
 }
 
 .form__checkbox {
-    margin-top: 20px;
-    margin-bottom: 30px;
+    @include margin(20px, null, 30px, null);
 }

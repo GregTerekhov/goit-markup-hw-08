@@ -27,9 +27,9 @@
 }
 
 .subscription__input {
+    max-width: 450px;  
     @include inputText(15px, 15px, 15px, 15px, getColor('background-secondary'), getColor('text-tertiary'));
     border-color: getColor('border-subscr-input');
-    max-width: 450px;    
     @include boxShadow(4);
 
     &::placeholder {
@@ -40,16 +40,16 @@
     }
 
     @include respondTo('pre-medium') {
-        margin-bottom: 20px;
+        @include margin(null, null, 20px, null);
     }
 
     @include respondTo('large') {
         width: 358px;
-        margin-bottom: 0;
+        @include margin(null, null, 0, null);
     }
 }
 
 .subscription__icon {
     @extend %icon;
-    margin-left: 10px;
+    @include margin(null, null, null, 10px);
 }

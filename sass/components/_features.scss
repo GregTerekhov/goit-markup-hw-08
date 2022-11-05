@@ -1,20 +1,26 @@
 .features__list {
-    @include flexList($flex-wrap: nowrap, $flex-direction: column);
-    align-items: flex-start;
-    gap: 30px;
+    @extend %list;
 
     @include respondTo('medium') {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
+        @include flexList();
+        gap: 30px;
 
-    @include respondTo('large') {
-        flex-wrap: nowrap;    
+        @include respondTo('large') {
+            align-items: flex-start;;
+        }
     }
 }
 
 .features__item {
-    
+
+    & + & {
+        @include margin(30px, null, null, null);
+
+        @include respondTo('medium') {
+            margin: 0;
+        }
+    }
+
     @include respondTo('medium') {
         width: calc((100% - 30px) / 2);
     }
@@ -25,8 +31,8 @@
 }
 
 .features__thumb {
-    padding: 25px 0;
-    margin-bottom: 30px;
+    @include padding(25px, null, 25px, null);
+    @include margin(null, null, 30px, null);
     text-align: center;
 
     background-color: getColor('background-tertiary');

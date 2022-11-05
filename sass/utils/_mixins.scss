@@ -37,8 +37,8 @@
 
 // Міксини центрування--------------------------------------
 // Міксин центрування за абсолютним позиціонуванням
-@mixin centeredAbsolute ($width, $height, $top: 50%, $left: 50%) {
-  position: absolute;
+@mixin centeredAbsolute ($position: absolute, $width, $height, $top: 50%, $left: 50%) {
+  position: $position;
   left: $left;
   top: $top;
   height: $height;
@@ -101,12 +101,6 @@
   -o-transition-timing-function: $timing-function; 
      transition-timing-function: $timing-function;
 }
-
-// // Міксин translate-opacity
-// @mixin transformOpacity () {
-//   transform: $transform;
-//   opacity: $opacity;
-// }
 
 // Міксини стилей посилань-----------------------------------
 // Загальний міксин посилань
@@ -236,6 +230,23 @@
   }
 }
 
+// Міксини геометрії------------------------------------------
+// Міксин паддінгів
+@mixin padding ($top, $right, $bottom, $left) {
+  padding-top: $top;
+  padding-right: $right;
+  padding-bottom: $bottom;
+  padding-left: $left;
+}
+
+// Міксин марджинів
+@mixin margin ($top, $right, $bottom, $left) {
+  margin-top: $top;
+  margin-right: $right;
+  margin-bottom: $bottom;
+  margin-left: $left;
+}
+
 // Міксини шрифтів--------------------------------------------
 // Міксин стилей шрифту
 @mixin fontType ($weight: 700, $size: 16px, $lh: 1.172, $ls: 0.03em, $align: start, $transform: none, $color: inherit) {
@@ -311,3 +322,14 @@
   // Output standard non-prefixed declaration
   #{$property}: $value;
 }
+
+// // Міксин калькуляції розмірів контенту
+// @mixin calcLength ($property, $expression...){
+//   #{$property}: calc(#{$expression});
+// }
+
+// // Міксин translate-opacity
+// @mixin transformOpacity () {
+//   transform: $transform;
+//   opacity: $opacity;
+// }
