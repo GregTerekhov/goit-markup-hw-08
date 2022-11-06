@@ -34,7 +34,12 @@
 .page-footer__logo {
     @extend .logo;
     display: block;
+    padding: 0;
     @include margin(null, null, 20px, null);
+
+    @include respondTo('pre-large') {
+        text-align: center;
+    }
 }
 
 .page-footer__contacts {

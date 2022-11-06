@@ -8,14 +8,14 @@
 }
 
 .clients__item {
-  width: calc((100% - 30px) / 2);
+  @include listLayout(2);
 
   @include respondTo('medium') {
-    width: calc((100% - 60px) / 3);
+    @include listLayout(3);
   }
 
   @include respondTo('large') {
-    width: calc((100% - 90px) / 4);
+    @include listLayout(4);
   }
 }
 

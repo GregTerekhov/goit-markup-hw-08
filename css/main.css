@@ -624,7 +624,6 @@ summary {
   color: #2196f3;
 }
 .contacts__link--header {
-  position: relative;
   text-decoration: none;
   color: #757575;
   display: block;
@@ -746,7 +745,7 @@ summary {
 .contacts__link--footer {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.6);
-  display: inline-block;
+  display: block;
   transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -757,7 +756,7 @@ summary {
 .contacts__link--footer:hover, .contacts__link--footer:focus {
   color: #2196f3;
 }
-@media (max-width: 479px) {
+@media (max-width: 1199px) {
   .contacts__link--footer {
     text-align: center;
   }
@@ -1680,7 +1679,13 @@ summary {
 
 .page-footer__logo {
   display: block;
+  padding: 0;
   margin-bottom: 20px;
+}
+@media (max-width: 1199px) {
+  .page-footer__logo {
+    text-align: center;
+  }
 }
 
 .page-footer__contacts {

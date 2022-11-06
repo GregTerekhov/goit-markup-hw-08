@@ -11,28 +11,6 @@
   }
 }
 
-// // Міксини вендорних префіксів----------------------------
-// /// Міксин розстановки вендорних префіксів
-// /// @author Kitty Giraudel
-// /// @param {Map} $declarations - Declarations to prefix
-// /// @param {List} $prefixes (()) - List of prefixes to print
-// @mixin prefix($declarations, $prefixes: ()) {
-//   @each $property, $value in $declarations {
-//     @each $prefix in $prefixes {
-//       #{'-' + $prefix + '-' + $property}: $value;
-//     }
-
-//     // Output standard non-prefixed declaration
-//     #{$property}: $value;
-//   }
-// }
-// // Міксин префіксів трансформ
-// @mixin transform($value) { 
-//   @include prefix(transform, $value, webkit ms moz); 
-// } 
-
-
-
 // Міксини позиціонування--------------------------------
 @mixin position($position, $args) {
   @each $o in top right bottom left {
@@ -84,6 +62,12 @@
 }
 
 // Міксин списків------------------------------------------
+// Міксин калькуляції розміщення елементів в списку
+// Параметр {$numberOfElement} визначає необхідну кількість елементів в рядку
+@mixin listLayout($numberOfElement) {
+  width: calc((100% - 30px * ($numberOfElement - 1)) / $numberOfElement);
+}
+
 // Міксин для списків у флекс-контейнері
 @mixin flexList ($flex-wrap: wrap, $flex-direction: row) {
   @extend %margin-padding-reset;
@@ -195,7 +179,7 @@
   }
 }
 
-// Міксини декоративних елементів----------------------------
+// Міксини декоративних елементів-------------------------------
 // Міксин радіуса бордера
 @mixin rounded($radius...) {
   -webkit-border-radius: $radius; 
@@ -331,13 +315,30 @@
     margin-bottom: $mb;
 }
 
-// // Міксин калькуляції розмірів контенту
-// @mixin calcLength ($property, $expression...){
-//   #{$property}: calc(#{$expression});
-// }
-
 // // Міксин translate-opacity
 // @mixin transformOpacity () {
 //   transform: $transform;
 //   opacity: $opacity;
 // }
+
+
+// // // Міксини вендорних префіксів----------------------------
+// /// Міксин розстановки вендорних префіксів
+// /// @author Kitty Giraudel
+// /// @param {Map} $declarations - Declarations to prefix
+// /// @param {List} $prefixes (()) - List of prefixes to print
+// @mixin prefix($declarations, $prefixes: ()) {
+//   @each $property, $value in $declarations {
+//     @each $prefix in $prefixes {
+//       #{'-' + $prefix + '-' + $property}: $value;
+//     }
+
+//     // Output standard non-prefixed declaration
+//     #{$property}: $value;
+//   }
+// }
+// // Міксин префіксів для transform
+// @mixin transform($value) { 
+//   @include prefix(transform, $value, webkit ms moz); 
+// }
+

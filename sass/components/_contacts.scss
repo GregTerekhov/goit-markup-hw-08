@@ -7,7 +7,6 @@
     @include fontType($weight: 400, $ls: 0.02em);
 
     &--header {
-        position: relative;
         @include link($color: getColor('text-secondary'));
 
         @include respondTo('medium') {
@@ -97,12 +96,12 @@
     }
 
     &--footer {
-        @include link($display: inline-block, $color: getColor('text-footer-contacts'));
+        @include link($color: getColor('text-footer-contacts'));
         font-size: 14px;
         line-height: 1.714;
         letter-spacing: 0.03em;
 
-        @include respondTo('pre-little') {
+        @include respondTo('pre-large') {
             text-align: center;
         }
 
