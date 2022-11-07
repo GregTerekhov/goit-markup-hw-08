@@ -59,3 +59,7 @@
 .form__checkbox {
     @include margin(20px, null, 30px, null);
 }
+
+.form__button {
+    @include margin(0, auto, 0, auto);
+}

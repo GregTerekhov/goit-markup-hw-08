@@ -92,6 +92,7 @@
 }
 
 .hero__button {
+    @include margin(0, auto, 0, auto);
 
     @include respondTo('large') {
         width: 216px

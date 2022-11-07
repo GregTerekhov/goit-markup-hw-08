@@ -9,7 +9,7 @@
 }
 
 .projects__category, .projects__name, .projects__label, .projects__cards, .projects__filters-list, .subscription__input, .subscription__form, .subscription__call, .clients__list, .team__descr, .team__name, .team__list, .socials__list, .socials__call, .activity__label, .activity__list, .features__descr, .features__subtitle, .checkbox__text, .form__input::placeholder,
-.form__textarea::placeholder, .form__textarea, .form__input, .form__label, .form__call, .hero__title, .hero__overlay, .mobile-network__line, .mobile-network, .mobile-container__wrap, .navigation__list, .title, .features__list, .form__panel-list, .mobile-menu, .contacts__list {
+.form__textarea::placeholder, .form__textarea, .form__input, .form__label, .form__call, .hero__title, .hero__overlay, .mobile-network__line, .mobile-network, .mobile-container__wrap, .navigation__list, .section__title, .features__list, .form__panel-list, .mobile-menu, .contacts__list {
   margin: 0;
   padding: 0;
 }
@@ -376,13 +376,8 @@ summary {
 .section.team {
   background-color: #f5f4fa;
 }
-.section.page-footer {
-  background-color: #2f303a;
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
 
-.title {
+.section__title {
   font-weight: 700;
   font-size: 28px;
   line-height: 1.172;
@@ -393,7 +388,7 @@ summary {
   margin-bottom: 30px;
 }
 @media (min-width: 1200px) {
-  .title {
+  .section__title {
     font-size: 36px;
     margin-bottom: 50px;
   }
@@ -420,10 +415,6 @@ summary {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 0;
-  margin-right: auto;
-  margin-bottom: 0;
-  margin-left: auto;
 }
 .button:hover, .button:focus {
   background-color: #188ce8;
@@ -1069,6 +1060,12 @@ summary {
   }
 }
 
+.hero__button {
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
+}
 @media (min-width: 1200px) {
   .hero__button {
     width: 216px;
@@ -1296,6 +1293,13 @@ summary {
 .form__checkbox {
   margin-top: 20px;
   margin-bottom: 30px;
+}
+
+.form__button {
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
 }
 
 .checkbox__label {
@@ -1639,6 +1643,12 @@ summary {
   color: #2196f3;
 }
 
+.page-footer {
+  background-color: #2f303a;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
 @media (min-width: 1200px) {
   .page-footer__box {
     display: flex;
@@ -1735,11 +1745,6 @@ summary {
   }
 }
 
-@media (max-width: 767px) {
-  .subscription__form {
-    text-align: center;
-  }
-}
 @media (min-width: 768px) {
   .subscription__form {
     display: flex;
@@ -1807,6 +1812,13 @@ summary {
     width: 358px;
     margin-bottom: 0;
   }
+}
+
+.subscription__button {
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
 }
 
 .subscription__icon {

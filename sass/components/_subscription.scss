@@ -10,10 +10,6 @@
 .subscription__form {
     @extend %margin-padding-reset;
 
-    @include respondTo('pre-medium') {
-        text-align: center;
-    }
-
     @include respondTo('medium') {
         @include flexList($flex-direction: column);
         gap: 20px;
@@ -47,6 +43,10 @@
         width: 358px;
         @include margin(null, null, 0, null);
     }
+}
+
+.subscription__button {
+    @include margin(0, auto, 0, auto);
 }
 
 .subscription__icon {

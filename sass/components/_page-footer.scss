@@ -1,3 +1,8 @@
+.page-footer {
+    background-color: getColor('background-secondary');
+    @include padding(60px, null, 60px, null);
+}
+
 .page-footer__box {    
     
     @include respondTo('large') {

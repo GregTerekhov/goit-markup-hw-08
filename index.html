@@ -285,14 +285,16 @@
               </label>
             </div>
             <!-- Кнопка відправки форми -->
-            <button class="button" type="submit">Відправити</button>
+            <button class="button form__button" type="submit">
+              Відправити
+            </button>
           </form>
         </div>
       </div>
       <!--Секція "Наші переваги"-->
       <section class="section features">
         <div class="container">
-          <h2 class="features__title visually-hidden">Наші переваги</h2>
+          <h2 class="section__title visually-hidden">Наші переваги</h2>
           <ul class="features__list">
             <li class="features__item">
               <div class="features__thumb">
@@ -347,7 +349,7 @@
       <!--Секція "Чим ми займаємося"-->
       <section class="section activity">
         <div class="container">
-          <h2 class="title">Чим ми займаємося</h2>
+          <h2 class="section__title">Чим ми займаємося</h2>
           <ul class="activity__list">
             <li>
               <div class="activity__thumb">
@@ -436,7 +438,7 @@
       <!--Секція "Наша команда"-->
       <section class="section team">
         <div class="container">
-          <h2 class="title">Наша команда</h2>
+          <h2 class="section__title">Наша команда</h2>
           <ul class="team__list">
             <li class="team__item">
               <div class="team__wrap">
@@ -912,7 +914,7 @@
       <!--Секція "Постійні клієнти"-->
       <section class="section clients">
         <div class="container">
-          <h2 class="title">Постійні клієнти</h2>
+          <h2 class="section__title">Постійні клієнти</h2>
           <ul class="clients__list">
             <li class="clients__item">
               <a href="#" class="clients__logo">
@@ -961,7 +963,7 @@
       </section>
     </main>
     <!--Підвал-->
-    <footer class="section page-footer">
+    <footer class="page-footer">
       <div class="container page-footer__box">
         <div class="page-footer__info">
           <!-- Адреса та зворотній зв'язок -->
@@ -1049,7 +1051,11 @@
               placeholder="E-mail"
               required
             />
-            <button class="button" type="submit" aria-label="Підписатися">
+            <button
+              class="button subscription__button"
+              type="submit"
+              aria-label="Підписатися"
+            >
               Підписатися
               <svg class="subscription__icon" width="24" height="24">
                 <use href="./images/icons.svg#icon-send"></use>
