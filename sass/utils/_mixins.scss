@@ -79,10 +79,9 @@
 
 // Міксини псевдо-------------------------------------------
 // Загальний міксин псевдоелементів
-@mixin pseudo ($display: block, $width: 100%){
+@mixin pseudo ($width: 100%){
     @include absolute(0);
     content: '';
-    display: $display;
     width: $width;
 }
 
@@ -215,6 +214,32 @@
   @include rounded(2px);
   height: $height;
   background-color: $bgc; 
+}
+
+// Міксин вибору фонового зображення
+$imgdir: '../../images/hero-img/';
+@mixin backgroundImageRetina($gradient: linear-gradient(getColor('gradient-hero'), getColor('gradient-hero')), $file, $type, $bg-size: cover, $bg-position: center) {
+  background-image: $gradient, url(#{$imgdir}#{$file} + '.' + #{$type});
+
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    & {
+      background-image: $gradient, url(#{$imgdir}#{$file} + '2x.' + #{$type});
+      background-size: $bg-size;
+      background-position: $bg-position;
+    }
+  }
+
+  @media (min-device-pixel-ratio: 3),
+  screen and (min-resolution: 288dpi),
+  screen and (min-resolution: 3dppx) {
+    & {
+      background-image: $gradient, url(#{$imgdir}#{$file} + '3x.' + #{$type});
+      background-size: $bg-size;
+      background-position: $bg-position;
+    }
+  }
 }
 
 // Міксини форм-----------------------------------------------

@@ -5,77 +5,17 @@
 .hero__overlay {
     @include centeredFlex();
     @include centeredElement($maxwidth: 480px, $min-height: 400px);
-    
-    background-image: linear-gradient(
-        getColor('gradient-hero'), 
-        getColor('gradient-hero')), url('../../images/mobile/hero-img/mobile-hero.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    
-
-    @media screen and (min-device-pixel-ratio: 2),
-        screen and (min-resolution: 192dpi),
-        screen and (min-resolution: 2dppx) { 
-                background-image: linear-gradient(
-                    getColor('gradient-hero'), 
-                    getColor('gradient-hero')), url('../../images/mobile/hero-img/mobile-hero2x.jpg');
-            
-    }
-
-    @media screen and (min-device-pixel-ratio: 3),
-        screen and (min-resolution: 288dpi),
-        screen and (min-resolution: 3dppx) {
-                background-image: linear-gradient(
-                    getColor('gradient-hero'), 
-                    getColor('gradient-hero')), url('../../images/mobile/hero-img/mobile-hero3x.jpg');
-    }
+    @include backgroundImageRetina($file: 'mobile-hero', $type: 'webp');
 
     @include respondTo('little') {
             max-width: 768px;
-            background-image: linear-gradient(
-        getColor('gradient-hero'), 
-        getColor('gradient-hero')), url('../../images/tablet/hero-img/tablet-hero.jpg');
-
-        @media screen and (min-device-pixel-ratio: 2),
-        screen and (min-resolution: 192dpi),
-        screen and (min-resolution: 2dppx) {
-                background-image: linear-gradient(
-                    getColor('gradient-hero'), 
-                    getColor('gradient-hero')), url('../../images/tablet/hero-img/tablet-hero2x.jpg');
-            }
-
-        @media screen and (min-device-pixel-ratio: 3),
-        screen and (min-resolution: 288dpi),
-        screen and (min-resolution: 3dppx) {
-                background-image: linear-gradient(
-                    getColor('gradient-hero'), 
-                    getColor('gradient-hero')), url('../../images/tablet/hero-img/tablet-hero3x.jpg');
-            }        
+            @include backgroundImageRetina($file: 'tablet-hero', $type: 'webp');        
     }
 
     @include respondTo('medium') {
             max-width: 1600px;
             min-height: 600px;
-            background-image: linear-gradient(
-        getColor('gradient-hero'), 
-        getColor('gradient-hero')), url('../../images/desktop/hero-img/desktop-hero.jpg');
-
-        @media screen and (min-device-pixel-ratio: 2),
-        screen and (min-resolution: 192dpi),
-        screen and (min-resolution: 2dppx) {
-                background-image: linear-gradient(
-                    getColor('gradient-hero'), 
-                    getColor('gradient-hero')), url('../../images/desktop/hero-img/desktop-hero2x.jpg');
-            }
-
-        @media screen and (min-device-pixel-ratio: 3),
-        screen and (min-resolution: 288dpi),
-        screen and (min-resolution: 3dppx) {
-                background-image: linear-gradient(
-                    getColor('gradient-hero'), 
-                    getColor('gradient-hero')), url('../../images/desktop/hero-img/desktop-hero3x.jpg');
-        }    
+            @include backgroundImageRetina($file: 'desktop-hero', $type: 'webp');    
     }
 }
 
