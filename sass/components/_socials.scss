@@ -1,6 +1,5 @@
 .socials__call {
-    @include textUpperCase($color: getColor('text-tertiary'), $mb: 20px);
-    display: block;
+    @include footerCalls;
 
     @include respondTo('pre-medium') {
         text-align: center;

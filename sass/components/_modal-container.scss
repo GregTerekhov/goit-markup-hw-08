@@ -29,7 +29,7 @@
 }
 
 .modal-container__form {
-    @include centeredFlex();
+    display: flex;
     flex-direction: column;
 }
 

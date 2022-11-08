@@ -340,6 +340,11 @@ $imgdir: '../../images/hero-img/';
     margin-bottom: $mb;
 }
 
+@mixin footerCalls {
+  @include textUpperCase(getColor('text-tertiary'), 20px);
+  display: block;
+}
+
 // // Міксин translate-opacity
 // @mixin transformOpacity () {
 //   transform: $transform;
