@@ -1,0 +1,10 @@
+.title {
+    @extend %margin-padding-reset;
+    @include fontType($size: 28px, $align: center);
+    @include margin(null, null, 30px, null);
+
+    @include respondTo('large') {
+        font-size: 36px;
+        @include margin(null, null, 50px, null);
+    }
+}

@@ -290,6 +290,48 @@ $imgdir: '../../images/hero-img/';
     color: $color;
 }
 
+// Міксин підзаголовків прописними літерами
+@mixin textUpperCase ($color: inherit, $mb) {
+    @extend %margin-padding-reset;
+    @include fontType($size: 14px, $transform: uppercase);
+    color: $color;
+    margin-bottom: $mb;
+}
+// Міксин закликів у футері
+@mixin footerCalls {
+  @include textUpperCase(getColor('text-tertiary'), 20px);
+  display: block;
+}
+
+// // Міксин translate-opacity
+// @mixin transformOpacity () {
+//   transform: $transform;
+//   opacity: $opacity;
+// }
+
+
+// // // Міксини вендорних префіксів----------------------------
+// /// Міксин розстановки вендорних префіксів
+// /// @author Kitty Giraudel
+// /// @param {Map} $declarations - Declarations to prefix
+// /// @param {List} $prefixes (()) - List of prefixes to print
+// @mixin prefix($declarations, $prefixes: ()) {
+//   @each $property, $value in $declarations {
+//     @each $prefix in $prefixes {
+//       #{'-' + $prefix + '-' + $property}: $value;
+//     }
+
+//     // Output standard non-prefixed declaration
+//     #{$property}: $value;
+//   }
+// }
+// // Міксин префіксів для transform
+// @mixin transform($value) { 
+//   @include prefix(transform, $value, webkit ms moz); 
+// }
+
+
+
 // .activity__title, .clients__title, .team__title
 // font-size: 36px; line-height: 1.172; text-align: center; mb:50px;
 
@@ -331,44 +373,4 @@ $imgdir: '../../images/hero-img/';
 
 // .form__label, .form__input, .form__textarea, .form__input::placeholder, .form__textarea::placeholder
 // font-size: 12px; line-height: 1.172; letter-spacing: 0.01em;
-
-// Міксин підзаголовків прописними літерами
-@mixin textUpperCase ($color: inherit, $mb) {
-    @extend %margin-padding-reset;
-    @include fontType($size: 14px, $transform: uppercase);
-    color: $color;
-    margin-bottom: $mb;
-}
-
-@mixin footerCalls {
-  @include textUpperCase(getColor('text-tertiary'), 20px);
-  display: block;
-}
-
-// // Міксин translate-opacity
-// @mixin transformOpacity () {
-//   transform: $transform;
-//   opacity: $opacity;
-// }
-
-
-// // // Міксини вендорних префіксів----------------------------
-// /// Міксин розстановки вендорних префіксів
-// /// @author Kitty Giraudel
-// /// @param {Map} $declarations - Declarations to prefix
-// /// @param {List} $prefixes (()) - List of prefixes to print
-// @mixin prefix($declarations, $prefixes: ()) {
-//   @each $property, $value in $declarations {
-//     @each $prefix in $prefixes {
-//       #{'-' + $prefix + '-' + $property}: $value;
-//     }
-
-//     // Output standard non-prefixed declaration
-//     #{$property}: $value;
-//   }
-// }
-// // Міксин префіксів для transform
-// @mixin transform($value) { 
-//   @include prefix(transform, $value, webkit ms moz); 
-// }
 

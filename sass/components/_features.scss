@@ -1,3 +1,9 @@
+.features {
+    @include respondTo('large') {
+        padding-bottom: 0;
+    }
+}
+
 .features__list {
     @extend %list;
 

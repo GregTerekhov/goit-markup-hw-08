@@ -1,3 +1,13 @@
+.activity {
+    @include respondTo('pre-large') {
+        display: none;
+    }
+
+    @include respondTo('large') {
+        padding-bottom: 94px;
+    }
+}
+
 .activity__list {
     @include flexList();
     gap: 30px;

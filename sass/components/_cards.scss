@@ -1,0 +1,102 @@
+.cards {
+    @include flexList();
+    gap: 30px;
+
+    @include respondTo('medium') {
+        justify-content: flex-start;
+    }
+
+    @include respondTo('large') {
+        justify-content: center;
+    }    
+}
+
+.cards__item {
+
+    @include respondTo('medium') {
+        @include listLayout(2);
+    }
+
+    @include respondTo('large') {
+        @include listLayout(3);
+    }
+}
+
+.cards__link {
+    @include link();
+    @include transition(box-shadow);
+    @include hoFus {
+        @include boxShadow(3);
+    }
+}
+
+.cards__wrap {
+    @include relative(0);  
+    @include centeredFlex();
+    overflow: hidden;
+}
+
+.cards__overlay {
+    @include centeredAbsolute($width: 100%, $height: 100%, $top: 0, $left: 0);
+
+    background-color: getColor('overlay-cards');
+  
+    opacity: 0;
+    pointer-events: none;
+  
+    transform: translateY(100%);
+    @include transition(transform, opacity);
+
+    .projects__cards-link:hover &,
+    .projects__cards-link:focus & {
+        opacity: 1;
+        transform: translatey(0);
+    }
+}
+
+.cards__label {
+    @extend %margin-padding-reset;
+    @include fontType($weight: 400, $size: 18px, $lh: 1.556, $color: getColor('text-tertiary'));
+    @include padding(77px, 24px, 77px, 24px);
+
+    @include respondTo('medium') {
+        @include padding(48px, 24px, 77px, 24px);
+    }
+
+    @include respondTo('large') {
+        @include padding(63px, 24px, 63px, 24px);
+    }
+}
+
+.cards__meta {
+    @include borderStyle($color: getColor('border-cards'), $rad: 0);
+    @include padding(20px, 24px, 20px, 24px);
+    border-top: none;
+
+    &--bug {
+        @include respondTo('medium') {
+            @include padding(20px, 24px, 56px, 24px);
+        }
+
+        @include respondTo('large') {
+            @include padding(20px, 24px, 20px, 24px);
+        }
+    }
+}
+
+
+.cards__name {
+    @extend %margin-padding-reset;
+    @include fontType($size: 18px, $lh: 2, $ls: 0.06em, $transform: capitalize, $color: getColor('text-primary'));
+
+    @include margin(null, null, 4px, null);
+
+    &--lowercase-letter {
+        text-transform: lowercase;
+    }
+}
+
+.cards__category {
+    @extend %margin-padding-reset;
+    @include fontType($weight: 400, $lh: 1.875, $color: getColor('text-secondary'));
+}

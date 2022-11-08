@@ -1,3 +1,7 @@
+.team {
+    background-color: getColor('background-tertiary');
+}
+
 .team__list {
     @include flexList($flex-direction: column);
     gap: 30px;
