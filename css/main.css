@@ -880,7 +880,7 @@ summary {
 }
 @media (min-width: 576px) {
   .mobile-container__contacts {
-    margin-bottom: 35px;
+    margin-bottom: 32px;
   }
 }
 
@@ -894,7 +894,7 @@ summary {
 }
 @media (min-width: 576px) {
   .mobile-menu__item:not(:last-child) {
-    margin-bottom: 25px;
+    margin-bottom: 24px;
   }
 }
 
@@ -1526,7 +1526,7 @@ summary {
   margin-bottom: 20px;
   display: block;
 }
-@media (max-width: 767px) {
+@media (max-width: 1199px) {
   .socials__call {
     text-align: center;
   }
@@ -1991,7 +1991,7 @@ summary {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.projects__cards-link:hover .cards__overlay, .projects__cards-link:focus .cards__overlay {
+.cards__link:hover .cards__overlay, .cards__link:focus .cards__overlay {
   opacity: 1;
   transform: translatey(0);
 }

@@ -48,6 +48,6 @@
     }
 
     @include respondTo('small') {
-        @include margin(null, null, 35px, null);
+        @include margin(null, null, 32px, null);
     }
 }

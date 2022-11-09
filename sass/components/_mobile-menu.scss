@@ -10,7 +10,7 @@
   }
 
   @include respondTo('small') {
-    @include margin(null, null, 25px, null);
+    @include margin(null, null, 24px, null);
   }
 }
 

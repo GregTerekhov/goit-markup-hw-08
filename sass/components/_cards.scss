@@ -47,8 +47,8 @@
     transform: translateY(100%);
     @include transition(transform, opacity);
 
-    .projects__cards-link:hover &,
-    .projects__cards-link:focus & {
+    .cards__link:hover &,
+    .cards__link:focus & {
         opacity: 1;
         transform: translatey(0);
     }
