@@ -1,0 +1,21 @@
+// Міксини стилей посилань-----------------------------------
+// Загальний міксин посилань
+@mixin link ($display: block, $decor: none, $color: inherit) {
+    text-decoration: $decor;
+    color: $color;
+    display: $display;
+    @include transition(color);
+    @include hoFus() {
+      color: getColor('accent');
+    }
+}
+
+// Міксин для іконок-посилань на соцмережі
+@mixin socialLinks ($width: 44px, $height: 44px, $color, $background) {
+    width: $width;
+    height: $height;
+    color: $color;
+    background-color: $background;
+    border-radius: 50%;
+    @include transition(color, background-color)
+}

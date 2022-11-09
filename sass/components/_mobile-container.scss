@@ -5,7 +5,7 @@
     z-index: 999;
 
     @extend %is-hidden;
-    transform: translateX(100%);
+    @include transform(translateX(100%));
     @include transition(transform, opacity, visibility);
 
     &.is-open {

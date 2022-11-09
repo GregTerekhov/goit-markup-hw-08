@@ -1,0 +1,62 @@
+// Міксини декоративних елементів-------------------------------
+// Міксин радіуса бордера
+@mixin rounded($radius...) {
+    -webkit-border-radius: $radius; 
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+  
+// Міксин стилей бордера
+@mixin borderStyle ($width: 1px, $style: solid, $color, $rad: 4px) {
+    border-width: $width;
+    border-style: $style;
+    border-color: $color;
+    border-radius: $rad;
+}
+  
+  // Міксин box-shadow
+  @mixin boxShadow ($type) {
+    @if $type == 1 {
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    } @else if $type == 2 {
+      box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+    } @else if $type == 3 {
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+    } @else if $type == 4 {
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    }
+  }
+  
+  // Міксин декорування через псевдоелементи
+  @mixin decorElement ($height: 4px, $bgc: getColor('accent')) {
+    @include pseudo();
+    @include absolute(bottom -1px);
+    @include rounded(2px);
+    height: $height;
+    background-color: $bgc; 
+  }
+  
+  // Міксин вибору фонового зображення
+  $imgdir: '../../images/hero-img/';
+  @mixin backgroundImageRetina($gradient: linear-gradient(getColor('gradient-hero'), getColor('gradient-hero')), $file, $type, $bg-size: cover, $bg-position: center) {
+    background-image: $gradient, url(#{$imgdir}#{$file} + '.' + #{$type});
+    background-size: $bg-size;
+    background-position: $bg-position;
+    background-repeat: no-repeat;
+  
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      & {
+        background-image: $gradient, url(#{$imgdir}#{$file} + '2x.' + #{$type});
+      }
+    }
+  
+    @media (min-device-pixel-ratio: 3),
+    screen and (min-resolution: 288dpi),
+    screen and (min-resolution: 3dppx) {
+      & {
+        background-image: $gradient, url(#{$imgdir}#{$file} + '3x.' + #{$type});
+      }
+    }
+  }

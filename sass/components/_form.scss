@@ -35,8 +35,7 @@
 
 .form__icon {
     @include absolute(top 50% left 12px);
-    
-    transform: translateY(-50%);
+    @include transform(translateY(-50%));
     @include transition(fill);
 
     .form__input:focus ~ & {

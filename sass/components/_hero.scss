@@ -4,15 +4,15 @@
 
 .hero__overlay {
     @include centeredFlex();
-    @include centeredElement($maxwidth: 480px, $min-height: 400px);
+    @include centeredElement($maxwidth: 768px, $min-height: 400px);
     @include backgroundImageRetina($file: 'mobile-hero', $type: 'webp');
 
-    @include respondTo('little') {
-            max-width: 768px;
+    @include respondTo('medium') {
+            max-width: 1200px;
             @include backgroundImageRetina($file: 'tablet-hero', $type: 'webp');        
     }
 
-    @include respondTo('medium') {
+    @include respondTo('large') {
             max-width: 1600px;
             min-height: 600px;
             @include backgroundImageRetina($file: 'desktop-hero', $type: 'webp');    

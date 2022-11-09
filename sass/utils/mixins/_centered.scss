@@ -1,0 +1,25 @@
+// Міксини центрування--------------------------------------
+// Міксин центрування за абсолютним позиціонуванням
+@mixin centeredAbsolute ($position: absolute, $width, $height, $top: 50%, $left: 50%) {
+    position: $position;
+    left: $left;
+    top: $top;
+    height: $height;
+    width: $width;
+  }
+  
+  // Міксин центрування елементів, заголовків та підзаголовків
+  @mixin centeredElement ($maxwidth, $min-height) {
+    @extend %margin-padding-reset;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $maxwidth;
+    min-height: $min-height;
+  }
+  
+  // Міксин центрування за флексом
+  @mixin centeredFlex ($type: flex, $justify-content: center, $align-items: center) {
+    display: $type;
+    justify-content: $justify-content;
+    align-items: $align-items;
+  }

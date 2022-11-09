@@ -1,0 +1,48 @@
+// Міксини кнопок-------------------------------------------
+// Міксин розміру та стилей кнопки
+@mixin buttonSize ($weight, $padding-y, $padding-x, $font-size, $line-height, $bgc, $border-radius) {
+    font-weight: $weight;
+    padding: $padding-y $padding-x;
+    font-size: $font-size;
+    line-height: $line-height;
+    background-color: $bgc;
+    border: none;
+    cursor: pointer;
+    // Manually declare to provide an override to the browser default
+    @if $enable-rounded {
+      border-radius: $border-radius;
+    } @else {
+      border-radius: 0;
+    }
+  }
+  
+  // Міксин стилей головної кнопки
+  @mixin buttonPrimary ($width: 200px, $height: 50px, $letter-spacing: 0.06em, $color: getColor('text-tertiary')) {
+    @include buttonSize(700, 0, 0, 16px, 1.875, getColor('accent'), 4px);
+    width: $width;
+    height: $height;
+    letter-spacing: $letter-spacing;
+    color: $color;
+    text-align: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    @include transition(background-color, box-shadow);
+    @include hoFus() {
+      background-color: getColor('primary-button-hover')
+    }
+  }
+  
+  // Міксин кнопок управління
+  @mixin controlBtn ($width: auto, $height: auto, $padding-y: 0, $padding-x: 0, $color, $bgc: transparent, $border: none, $outline: none) {
+    width: $width;
+    height: $height;
+    padding: $padding-y $padding-x;
+    color: $color;
+    background-color: $bgc;
+    cursor: pointer;
+    border: $border;
+    outline: $outline;
+    @include transition(color);
+    @include hoFus() {
+      color: getColor('accent');
+    }
+  }

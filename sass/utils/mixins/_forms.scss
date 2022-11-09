@@ -1,0 +1,18 @@
+// Міксини форм-----------------------------------------------
+// Міксин стилей input, textarea
+@mixin inputText($padding-t, $padding-r, $padding-b, $padding-l, $bgc: getColor('background-primary'), $color: inherit) {
+    @extend %margin-padding-reset;
+    display: block;
+    width: 100%;
+    padding: $padding-t $padding-r $padding-b $padding-l;
+    font-family: inherit;
+    resize: none;
+    background-color: $bgc;
+    color: $color;
+    @include borderStyle($color: getColor('border-modal-input'));
+    @include transition(border);
+    &:focus {
+      border-color: getColor('accent');
+      outline: none;
+    }
+  }

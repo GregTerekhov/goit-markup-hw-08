@@ -1,0 +1,16 @@
+// Міксини геометрії------------------------------------------
+// Міксин паддінгів
+@mixin padding ($top, $right, $bottom, $left) {
+    padding-top: $top;
+    padding-right: $right;
+    padding-bottom: $bottom;
+    padding-left: $left;
+  }
+  
+  // Міксин марджинів
+  @mixin margin ($top, $right, $bottom, $left) {
+    margin-top: $top;
+    margin-right: $right;
+    margin-bottom: $bottom;
+    margin-left: $left;
+  }

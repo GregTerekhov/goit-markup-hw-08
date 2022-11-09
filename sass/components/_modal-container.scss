@@ -6,15 +6,14 @@
   
     @include boxShadow(1);
     @include rounded(4px);
-  
-    transform: translateX(-50%) scale(1) rotate(0);
+    @include transform(translateX(-50%) scale(1) rotate(0));
     @include transition(transform);
 
     .backdrop.is-hidden & {
-        transform: translateX(-50%) scale(0.5) rotate(180deg);
+        @include transform(translateX(-50%) scale(0.5) rotate(180deg));
 
         @include respondTo('large') {
-            transform: translate(-50%, -50%) scale(0.5) rotate(180deg);
+            @include transform(translate(-50%, -50%) scale(0.5) rotate(180deg));
         }
     }
 
@@ -24,7 +23,7 @@
 
     @include respondTo('large') {
         width: 528px;
-        transform: translate(-50%, -50%) scale(1) rotate(0);
+        @include transform(translate(-50%, -50%) scale(1) rotate(0));
     }
 }
 

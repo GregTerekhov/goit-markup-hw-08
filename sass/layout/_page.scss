@@ -10,8 +10,7 @@
 }
   
   .page__backdrop {
-    @include centeredAbsolute($position: fixed, $width: 100%,
-    $height: 100%, $top: 0, $left: 0);
+    @include centeredAbsolute($position: fixed, $width: 100%, $height: 100%, $top: 0, $left: 0);
   }
 
   .page__modal-container {
