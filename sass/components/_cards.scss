@@ -24,8 +24,6 @@
     }
 }
 
-
-
 .cards__link {
     @include link();
     @include transition(box-shadow);
