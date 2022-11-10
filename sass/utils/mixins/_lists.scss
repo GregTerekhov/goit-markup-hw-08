@@ -4,12 +4,3 @@
 @mixin listLayout($numberOfElement) {
     width: calc((100% - 30px * ($numberOfElement - 1)) / $numberOfElement);
   }
-  
-  // Міксин для списків у флекс-контейнері
-  @mixin flexList ($flex-wrap: wrap, $flex-direction: row) {
-    @extend %margin-padding-reset;
-    @include centeredFlex();
-    flex-wrap: $flex-wrap;
-    flex-direction: $flex-direction;
-    list-style: none;
-  }

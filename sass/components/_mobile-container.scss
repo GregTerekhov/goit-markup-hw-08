@@ -12,7 +12,7 @@
         opacity: 1;
         visibility: visible;
         pointer-events: initial;
-        transform: translateX(0); 
+        @include transform(translateX(0));
     }
 
     @include respondTo('medium') {
@@ -22,32 +22,25 @@
 
 .mobile-container__wrap {
     @include relative(0);
-    @include centeredElement($maxwidth: 480px, $min-height: 100%);
-    @include centeredFlex($align-items: normal);
-    @include padding(48px, 40px, 48px, 40px);
+    @include centeredElement($maxwidth: 480px);
+    min-height: 100%;
+    display: flex;
     flex-direction: column;
+    @include padding(48px, 40px, 48px, 40px);
 
     @include respondTo('pre-little') {
         @include padding(55px, 30px, 55px, 30px);
     }
-
-    @include respondTo('small') {
-        @include padding(30px, 15px, 30px, 15px);
-    }
 }
 
 .mobile-container__mobile-menu {
-    @include margin(null, null, auto, null);
+    margin-bottom: auto;
 }
 
 .mobile-container__contacts {
-    @include margin(null, null, 40px, null);
+    @include margin(0, 0, 40px, 0);
 
     @include respondTo('little') {
         @include margin(null, null, 64px, null);
-    }
-
-    @include respondTo('small') {
-        @include margin(null, null, 32px, null);
     }
 }

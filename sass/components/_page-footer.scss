@@ -13,7 +13,7 @@
 .page-footer__info {
 
     @include respondTo('medium') {
-        @include centeredFlex($justify-content: space-between, $align-items: baseline);
+        @include centeredFlex($justify-content: space-around, $align-items: baseline);
         @include margin(null, null, 60px, null);
     }
 

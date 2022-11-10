@@ -9,7 +9,8 @@
 }
 
 .activity__list {
-    @include flexList();
+    @extend %list;
+    display: flex;
     gap: 30px;
 }
 

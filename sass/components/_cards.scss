@@ -1,17 +1,19 @@
 .cards {
-    @include flexList();
-    gap: 30px;
+    @extend %list;
 
     @include respondTo('medium') {
-        justify-content: flex-start;
-    }
-
-    @include respondTo('large') {
-        justify-content: center;
-    }    
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    } 
 }
 
 .cards__item {
+    @include respondTo('pre-medium') {
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
 
     @include respondTo('medium') {
         @include listLayout(2);
@@ -22,9 +24,14 @@
     }
 }
 
+
+
 .cards__link {
     @include link();
     @include transition(box-shadow);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     @include hoFus {
         @include boxShadow(3);
     }
@@ -32,7 +39,6 @@
 
 .cards__wrap {
     @include relative(0);  
-    @include centeredFlex();
     overflow: hidden;
 }
 
@@ -72,16 +78,7 @@
     @include borderStyle($color: getColor('border-cards'), $rad: 0);
     @include padding(20px, 24px, 20px, 24px);
     border-top: none;
-
-    &--bug {
-        @include respondTo('medium') {
-            @include padding(20px, 24px, 56px, 24px);
-        }
-
-        @include respondTo('large') {
-            @include padding(20px, 24px, 20px, 24px);
-        }
-    }
+    flex-grow: 1;
 }
 
 

@@ -38,10 +38,6 @@
             @include respondTo('little') {
                 font-size: 28px;
             }
-
-            @include respondTo('small') {
-                font-size: 20px;
-            }
           
             @include respondTo('medium') {
                 color: getColor('text-secondary');
@@ -71,12 +67,6 @@
             @include respondTo('little') {
                 font-weight: 500;
                 font-size: 34px;
-            }
-
-            @include respondTo('small') {
-                @include margin(null, null, 25px, null);
-                font-weight: 400;
-                font-size: 24px;
             }
     
             @include respondTo('medium') {

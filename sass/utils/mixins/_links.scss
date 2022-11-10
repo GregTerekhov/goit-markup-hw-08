@@ -2,6 +2,7 @@
 // Загальний міксин посилань
 @mixin link ($display: block, $decor: none, $color: inherit) {
     text-decoration: $decor;
+    font-family: inherit;
     color: $color;
     display: $display;
     @include transition(color);

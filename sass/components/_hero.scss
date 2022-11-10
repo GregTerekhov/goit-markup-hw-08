@@ -4,23 +4,24 @@
 
 .hero__overlay {
     @include centeredFlex();
-    @include centeredElement($maxwidth: 768px, $min-height: 400px);
+    @include centeredElement($maxwidth: 767px);
     @include backgroundImageRetina($file: 'mobile-hero', $type: 'webp');
+    padding: 118px 0;
 
     @include respondTo('medium') {
-            max-width: 1200px;
+            max-width: 1199px;
             @include backgroundImageRetina($file: 'tablet-hero', $type: 'webp');        
     }
 
     @include respondTo('large') {
             max-width: 1600px;
-            min-height: 600px;
+            padding: 200px 0;
             @include backgroundImageRetina($file: 'desktop-hero', $type: 'webp');    
     }
 }
 
 .hero__title {
-    @include centeredElement($maxwidth: 360px, $min-height: max-content);
+    @include centeredElement($maxwidth: 360px);
     @include fontType($weight: 900, $size: 26px, $lh: 1.615, $ls: 0.06em, $align: center, $transform: uppercase, $color: getColor('text-tertiary'));
     @include margin(null, null, 30px, null);
 

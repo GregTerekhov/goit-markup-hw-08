@@ -35,13 +35,14 @@
 }
 
 .navigation__list {
-    @include flexList($flex-wrap: nowrap);
-    gap: 50px;
-    @include margin(null, 95px, null, null);
+  @extend %list;
+  display: flex;
+  gap: 50px;
+  @include margin(null, 95px, null, null);
 
-    @include respondTo('large') {
-      @include margin(null, auto, null, null);  
-    }
+  @include respondTo('large') {
+    @include margin(null, auto, null, null);  
+  }
 }
 
 .navigation__link {

@@ -1,6 +1,7 @@
 .projects__filters-list {
-    @include flexList();
-    justify-content: flex-start;
+    @extend %list;
+    display: flex;
+    flex-wrap: wrap;
     gap: 15px 8px;
     @include margin(null, null, 40px, null);
     color: getColor('text-primary');

@@ -8,12 +8,9 @@
     @extend %list;
 
     @include respondTo('medium') {
-        @include flexList();
+        display: flex;
+        flex-wrap: wrap;
         gap: 30px;
-
-        @include respondTo('large') {
-            align-items: flex-start;;
-        }
     }
 }
 

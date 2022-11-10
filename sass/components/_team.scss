@@ -3,7 +3,9 @@
 }
 
 .team__list {
-    @include flexList($flex-direction: column);
+    @extend %list;
+    display: flex;
+    flex-direction: column;
     gap: 30px;
 
     @include respondTo('medium') {

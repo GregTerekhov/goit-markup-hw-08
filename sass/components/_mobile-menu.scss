@@ -8,10 +8,6 @@
   @include respondTo('little') {
     @include margin(null, null, 32px, null);
   }
-
-  @include respondTo('small') {
-    @include margin(null, null, 24px, null);
-  }
 }
 
 .mobile-menu__link {
@@ -26,11 +22,6 @@
     @include respondTo('little') {
       font-weight: 500;
       font-size: 40px;
-    }   
-
-    @include respondTo('small') {
-      font-weight: 400;
-      font-size: 30px;
     } 
     
     &--current {
