@@ -37,7 +37,7 @@
   }
   
   // Міксин вибору фонового зображення
-  $imgdir: '../../images/hero-img/';
+  $imgdir: '../images/hero-img/';
   @mixin backgroundImageRetina($gradient: linear-gradient(getColor('gradient-hero'), getColor('gradient-hero')), $file, $type, $bg-size: cover, $bg-position: center) {
     background-image: $gradient, url(#{$imgdir}#{$file} + '.' + #{$type});
     background-size: $bg-size;
