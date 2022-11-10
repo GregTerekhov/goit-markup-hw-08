@@ -4,13 +4,9 @@
 
 .team__list {
     @extend %list;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-
+    
     @include respondTo('medium') {
-        flex-direction: row;
-        flex-wrap: wrap;
+        @include pageList;
     }
 
     @include respondTo('large') {
@@ -20,6 +16,12 @@
 
 .team__item {
     
+    & + & {
+        @include respondTo('pre-medium') {
+            @include margin(30px, null, null, null);
+        }
+    }
+
     @include respondTo('medium') {
         @include listLayout(2);
     }

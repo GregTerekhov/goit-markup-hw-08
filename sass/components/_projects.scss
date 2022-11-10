@@ -1,8 +1,6 @@
 .projects__filters-list {
     @extend %list;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px 8px;
+    @include pageList($gap: 15px 8px);
     @include margin(null, null, 40px, null);
     color: getColor('text-primary');
 

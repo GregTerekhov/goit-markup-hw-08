@@ -36,8 +36,7 @@
 
 .navigation__list {
   @extend %list;
-  display: flex;
-  gap: 50px;
+  @include pageList($fwrap: nowrap, $gap: 50px);
   @include margin(null, 95px, null, null);
 
   @include respondTo('large') {

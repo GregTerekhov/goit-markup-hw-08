@@ -10,10 +10,8 @@
 
 .form__panel-list {
     @extend %list;
-    display: flex;
+    @include pageList($gap: 10px);
     flex-direction: column;
-    gap: 10px;
-  
     width: 100%;
 }
 

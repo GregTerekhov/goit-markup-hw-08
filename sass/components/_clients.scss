@@ -1,8 +1,6 @@
 .clients__list {
   @extend %list;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
+  @include pageList;
 
   @include respondTo('large') {
     flex-wrap: nowrap;

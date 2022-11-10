@@ -9,12 +9,12 @@
 }
 
 .cards__category, .cards__name, .cards__label, .subscription__input, .subscription__form, .subscription__call, .team__descr, .team__name, .socials__call, .activity__label, .features__descr, .features__subtitle, .checkbox__text, .form__input::placeholder,
-.form__textarea::placeholder, .form__textarea, .form__input, .form__label, .form__call, .hero__title, .hero__overlay, .mobile-network__line, .mobile-network, .mobile-container__wrap, .title, .cards, .projects__filters-list, .clients__list, .team__list, .socials__list, .activity__list, .features__list, .form__panel-list, .mobile-menu, .contacts__list, .navigation__list {
+.form__textarea::placeholder, .form__textarea, .form__input, .form__label, .form__call, .hero__title, .hero__overlay, .mobile-network__line, .mobile-container__wrap, .section__title, .cards, .projects__filters-list, .clients__list, .team__list, .socials__list, .activity__list, .features__list, .form__panel-list, .mobile-network, .mobile-menu, .contacts__list, .navigation__list {
   margin: 0;
   padding: 0;
 }
 
-.cards, .projects__filters-list, .clients__list, .team__list, .socials__list, .activity__list, .features__list, .form__panel-list, .mobile-menu, .contacts__list, .navigation__list {
+.cards, .projects__filters-list, .clients__list, .team__list, .socials__list, .activity__list, .features__list, .form__panel-list, .mobile-network, .mobile-menu, .contacts__list, .navigation__list {
   list-style: none;
 }
 
@@ -355,7 +355,7 @@ summary {
 
 .picture {
   display: block;
-  min-width: 100%;
+  width: 100%;
   height: auto;
 }
 
@@ -399,7 +399,7 @@ summary {
   }
 }
 
-.title {
+.section__title {
   font-weight: 700;
   font-size: 28px;
   line-height: 1.172;
@@ -410,7 +410,7 @@ summary {
   margin-bottom: 30px;
 }
 @media (min-width: 1200px) {
-  .title {
+  .section__title {
     font-size: 36px;
     margin-bottom: 50px;
   }
@@ -566,6 +566,7 @@ summary {
 
 .navigation__list {
   display: flex;
+  flex-wrap: nowrap;
   gap: 50px;
   margin-right: 95px;
 }
@@ -1150,8 +1151,9 @@ summary {
 
 .form__panel-list {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 10px;
+  flex-direction: column;
   width: 100%;
 }
 
@@ -1349,12 +1351,9 @@ summary {
   }
 }
 
-.features__item + .features__item {
-  margin-top: 30px;
-}
-@media (min-width: 768px) {
+@media (max-width: 767px) {
   .features__item + .features__item {
-    margin: 0;
+    margin-top: 30px;
   }
 }
 @media (min-width: 768px) {
@@ -1417,6 +1416,7 @@ summary {
 
 .activity__list {
   display: flex;
+  flex-wrap: nowrap;
   gap: 30px;
 }
 
@@ -1502,15 +1502,11 @@ summary {
   background-color: #f5f4fa;
 }
 
-.team__list {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
 @media (min-width: 768px) {
   .team__list {
-    flex-direction: row;
+    display: flex;
     flex-wrap: wrap;
+    gap: 30px;
   }
 }
 @media (min-width: 1200px) {
@@ -1519,6 +1515,11 @@ summary {
   }
 }
 
+@media (max-width: 767px) {
+  .team__item + .team__item {
+    margin-top: 30px;
+  }
+}
 @media (min-width: 768px) {
   .team__item {
     width: calc((100% - 30px) / 2);
@@ -1851,8 +1852,8 @@ summary {
 }
 
 @media (max-width: 767px) {
-  .cards__item:not(:last-child) {
-    margin-bottom: 30px;
+  .cards__item + .cards__item {
+    margin-top: 30px;
   }
 }
 @media (min-width: 768px) {

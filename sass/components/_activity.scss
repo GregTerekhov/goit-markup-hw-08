@@ -10,8 +10,7 @@
 
 .activity__list {
     @extend %list;
-    display: flex;
-    gap: 30px;
+    @include pageList($fwrap: nowrap);
 }
 
 .activity__thumb {

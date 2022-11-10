@@ -2,16 +2,15 @@
     @extend %list;
 
     @include respondTo('medium') {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 30px;
+        @include pageList;
     } 
 }
 
 .cards__item {
-    @include respondTo('pre-medium') {
-        &:not(:last-child) {
-            margin-bottom: 30px;
+
+    & + & {
+        @include respondTo('pre-medium') {
+            @include margin(30px, null, null, null);
         }
     }
 

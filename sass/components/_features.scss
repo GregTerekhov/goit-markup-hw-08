@@ -8,19 +8,15 @@
     @extend %list;
 
     @include respondTo('medium') {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 30px;
+        @include pageList;
     }
 }
 
 .features__item {
 
     & + & {
-        @include margin(30px, null, null, null);
-
-        @include respondTo('medium') {
-            margin: 0;
+        @include respondTo('pre-medium') {
+            @include margin(30px, null, null, null);
         }
     }
 
