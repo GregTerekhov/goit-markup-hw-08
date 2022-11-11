@@ -5,18 +5,19 @@
 .hero__overlay {
     @include centeredFlex();
     @include centeredElement($maxwidth: 767px);
-    @include backgroundImageRetina($file: 'mobile-hero', $type: 'webp');
+    @include backgroundImageRetina($file: 'mobile-hero');
+    
     padding: 118px 0;
 
     @include respondTo('medium') {
             max-width: 1199px;
-            @include backgroundImageRetina($file: 'tablet-hero', $type: 'webp');        
+            @include backgroundImageRetina($file: 'tablet-hero');        
     }
 
     @include respondTo('large') {
             max-width: 1600px;
             padding: 200px 0;
-            @include backgroundImageRetina($file: 'desktop-hero', $type: 'webp');    
+            @include backgroundImageRetina($file: 'desktop-hero');    
     }
 }
 

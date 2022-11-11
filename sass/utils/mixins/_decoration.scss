@@ -38,17 +38,23 @@
   
   // Міксин вибору фонового зображення
   $imgdir: '../images/hero-img/';
-  @mixin backgroundImageRetina($gradient: linear-gradient(getColor('gradient-hero'), getColor('gradient-hero')), $file, $type, $bg-size: cover, $bg-position: center) {
-    background-image: $gradient, url(#{$imgdir}#{$file} + '.' + #{$type});
+  @mixin backgroundImageRetina($gradient: linear-gradient(getColor('gradient-hero'), getColor('gradient-hero')), $file, $bg-size: cover, $bg-position: center) {
+    background-image: $gradient, url(#{$imgdir}#{$file} + '.' + jpg);
     background-size: $bg-size;
     background-position: $bg-position;
     background-repeat: no-repeat;
+    @supports (background: url('../images/hero-img/desktop-hero.webp')) {
+    background-image: $gradient, url(#{$imgdir}#{$file} + '.' + webp);
+    }
   
     @media screen and (min-device-pixel-ratio: 2),
       screen and (min-resolution: 192dpi),
       screen and (min-resolution: 2dppx) {
       & {
-        background-image: $gradient, url(#{$imgdir}#{$file} + '2x.' + #{$type});
+        background-image: $gradient, url(#{$imgdir}#{$file} + '2x.' + jpg);
+        @supports (background: url('../images/hero-img/desktop-hero.webp')) {
+          background-image: $gradient, url(#{$imgdir}#{$file} + '2x.' + webp);
+        }
       }
     }
   
@@ -56,7 +62,10 @@
     screen and (min-resolution: 288dpi),
     screen and (min-resolution: 3dppx) {
       & {
-        background-image: $gradient, url(#{$imgdir}#{$file} + '3x.' + #{$type});
+        background-image: $gradient, url(#{$imgdir}#{$file} + '3x.' + img);
+        @supports (background: url('../images/hero-img/desktop-hero.webp')) {
+          background-image: $gradient, url(#{$imgdir}#{$file} + '3x.' + webp);
+        }
       }
     }
   }
