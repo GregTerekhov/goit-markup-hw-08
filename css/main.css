@@ -967,7 +967,7 @@ summary {
   align-items: center;
   margin-left: auto;
   margin-right: auto;
-  max-width: 767px;
+  max-width: 480px;
   background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-img/mobile-hero.jpg);
   background-size: cover;
   background-position: center;
@@ -1001,7 +1001,7 @@ summary {
 }
 @media (min-width: 768px) {
   .hero__overlay {
-    max-width: 1199px;
+    max-width: 768px;
     background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-img/tablet-hero.jpg);
     background-size: cover;
     background-position: center;
