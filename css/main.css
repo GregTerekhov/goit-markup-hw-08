@@ -443,10 +443,7 @@ summary {
 }
 
 .page-header {
-  border-width: 1px;
-  border-style: solid;
-  border-color: #ececec;
-  border-radius: 0;
+  border-bottom: 1px solid #ececec;
 }
 
 @media (min-width: 768px) {
