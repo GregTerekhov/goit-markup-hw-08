@@ -9,17 +9,9 @@
 .subscription__form {
     @extend %margin-padding-reset;
 
-    @include respondTo('medium') {
+    @include respondTo('large') {
         display: flex;
         align-items: center;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    @include respondTo('large') {
-        flex-direction: row;
-        flex-wrap: nowrap;
-        gap: 12px;
     }
 }
 
@@ -36,13 +28,15 @@
         color: getColor('placeholder-footer');      
     }
 
-    @include respondTo('pre-medium') {
-        @include margin(null, null, 20px, null);
+    @include respondTo('pre-large') {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
     }
 
     @include respondTo('large') {
         width: 358px;
-        @include margin(null, null, 0, null);
+        @include margin(null, 12px, 0, null);
     }
 }
 

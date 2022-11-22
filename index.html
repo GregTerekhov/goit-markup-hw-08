@@ -356,17 +356,18 @@
                     "
                     type="image/webp"
                   />
-                  <img
-                    loading="lazy"
-                    class="picture"
+                  <source
                     srcset="
                       ./images/desktop/activity-img/activ-1.jpg   1x,
                       ./images/desktop/activity-img/activ2x-1.jpg 2x,
                       ./images/desktop/activity-img/activ3x-1.jpg 3x
                     "
+                  />
+                  <img
+                    loading="lazy"
+                    class="picture"
                     src="./images/desktop/activity-img/activ-1.jpg"
                     alt="Руки на клавіатурі навпроти планшета"
-                    sizes="(min-width: 1200px) 33vw"
                   />
                 </picture>
                 <p class="activity__label">Десктопні додатки</p>
@@ -383,17 +384,18 @@
                     "
                     type="image/webp"
                   />
-                  <img
-                    loading="lazy"
-                    class="picture"
+                  <source
                     srcset="
                       ./images/desktop/activity-img/activ-2.jpg   1x,
                       ./images/desktop/activity-img/activ2x-2.jpg 2x,
                       ./images/desktop/activity-img/activ3x-2.jpg 3x
                     "
+                  />
+                  <img
+                    loading="lazy"
+                    class="picture"
                     src="./images/desktop/activity-img/activ-2.jpg"
                     alt="Людина навпроти комп'ютера тримає мобільний телефон"
-                    sizes="(min-width: 1200px) 33vw"
                   />
                 </picture>
                 <p class="activity__label">Мобільні додатки</p>
@@ -410,17 +412,18 @@
                     "
                     type="image/webp"
                   />
-                  <img
-                    loading="lazy"
-                    class="picture"
+                  <source
                     srcset="
                       ./images/desktop/activity-img/activ-3.jpg   1x,
                       ./images/desktop/activity-img/activ2x-3.jpg 2x,
                       ./images/desktop/activity-img/activ3x-3.jpg 3x
                     "
+                  />
+                  <img
+                    loading="lazy"
+                    class="picture"
                     src="./images/desktop/activity-img/activ-3.jpg"
                     alt="Цвітова палітра на екрані планшета"
-                    sizes="(min-width: 1200px) 33vw"
                   />
                 </picture>
                 <p class="activity__label">Дизайнерські рішення</p>
@@ -493,7 +496,6 @@
                     class="picture"
                     src="./images/desktop/team-img/team-1.jpg"
                     alt="Чоловік, який посміхається, у темній сорочці та окулярах"
-                    sizes="(min-width: 1200px) 25vw, (min-width: 768px) 50vw, 100vw"
                   />
                 </picture>
                 <div class="team__meta">
@@ -555,62 +557,61 @@
               <div class="team__wrap">
                 <picture>
                   <source
+                    media="(max-width: 767px)"
                     srcset="
                       ./images/mobile/team-img/team-2.webp   1x,
                       ./images/mobile/team-img/team2x-2.webp 2x,
                       ./images/mobile/team-img/team3x-2.webp 3x
                     "
                     type="image/webp"
-                    media="(max-width: 767px)"
                   />
                   <source
+                    media="(max-width: 1199px)"
                     srcset="
                       ./images/tablet/team-img/team-2.webp   1x,
                       ./images/tablet/team-img/team2x-2.webp 2x,
                       ./images/tablet/team-img/team3x-2.webp 3x
                     "
                     type="image/webp"
-                    media="(max-width: 1199px)"
                   />
                   <source
+                    media="(min-width: 1200px)"
                     srcset="
                       ./images/desktop/team-img/team-2.webp   1x,
                       ./images/desktop/team-img/team2x-2.webp 2x,
                       ./images/desktop/team-img/team3x-2.webp 3x
                     "
                     type="image/webp"
-                    media="(min-width: 1200px)"
                   />
                   <source
+                    media="(max-width: 767px)"
                     srcset="
                       ./images/mobile/team-img/team-2.jpg   1x,
                       ./images/mobile/team-img/team2x-2.jpg 2x,
                       ./images/mobile/team-img/team3x-2.jpg 3x
                     "
-                    media="(max-width: 767px)"
                   />
                   <source
+                    media="(max-width: 1199px)"
                     srcset="
                       ./images/tablet/team-img/team-2.jpg   1x,
                       ./images/tablet/team-img/team2x-2.jpg 2x,
                       ./images/tablet/team-img/team3x-2.jpg 3x
                     "
-                    media="(max-width: 1199px)"
                   />
                   <source
+                    media="(min-width: 1200px)"
                     srcset="
                       ./images/desktop/team-img/team-2.jpg   1x,
                       ./images/desktop/team-img/team2x-2.jpg 2x,
                       ./images/desktop/team-img/team3x-2.jpg 3x
                     "
-                    media="(min-width: 1200px)"
                   />
                   <img
                     loading="lazy"
                     class="picture"
                     src="./images/desktop/team-img/team-2.jpg"
                     alt="Білявка, яка посміхається, у темному піджаку та окулярах"
-                    sizes="(min-width: 1200px) 25vw, (min-width: 768px) 50vw, 100vw"
                   />
                 </picture>
                 <div class="team__meta">
@@ -727,7 +728,6 @@
                     class="picture"
                     src="./images/desktop/team-img/team-3.jpg"
                     alt="Чоловік, який посміхається, у світлій сорочці дивиться вбок"
-                    sizes="(min-width: 1200px) 25vw, (min-width: 768px) 50vw, 100vw"
                   />
                 </picture>
                 <div class="team__meta">
@@ -844,7 +844,6 @@
                     class="picture"
                     src="./images/desktop/team-img/team-4.jpg"
                     alt="Чоловік у темній футболці дивиться у камеру"
-                    sizes="(min-width: 1200px) 25vw, (min-width: 768px) 50vw, 100vw"
                   />
                 </picture>
                 <div class="team__meta">
@@ -1032,10 +1031,7 @@
         <div class="subscription">
           <b class="subscription__call">Підпишіться на розсилку</b>
           <form class="subscription__form" action="#" method="post">
-            <label
-              class="subscription__label visually-hidden"
-              for="user-email"
-            ></label>
+            <label class="subscription__label" for="user-email"></label>
             <input
               class="subscription__input"
               type="email"
