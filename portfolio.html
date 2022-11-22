@@ -164,39 +164,51 @@
         <div class="container">
           <h1 class="section__title visually-hidden">Наші проєкти</h1>
           <!-- Кнопки фільтрів -->
-          <ul class="projects__filters-list">
+          <ul class="projects__filters-list" id="filtersBtnList">
             <li class="projects__filters-item">
               <button
                 class="projects__filters-button projects__filters-button--current"
-                type="button"
+                onclick="filterSelection('all')"
               >
                 Усі
               </button>
             </li>
             <li class="projects__filters-item">
-              <button class="projects__filters-button" type="button">
+              <button
+                class="projects__filters-button"
+                onclick="filterSelection('websites')"
+              >
                 Веб-сайти
               </button>
             </li>
             <li class="projects__filters-item">
-              <button class="projects__filters-button" type="button">
+              <button
+                class="projects__filters-button"
+                onclick="filterSelection('apps')"
+              >
                 Додатки
               </button>
             </li>
             <li class="projects__filters-item">
-              <button class="projects__filters-button" type="button">
+              <button
+                class="projects__filters-button"
+                onclick="filterSelection('design')"
+              >
                 Дизайн
               </button>
             </li>
             <li class="projects__filters-item">
-              <button class="projects__filters-button" type="button">
+              <button
+                class="projects__filters-button"
+                onclick="filterSelection('marketing')"
+              >
                 Маркетинг
               </button>
             </li>
           </ul>
           <!-- Картки проектів -->
           <ul class="cards">
-            <li class="cards__item">
+            <li class="cards__item websites">
               <a class="cards__link" href="#">
                 <div class="cards__wrap">
                   <picture>
@@ -273,7 +285,7 @@
                 </div>
               </a>
             </li>
-            <li class="cards__item">
+            <li class="cards__item design">
               <a class="cards__link" href="#">
                 <div class="cards__wrap">
                   <picture>
@@ -357,7 +369,7 @@
                 </div>
               </a>
             </li>
-            <li class="cards__item">
+            <li class="cards__item apps">
               <a class="cards__link" href="#">
                 <div class="cards__wrap">
                   <picture>
@@ -436,7 +448,7 @@
                 </div>
               </a>
             </li>
-            <li class="cards__item">
+            <li class="cards__item marketing">
               <a class="cards__link" href="#">
                 <div class="cards__wrap">
                   <picture>
@@ -515,7 +527,7 @@
                 </div>
               </a>
             </li>
-            <li class="cards__item">
+            <li class="cards__item apps">
               <a class="cards__link" href="#">
                 <div class="cards__wrap">
                   <picture>
@@ -594,7 +606,7 @@
                 </div>
               </a>
             </li>
-            <li class="cards__item">
+            <li class="cards__item websites">
               <a class="cards__link" href="#">
                 <div class="cards__wrap">
                   <picture>
@@ -675,7 +687,7 @@
                 </div>
               </a>
             </li>
-            <li class="cards__item">
+            <li class="cards__item design">
               <a class="cards__link" href="#">
                 <div class="cards__wrap">
                   <picture>
@@ -754,7 +766,7 @@
                 </div>
               </a>
             </li>
-            <li class="cards__item">
+            <li class="cards__item marketing">
               <a class="cards__link" href="#">
                 <div class="cards__wrap">
                   <picture>
@@ -831,7 +843,7 @@
                 </div>
               </a>
             </li>
-            <li class="cards__item">
+            <li class="cards__item apps">
               <a class="cards__link" href="#">
                 <div class="cards__wrap">
                   <picture>
@@ -1020,5 +1032,6 @@
       crossorigin="anonymous"
     ></script>
     <script defer src="js/mobile-menu.js"></script>
+    <script src="./js/filters.js"></script>
   </body>
 </html>

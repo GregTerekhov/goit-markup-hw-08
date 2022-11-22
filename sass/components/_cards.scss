@@ -1,5 +1,6 @@
 .cards {
     @extend %list;
+    overflow: hidden;
 
     @include respondTo('medium') {
         @include pageList;
@@ -7,6 +8,7 @@
 }
 
 .cards__item {
+    display: none;
 
     & + & {
         @include respondTo('pre-medium') {
@@ -21,6 +23,10 @@
     @include respondTo('large') {
         @include listLayout(3);
     }
+}
+
+.show {
+    display: block;
 }
 
 .cards__link {

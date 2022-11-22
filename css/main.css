@@ -8,7 +8,7 @@
   padding: 0;
 }
 
-.cards__category, .cards__name, .cards__label, .subscription__input, .subscription__form, .subscription__call, .team__descr, .team__name, .socials__call, .activity__label, .features__descr, .features__subtitle, .checkbox__text, .form__input::placeholder,
+.cards__category, .cards__name, .cards__label, .subscription__input, .subscription__form, .subscription__call, .team__descr, .team__name, .socials__call, .activity__label, .features__descr, .features__subtitle, .checkbox__label, .form__input::placeholder,
 .form__textarea::placeholder, .form__textarea, .form__input, .form__label, .form__call, .hero__title, .hero__overlay, .mobile-network__line, .mobile-container__wrap, .section__title, .cards, .projects__filters-list, .clients__list, .team__list, .socials__list, .activity__list, .features__list, .form__panel-list, .mobile-network, .mobile-menu, .contacts__list, .navigation__list {
   margin: 0;
   padding: 0;
@@ -1333,6 +1333,19 @@ summary {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.172;
+  letter-spacing: 0.03em;
+  text-align: start;
+  text-transform: none;
+  color: #757575;
+}
+@media (min-width: 1200px) {
+  .checkbox__label {
+    font-size: 14px;
+    line-height: 1.714;
+  }
 }
 
 .checkbox__icon {
@@ -1349,22 +1362,6 @@ summary {
 .checkbox__input:checked + .checkbox__icon {
   border: none;
   background-color: #2196f3;
-}
-
-.checkbox__text {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.172;
-  letter-spacing: 0.03em;
-  text-align: start;
-  text-transform: none;
-  color: #757575;
-}
-@media (min-width: 1200px) {
-  .checkbox__text {
-    font-size: 14px;
-    line-height: 1.714;
-  }
 }
 
 .checkbox__contract-terms {
@@ -1880,6 +1877,9 @@ summary {
   background-color: #2196f3;
 }
 
+.cards {
+  overflow: hidden;
+}
 @media (min-width: 768px) {
   .cards {
     display: flex;
@@ -1888,6 +1888,9 @@ summary {
   }
 }
 
+.cards__item {
+  display: none;
+}
 @media (max-width: 767px) {
   .cards__item + .cards__item {
     margin-top: 30px;
@@ -1902,6 +1905,10 @@ summary {
   .cards__item {
     width: calc((100% - 60px) / 3);
   }
+}
+
+.show {
+  display: block;
 }
 
 .cards__link {
