@@ -34,6 +34,8 @@ $text-font-stack: "Roboto", sans-serif;
 $logo-font-stack: 'Raleway', sans-serif;
 $timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 $enable-rounded: true;
+$animation-duration: 1500ms;
+$animation-time-function: cubic-bezier(0.4, 0, 0.2, 1);
 
 $breakpoints: (
   'pre-little': ( max-width: 479px ),

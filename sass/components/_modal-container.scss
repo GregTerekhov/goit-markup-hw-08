@@ -1,5 +1,6 @@
 .modal-container {
-    width: 450px;
+    max-width: 450px;
+    width: calc(100% - 30px);
     @include padding(40px, 40px, 40px, 40px);
   
     background-color: getColor('background-primary');
@@ -15,10 +16,6 @@
         @include respondTo('large') {
             @include transform(translate(-50%, -50%) scale(0.5) rotate(180deg));
         }
-    }
-
-    @include respondTo('pre-little') {
-        width: 320px;
     }
 
     @include respondTo('large') {

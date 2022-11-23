@@ -25,6 +25,11 @@
     }
 }
 
+.animate__pulse {
+    animation-timing-function: $animation-time-function;
+    animation-duration: $animation-duration;
+}
+
 .show {
     display: block;
 }

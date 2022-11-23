@@ -59,4 +59,9 @@
 
 .form__button {
     @include margin(0, auto, 0, auto);
+
+    @include respondTo('pre-little') {
+        width: 100%;
+        max-width: 200px;
+    }
 }

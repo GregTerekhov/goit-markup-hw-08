@@ -1111,7 +1111,8 @@ summary {
   overflow-y: scroll;
 }
 .modal-container {
-  width: 450px;
+  max-width: 450px;
+  width: calc(100% - 30px);
   padding-top: 40px;
   padding-right: 40px;
   padding-bottom: 40px;
@@ -1130,11 +1131,6 @@ summary {
 @media (min-width: 1200px) {
   .backdrop.is-hidden .modal-container {
     transform: translate(-50%, -50%) scale(0.5) rotate(180deg);
-  }
-}
-@media (max-width: 479px) {
-  .modal-container {
-    width: 320px;
   }
 }
 @media (min-width: 1200px) {
@@ -1328,11 +1324,18 @@ summary {
   margin-bottom: 0;
   margin-left: auto;
 }
+@media (max-width: 479px) {
+  .form__button {
+    width: 100%;
+    max-width: 200px;
+  }
+}
 
 .checkbox__label {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 7px;
   font-weight: 400;
   font-size: 12px;
   line-height: 1.172;
@@ -1350,7 +1353,7 @@ summary {
 
 .checkbox__icon {
   display: inline-block;
-  margin-right: 7px;
+  flex-shrink: 0;
   border-width: 2px;
   border-style: solid;
   border-color: #212121;
@@ -1905,6 +1908,13 @@ summary {
   .cards__item {
     width: calc((100% - 60px) / 3);
   }
+}
+
+.animate__pulse {
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-duration: 1500ms;
+          animation-duration: 1500ms;
 }
 
 .show {
