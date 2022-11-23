@@ -3,14 +3,14 @@ function filterSelection(c) {
   var x, i;
   x = document.getElementsByClassName("cards__item");
   if (c == "all") c = "";
-  // Добавить класс "show" (display:block) к отфильтрованным элементам и удалите класс "show" из элементов, которые не выбраны
+  // Додати клас "show" (display:block) елементам, які є відфільтрованими та видалити "show" елементам, які не обрані
   for (i = 0; i < x.length; i++) {
     w3RemoveClass(x[i], "show");
     if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
   }
 }
 
-// Показать отфильтрованные элементы
+// Показати відфільтровані елементи
 function w3AddClass(element, name) {
   var i, arr1, arr2;
   arr1 = element.className.split(" ");
@@ -22,7 +22,7 @@ function w3AddClass(element, name) {
   }
 }
 
-// Скрыть элементы, которые не выбраны
+// Сховати елементи, які не обрані
 function w3RemoveClass(element, name) {
   var i, arr1, arr2;
   arr1 = element.className.split(" ");
@@ -35,7 +35,7 @@ function w3RemoveClass(element, name) {
   element.className = arr1.join(" ");
 }
 
-// Добавить активный класс к текущей кнопке управления (выделите ее)
+// Додати активний клас поточній кнопці керування (виділіть її)
 var btnContainer = document.getElementById("filtersBtnList");
 var btns = btnContainer.getElementsByClassName("projects__filters-button");
 for (var i = 0; i < btns.length; i++) {
