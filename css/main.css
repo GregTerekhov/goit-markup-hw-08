@@ -1135,7 +1135,7 @@ summary {
 }
 @media (min-width: 1200px) {
   .modal-container {
-    width: 528px;
+    max-width: 528px;
     transform: translate(-50%, -50%) scale(1) rotate(0);
   }
 }
