@@ -7,9 +7,7 @@
     position: relative;
     top: 0;
     left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include centeredFlex;
     border-radius: 5px;
     width: 55px;
     height: 55px;
