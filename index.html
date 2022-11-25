@@ -13,7 +13,7 @@
   </head>
   <body class="page">
     <!--Шапка-->
-    <header class="page-header">
+    <header class="page-header" id="home">
       <div class="container">
         <nav class="navigation page-header__navigation">
           <div class="navigation__wrap">
@@ -1060,8 +1060,15 @@
         </div>
       </div>
     </footer>
-
+    <div class="up-button">
+      <a class="up-button__link" href="#home">
+        <svg class="up-button__icon" width="40" height="40">
+          <use href="./images/icons.svg#icon-anchor-home"></use>
+        </svg>
+      </a>
+    </div>
     <script src="./js/modal.js"></script>
+    <script src="./js/anchor-scroll.js"></script>
     <script
       defer
       src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"

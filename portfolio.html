@@ -13,7 +13,7 @@
   </head>
   <body class="page">
     <!--Верхня лінія-->
-    <header class="page-header">
+    <header class="page-header" id="home">
       <div class="container">
         <nav class="navigation page-header__navigation">
           <div class="navigation__wrap">
@@ -1028,7 +1028,13 @@
         </div>
       </div>
     </footer>
-
+    <div class="up-button">
+      <a class="up-button__link" href="#home">
+        <svg class="up-button__icon" width="40" height="40">
+          <use href="./images/icons.svg#icon-anchor-home"></use>
+        </svg>
+      </a>
+    </div>
     <script
       defer
       src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
@@ -1037,5 +1043,6 @@
     ></script>
     <script defer src="js/mobile-menu.js"></script>
     <script src="./js/filters.js"></script>
+    <script src="./js/anchor-scroll.js"></script>
   </body>
 </html>
