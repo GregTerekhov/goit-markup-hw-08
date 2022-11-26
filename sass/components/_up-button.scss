@@ -1,12 +1,8 @@
 .up-button {
-    position: fixed;
-    bottom: 20px;
-    right: 55px;
-  }
+  @include fixed(bottom 20px right 55px);
+}
   .up-button__link {
-    position: relative;
-    top: 0;
-    left: 0;
+    @include relative(top 0 left 0);
     @include centeredFlex;
     border-radius: 5px;
     width: 55px;
@@ -14,17 +10,15 @@
     background-color: getColor('background-up-button');
     fill: getColor('accent');
     @include boxShadow(2);
-    transform: scale(1);
+    @include transform(scale(1));
     @include transition(transform, background-color, fill);
     &:hover,
     &:focus {
-      transform: scale(1.2);
+      @include transform(scale(1.2));
       background-color: getColor('accent');
       fill: getColor('text-tertiary');
     }
   }
   .up-button__icon {
-    position: relative;
-    top: 0;
-    left: 0;
+    @include relative(top 0 left 0);
   }

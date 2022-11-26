@@ -1754,15 +1754,15 @@ summary {
 }
 
 .up-button {
-  position: fixed;
-  bottom: 20px;
   right: 55px;
+  bottom: 20px;
+  position: fixed;
 }
 
 .up-button__link {
-  position: relative;
   top: 0;
   left: 0;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1784,9 +1784,9 @@ summary {
 }
 
 .up-button__icon {
-  position: relative;
   top: 0;
   left: 0;
+  position: relative;
 }
 
 .subscription__call {
